@@ -1,0 +1,20 @@
+.left-side-wrapper {
+  display: flex;
+  padding: 73px 40px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap:112px;
+  align-self: stretch;
+  background: var(--Foggy-Gray-50, #F5F5F1);
+  width: 43.75%;
+
+  p {
+    color: var(--Main-Green, var(--Fruit-Salad-600, #219D50));
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 120%; /* 48px */
+    margin:0px;
+  }
+}

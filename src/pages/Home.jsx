@@ -1,5 +1,4 @@
 import React from 'react';
-import LoginSignUpModal from "../components/LoginSignUpModal";
 
 const Home = () => {
     return (

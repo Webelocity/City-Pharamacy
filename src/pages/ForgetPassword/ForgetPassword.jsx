@@ -6,8 +6,10 @@ import './ForgetPassword.scss'
 const ForgetPassword = () => {
     return (
         <div className='forget-password-wrapper'>
-            <LeftSide />
-            <RightSide />
+            <div className='forget-password'>
+                <LeftSide/>
+                <RightSide/>
+            </div>
         </div>
     );
 };

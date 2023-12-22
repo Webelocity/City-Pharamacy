@@ -3,12 +3,14 @@ import './RightSide.scss'
 import {IconButton, InputAdornment, InputBase} from "@mui/material";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import Visibility from "@mui/icons-material/Visibility";
+import {useNavigate} from "react-router-dom";
 
 const RightSide = () => {
+    const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState({newPassword: false, confirmNewPassword: false});
     const [passwords, setPasswords] = useState({newPassword: "", confirmNewPassword: ""});
     const [success, setSuccess] = useState(false);
-    const [passwordError, setPasswordError] = useState({error:false, helperText:""})
+    const [passwordError, setPasswordError] = useState({error: false, helperText: ""})
 
     const handleChange = (event) => {
         const {name, value} = event.target;
@@ -18,8 +20,8 @@ const RightSide = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        if(passwords.newPassword !== passwords.confirmNewPassword){
-            setPasswordError({error:true, helperText:"Password do not match"});
+        if ((passwords.newPassword === "") || (passwords.confirmNewPassword === "") || (passwords.newPassword !== passwords.confirmNewPassword)) {
+            setPasswordError({error: true, helperText: "Password do not match"});
             return
         }
 
@@ -28,7 +30,7 @@ const RightSide = () => {
     }
     return (
         <div className='right-side-wrapper'>
-            <IconButton className='back-home'>
+            <IconButton className='back-home' onClick={() => navigate('/')}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <path d="M15 6L9 12L15 18" stroke="#219D50" stroke-width="2" stroke-linecap="round"
                           stroke-linejoin="round"/>

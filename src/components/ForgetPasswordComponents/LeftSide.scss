@@ -8,6 +8,9 @@
   align-self: stretch;
   background: var(--Foggy-Gray-50, #F5F5F1);
   width: 43.75%;
+  @media (max-width: 1200px) {
+    display: none;
+  }
 
   p {
     color: var(--Main-Green, var(--Fruit-Salad-600, #219D50));

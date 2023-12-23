@@ -65,9 +65,9 @@
 
       h1 {
         margin: 0px;
+        font-size: clamp(40px, 4vw, 48px);
         @media (max-width: 1200px) {
           color: #3C3C3C;
-          font-size: 40px;
           font-style: normal;
           font-weight: 700;
           line-height: 120%; /* 48px */

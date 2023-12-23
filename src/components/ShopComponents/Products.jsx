@@ -1,11 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './Products.scss'
 import Filters from "./Filters";
 import ProductsPerCategory from "./ProductsPerCategory";
 import {Container, useMediaQuery} from "@mui/material";
+import CategoryModal from "./CategoryModal";
+import PriceModal from "./PriceModal";
 
 const Products = () => {
     const matches = useMediaQuery('(max-width:1200px)');
+    const [categoryModal, setCategoryModal] = useState(false);
+    const [priceModal, setPriceModal] = useState(false);
     return (
         <div className='products_wrapper'>
             <Container sx={{maxWidth:"1440px !important", paddingX:{xs:"0px", md:"auto"}}}>
@@ -13,7 +17,7 @@ const Products = () => {
                     {!matches && <Filters/>}
                     {matches &&
                         <div className='filter-for-mobile'>
-                            <button>
+                            <button onClick={() => setCategoryModal(true)}>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17"
                                      fill="none">
                                     <g clip-path="url(#clip0_2131_56416)">
@@ -37,7 +41,7 @@ const Products = () => {
                                 </svg>
                                 Category
                             </button>
-                            <button>
+                            <button onClick={() => setPriceModal(true)}>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17"
                                      fill="none">
                                     <g clip-path="url(#clip0_2131_56939)">
@@ -57,6 +61,8 @@ const Products = () => {
                                 </svg>
                                 Price Range
                             </button>
+                            <CategoryModal open={categoryModal} handleClose={() => setCategoryModal(false)} />
+                            <PriceModal open={priceModal} handleClose={() => setPriceModal(false)} />
                         </div>
                     }
                     <ProductsPerCategory/>

@@ -2,22 +2,76 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
-  padding: 40px 80px;
 
   .top-part {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
     width: 100%;
+    @media (max-width: 1200px) {
+      align-items: center;
+      gap: 24px;
+    }
+
+    .categories-mobile {
+      display: none;
+
+      p {
+        color: #5C5F62;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 150%;
+        margin: 0px;
+      }
+
+      span {
+        position: relative;
+        left: -10px;
+      }
+
+      .green {
+        color: var(--Main-Green, var(--Fruit-Salad-600, #219D50));
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 150%;
+        margin: 0px;
+      }
+
+      @media (max-width: 1200px) {
+        display: flex;
+        padding: 4px 24px;
+        align-items: center;
+        gap: 15px;
+        border-radius: 80px;
+        background: #F7F7F7;
+      }
+    }
 
     .search {
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
       width: 100%;
+      @media (max-width: 1200px) {
+        flex-direction: column;
+        padding-left: 24px;
+        padding-right: 24px;
+        width: calc(100% - 48px);
+        align-items: center;
+        gap:10px;
+      }
 
       h1 {
         margin: 0px;
+        @media (max-width: 1200px) {
+          color: #3C3C3C;
+          font-size: 40px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 120%; /* 48px */
+        }
       }
 
       input {
@@ -45,6 +99,9 @@
         border-radius: 12px;
         border: 1px solid #E2E8F0;
         width: 380px;
+        @media (max-width: 1200px) {
+          width: 100%;
+        }
 
         input {
           border: none;
@@ -55,7 +112,15 @@
     .categories {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 15px;
+      @media (max-width: 1200px) {
+        display: none;
+      }
+
+      span {
+        position: relative;
+        left: -10px;
+      }
 
       p {
         color: #5C5F62;
@@ -63,10 +128,15 @@
         font-style: normal;
         font-weight: 600;
         line-height: 150%;
+      }
 
-        &.green {
-          color: var(--Main-Green, var(--Fruit-Salad-600, #219D50));
-        }
+      .green {
+        color: var(--Main-Green, var(--Fruit-Salad-600, #219D50));
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 150%;
+        margin: 0px;
       }
     }
   }
@@ -128,8 +198,6 @@
     text-align: center;
     font-size: 18px;
     background: #fff;
-
-    /* Center slide text vertically */
     display: flex;
     justify-content: center;
     align-items: center;

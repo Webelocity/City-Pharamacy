@@ -1,0 +1,37 @@
+.products_wrapper {
+  background: #F8F8F8;
+
+  .inside-wrapper {
+    display: flex;
+    align-items: flex-start;
+    padding-top: 56px;
+    padding-bottom: 56px;
+    gap: 24px;
+    align-self: stretch;
+    @media (max-width: 1200px) {
+      flex-direction: column;
+      padding-top: 0px;
+      gap:0px;
+      align-items: center;
+    }
+  }
+
+  .filter-for-mobile {
+    display: flex;
+    height: 71px;
+    padding: 11px 0px;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+
+    button {
+      display: flex;
+      padding: 10px 20px;
+      align-items: center;
+      gap: 10px;
+      border-radius: 10px;
+      border: 1.5px solid #DADADA;
+      background: #FFF;
+    }
+  }
+}

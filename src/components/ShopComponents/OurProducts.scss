@@ -143,6 +143,10 @@
 
   .products {
     width: 100%;
+    @media (max-width: 1200px) {
+      padding-left: 24px;
+      width: calc(100% - 24px);
+    }
 
     .inside-swiper {
       display: flex;

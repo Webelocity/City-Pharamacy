@@ -7,7 +7,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 
 // import required modules
-import {Navigation} from 'swiper/modules';
+import {FreeMode, Navigation} from 'swiper/modules';
 import {Rating, useMediaQuery} from "@mui/material";
 
 const CategoryProductsSwiper = ({data}) => {
@@ -25,9 +25,11 @@ const CategoryProductsSwiper = ({data}) => {
                 <Swiper
                     slidesPerView={large ? 5 : medium ? 4 : small && 2.5}
                     spaceBetween={10}
-                    modules={[Navigation]}
+                    modules={[Navigation, FreeMode]}
                     navigation={true}
                     className="mySwiper"
+                    freeMode={true}
+                    speed={800}
                 >
                     {data.products.map(product =>
                         <SwiperSlide>

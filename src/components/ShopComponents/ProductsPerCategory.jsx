@@ -1,9 +1,8 @@
 import React from 'react';
 import './ProductsPerCategory.scss'
 import CategoryProductsSwiper from "./CategoryProductsSwiper";
-import photo from '../../assets/Image.png'
+import photo from '../../assets/Image.svg'
 import {Divider} from "@mui/material";
-import {Gif} from "@mui/icons-material";
 
 const ProductsPerCategory = () => {
     const Beauty = {

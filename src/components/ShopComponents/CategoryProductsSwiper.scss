@@ -8,17 +8,20 @@
   @media (max-width: 1200px) {
     gap:24px;
     align-items: center;
+  }
 
-    button {
+  button {
+    display: none;
+    padding: 10px 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    border: 1.5px solid #DADADA;
+    background: #FFF;
+    cursor: pointer;
+    @media (max-width: 1200px) {
       display: flex;
-      padding: 10px 20px;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      border-radius: 10px;
-      border: 1.5px solid #DADADA;
-      background: #FFF;
-      cursor: pointer;
     }
   }
 

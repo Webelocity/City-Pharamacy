@@ -25,52 +25,88 @@
     }
   }
 
-  .top-section {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    align-self: stretch;
-    @media (max-width: 1200px) {
-      justify-content: center;
-    }
-
-    h1 {
-      color: #3C3C3C;
-      font-size: 28px;
-      font-style: normal;
-      font-weight: 800;
-      line-height: 150%; /* 42px */
-      letter-spacing: 0.42px;
-      margin: 0px;
-
-      @media (max-width: 1200px) {
-        color: #3C3C3C;
-        font-size: 24px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 150%; /* 36px */
-        letter-spacing: 0.36px;
-      }
-    }
-
-    button {
-      display: flex;
-      padding: 10px 20px;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      border-radius: 10px;
-      border: 1.5px solid #DADADA;
-      background: #FFF;
-      cursor: pointer;
-      @media (max-width: 1200px) {
-        display: none;
-      }
-    }
-  }
-
   .products {
     width: 100%;
+    position: relative;
+
+    .mySwiper {
+      position: relative;
+      padding-top: 100px;
+      @media (max-width: 1200px) {
+        padding-top: 50px;
+      }
+      .top-section {
+        position: absolute;
+        width: 100%;
+        top: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        align-self: stretch;
+        @media (max-width: 1200px) {
+          justify-content: center;
+        }
+
+        .top-buttons {
+          display: flex;
+          align-items: center;
+          gap:32px;
+
+          button {
+            display: flex;
+            padding: 10px 20px;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            border-radius: 10px;
+            border: 1.5px solid #DADADA;
+            background: #FFF;
+            cursor: pointer;
+            @media (max-width: 1200px) {
+              display: none;
+            }
+          }
+
+          .nav-buttons {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            button {
+              width: 48px;
+              height: 48px;
+              border: 0.8px solid var(--Fruit-Salad-600, #219D50);
+              background: #FFF;
+              border-radius: 50%;
+              padding:0px;
+            }
+
+            button:hover {
+              background-color: #c7f3da;
+            }
+          }
+        }
+
+        h1 {
+          color: #3C3C3C;
+          font-size: 28px;
+          font-style: normal;
+          font-weight: 800;
+          line-height: 150%; /* 42px */
+          letter-spacing: 0.42px;
+          margin: 0px;
+
+          @media (max-width: 1200px) {
+            color: #3C3C3C;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 150%; /* 36px */
+            letter-spacing: 0.36px;
+          }
+        }
+      }
+    }
 
     .inside-swiper {
       display: flex;
@@ -209,41 +245,10 @@
   }
 
   .swiper-button-next {
-    border: 1px solid #1C7CC4;
-    color: #1C7CC4;
-    position: absolute;
-    top: 0px;
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
-
-    &::after {
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    @media (max-width: 1200px) {
-      display: none;
-    }
+    display: none;
   }
 
   .swiper-button-prev {
-    color: #1C7CC4;
-    position: absolute;
-    top: 0px;
-    left: auto !important;
-    right: 0px !important;
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
-
-    &::after {
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    @media (max-width: 1200px) {
-      display: none;
-    }
+    display: none;
   }
 }

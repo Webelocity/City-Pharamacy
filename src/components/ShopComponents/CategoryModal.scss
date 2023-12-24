@@ -1,0 +1,98 @@
+.inside-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 85%;
+  display: flex;
+  padding: 20px 14px;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  border-radius: 10px;
+  background: #FFF;
+  max-height: 80vh;
+  overflow: auto;
+
+  .top-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    button {
+      display: flex;
+      padding: 10px 20px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      color: var(--Main-Green, var(--Fruit-Salad-600, #219D50));
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      text-transform: capitalize;
+      border: none;
+      background: #FFFFFF;
+    }
+  }
+
+
+
+  .filters {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+
+    .MuiButtonBase-root {
+      padding-right: 0px !important;
+      padding-left: 0px !important;
+    }
+  }
+
+  .buttons {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+
+    button {
+      display: flex;
+      padding: 10px 20px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      align-self: stretch;
+      border-radius: 10px;
+      background: var(--Main-Green, #219D50);
+      border:none;
+      cursor: pointer;
+      color: var(--Main-White, #FFF);
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      text-transform: capitalize;
+    }
+
+    .white {
+      display: flex;
+      padding: 10px 20px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      align-self: stretch;
+      border-radius: 10px;
+      background: #FFF;
+      color: var(--Main-Black, #1E1E1E);
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      text-transform: capitalize;
+      border: none;
+      cursor: pointer;
+    }
+  }
+}

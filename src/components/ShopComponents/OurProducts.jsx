@@ -7,7 +7,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 
 // import required modules
-import {Navigation} from 'swiper/modules';
+import {FreeMode, Navigation} from 'swiper/modules';
 import './OurProducts.scss'
 import covid from '../../assets/covid.svg'
 
@@ -67,10 +67,12 @@ const OurProducts = () => {
                 <div className='products'>
                 <Swiper
                         slidesPerView={large ? 5 : medium ? 3 : small && 1.5}
-                        spaceBetween={10}
-                        modules={[Navigation]}
+                        spaceBetween={30}
+                        modules={[Navigation,FreeMode]}
                         navigation={true}
                         className="mySwiper"
+                        freeMode={true}
+                        speed={800}
                     >
                         {categories.map(category =>
                             <SwiperSlide>

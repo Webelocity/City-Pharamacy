@@ -1,0 +1,26 @@
+.shop-category-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap:40px;
+  margin-top: 56px;
+
+
+  .filters-and-products-wrapper {
+    background: #F8F8F8;
+
+    .wrapper {
+      display: flex;
+      align-items: flex-start;
+      padding-top: 56px;
+      padding-bottom: 56px;
+      gap: 24px;
+      align-self: stretch;
+      @media (max-width: 1200px) {
+        flex-direction: column;
+        padding-top: 0px;
+        gap:0px;
+        align-items: center;
+      }
+    }
+  }
+}

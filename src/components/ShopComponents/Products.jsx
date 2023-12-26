@@ -12,7 +12,7 @@ const Products = () => {
     const [priceModal, setPriceModal] = useState(false);
     return (
         <div className='products_wrapper'>
-            <Container sx={{maxWidth:"1440px !important", paddingX:{xs:"0px", md:"auto"}}}>
+            <Container sx={{maxWidth:"1350px !important", paddingX:{xs:"0px", md:"auto"}}}>
                 <div className='inside-wrapper'>
                     {!matches && <Filters/>}
                     {matches &&

@@ -1,0 +1,43 @@
+.product-description-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 48px;
+  align-self: stretch;
+
+  .left-side-photo {
+    display: flex;
+    height: 408px;
+    align-items: flex-start;
+    gap: 7.969px;
+
+    .products-on-top {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      height: 408px;
+      justify-content: space-between;
+      gap: 1%;
+
+      img {
+        height: 49%;
+      }
+    }
+  }
+
+  .right-side {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    flex: 1 0 0;
+
+    h1 {
+      margin:0px;
+    }
+
+    p {
+      margin: 0px;
+      text-align: start;
+    }
+  }
+}

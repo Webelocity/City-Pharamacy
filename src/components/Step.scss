@@ -1,0 +1,36 @@
+.categories-stepper {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: #5C5F62;
+  border-radius: 80px;
+  background: #F7F7F7;
+  padding-left: 24px;
+  padding-right: 24px;
+
+  span {
+    position: relative;
+    left: -10px;
+  }
+
+  p {
+    color: #5C5F62;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+  }
+
+  li {
+    color: #5C5F62;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    margin: 0px;
+
+    &.green {
+      color: var(--Main-Green, var(--Fruit-Salad-600, #219D50));
+    }
+  }
+}

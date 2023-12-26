@@ -2,14 +2,13 @@ import React, {useState} from 'react';
 import './Filters.scss';
 import {Collapse, List, ListItemButton, ListItemIcon, ListItemText, Slider} from "@mui/material";
 import {ExpandLess, ExpandMore, StarBorder} from "@mui/icons-material";
-import {useNavigate, useParams} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 
 function valuetext(value) {
     return `${value}`;
 }
 
 const Filters = () => {
-    const {id} = useParams();
     const navigate = useNavigate();
     const [value, setValue] = React.useState([20, 37]);
     const [openPrice, setOpenPrice] = useState(true)

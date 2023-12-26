@@ -5,6 +5,7 @@ import ForgetPassword from "./pages/ForgetPassword/ForgetPassword";
 import Shop from "./pages/Shop/Shop";
 import ShopCategories from "./pages/ShopCategories/ShopCategories";
 import Layout from "./components/Layout/Layout";
+import Product from "./pages/Product/Product";
 
 function App() {
     return (
@@ -21,6 +22,10 @@ function App() {
                                 element={<ShopCategories/>}
                             />
                         </Route>
+                        <Route
+                            path="product/:id"
+                            element={<Product />}
+                        />
                     </Routes>
                 </Layout>
             </BrowserRouter>

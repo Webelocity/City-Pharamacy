@@ -1,0 +1,30 @@
+import React from 'react';
+import {Container} from "@mui/material";
+import './Product.scss'
+import Step from "../../components/Step";
+import LeftSideImage from "../../components/ProductComponents/LeftSideImage";
+import RightSideInfo from "../../components/ProductComponents/RightSideInfo";
+import ProductSummary from "../../components/ProductComponents/ProductSummary";
+import FeaturedProducts from "../../components/ProductComponents/FeaturedProducts";
+
+
+const Product = () => {
+    const path = [{name: "Categories"}, {name: "Health & Wellness"}, {name: "COVID-19 Essentials (45)"}, {name: "Nora - Oil Premium"}]
+    return (
+        <>
+            <Container sx={{maxWidth: "1350px !important", paddingX: {xs: "0px", md: "auto"}}}>
+                <div className='product-wrapper'>
+                    <Step data={path}/>
+                    <div className='product-detail-wrapper'>
+                        <LeftSideImage/>
+                        <RightSideInfo/>
+                    </div>
+                </div>
+            </Container>
+            <ProductSummary/>
+            <FeaturedProducts />
+        </>
+    );
+};
+
+export default Product;

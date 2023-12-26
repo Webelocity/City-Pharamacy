@@ -10,6 +10,7 @@ import 'swiper/css/navigation';
 import {FreeMode, Navigation} from 'swiper/modules';
 import './OurProducts.scss'
 import covid from '../../assets/covid.svg'
+import Step from "../Step";
 
 const OurProducts = () => {
     const categories = [
@@ -25,14 +26,13 @@ const OurProducts = () => {
     const medium = useMediaQuery('(min-width:600px)');
     const large = useMediaQuery('(min-width:1200px)');
 
+    const path = [{name:"Categories"}]
+
     return (
-        <Container sx={{maxWidth:"1440px !important", paddingX:{xs:"0px !important", md:"auto"}}}>
+        <Container sx={{maxWidth:"1350px !important", paddingX:{xs:"0px !important", md:"auto"}}}>
             <div className='our-products-wrapper'>
                 <div className='top-part'>
-                    <div className='categories-mobile'>
-                        <p>Home</p>
-                        <li className='green'><span>Categories</span></li>
-                    </div>
+                    {small && <Step data={path}/>}
                     <div className='search'>
                         <h1>Our Products</h1>
                         <InputBase
@@ -59,10 +59,7 @@ const OurProducts = () => {
                             }
                         />
                     </div>
-                    <div className='categories'>
-                        <p>Home</p>
-                        <li className='green'><span>Categories</span></li>
-                    </div>
+                    {!small && <Step data={path} />}
                 </div>
                 <div className='products'>
                 <Swiper

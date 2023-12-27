@@ -11,7 +11,7 @@ function App() {
     return (
         <div className="App">
             <BrowserRouter>
-                <Layout>
+                {/*<Layout>*/}
                     <Routes>
                         <Route path="/" index element={<Home/>}/>
                         <Route path="/forget-password" index element={<ForgetPassword/>}/>
@@ -27,7 +27,7 @@ function App() {
                             element={<Product />}
                         />
                     </Routes>
-                </Layout>
+                {/*</Layout>*/}
             </BrowserRouter>
         </div>
     );

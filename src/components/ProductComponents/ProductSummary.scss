@@ -27,6 +27,9 @@
       line-height: normal;
       text-transform: capitalize;
       cursor: pointer;
+      @media (max-width: 1200px) {
+        padding:10px;
+      }
 
       &.green {
         color: var(--Main-Green, var(--Fruit-Salad-600, #219D50));

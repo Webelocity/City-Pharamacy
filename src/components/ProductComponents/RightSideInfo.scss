@@ -84,6 +84,51 @@
     align-items: center;
     gap: 16px;
 
+    .MuiButtonBase-root {
+      border-radius: 10px;
+      border: 1.5px solid #DADADA;
+      background: #FFF;
+      padding:12px 24px;
+    }
+    .price-in-price {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      @media (max-width: 1200px) {
+        flex-direction: column;
+
+
+        p {
+          color: #171717;
+          font-size: 24px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 150%; /* 36px */
+          letter-spacing: 0.36px;
+        }
+      }
+    }
+    @media (max-width: 1200px) {
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .quantity {
+      display: flex;
+      padding: 4px 4px;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      border-radius: 10px;
+      border: 1.5px solid #DADADA;
+
+      .MuiButtonBase-root {
+        padding: 0px !important;
+        border: none;
+        width: 30%;
+      }
+    }
+
     h1 {
       color: #171717;
       font-size: 32px;
@@ -161,6 +206,10 @@
     align-self: stretch;
     width: 100%;
     justify-content: space-between;
+    @media (max-width: 1200px) {
+      flex-direction: column;
+      width: 100%;
+    }
 
     .MuiButtonBase-root {
       border-radius: 10px;
@@ -186,6 +235,9 @@
       text-transform: capitalize;
       width: 50%;
       cursor: pointer;
+      @media (max-width: 1200px) {
+        width: 100%;
+      }
 
       &.green-light {
         display: flex;
@@ -202,6 +254,9 @@
         line-height: normal;
         text-transform: capitalize;
         width: 30%;
+        @media (max-width: 1200px) {
+          width: 100%;
+        }
       }
     }
 

@@ -5,11 +5,15 @@
   gap: 19px;
   background: #FFF;
   width: 30%;
+  @media (max-width: 1200px) {
+    width: 100%;
+  }
 
   .photo {
     background-color: #F5F5F1;
     padding:20px;
     border-radius: 16px;
+    width: calc(100% - 40px);
 
     img {
       width: 100%;
@@ -28,6 +32,9 @@
       padding:10px;
       border-radius: 16px;
       background-color: #F5F5F1;
+      @media (max-width: 1200px) {
+        width: 18%;
+      }
     }
 
     img {

@@ -22,7 +22,7 @@ const featured = {
 
 const FeaturedProducts = () => {
     return (
-        <Container sx={{maxWidth: "1350px !important", paddingX: {xs: "0px", md: "auto"}, paddingTop:"40px"}}>
+        <Container sx={{maxWidth: "1350px !important", paddingX: {xs: "20px", md: "auto"}, paddingTop:"40px"}}>
             <CategoryProductsSwiper data={featured} largeAmountOfProducts={true}/>
         </Container>
     );

@@ -12,7 +12,7 @@ const Product = () => {
     const path = [{name: "Categories"}, {name: "Health & Wellness"}, {name: "COVID-19 Essentials (45)"}, {name: "Nora - Oil Premium"}]
     return (
         <>
-            <Container sx={{maxWidth: "1350px !important", paddingX: {xs: "0px", md: "auto"}}}>
+            <Container sx={{maxWidth: "1350px !important", paddingX: {xs: "20px", md: "auto"}}}>
                 <div className='product-wrapper'>
                     <Step data={path}/>
                     <div className='product-detail-wrapper'>

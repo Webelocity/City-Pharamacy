@@ -118,6 +118,10 @@
   text-transform: capitalize;
   cursor: pointer;
 }
+.upper .right button:hover {
+  background: #219d50;
+  color: #fff;
+}
 .upper .right .green {
   background: var(--Green-Light, rgba(104, 212, 145, 0.27));
   border: none;
@@ -163,6 +167,10 @@
   border: none;
   text-decoration: none;
 }
+.shopButton .ShopBut:hover {
+  background: #0c7935;
+}
+
 .shopButton .cartMini {
   display: flex;
   align-items: center;
@@ -323,6 +331,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  transition: 300ms;
 }
 
 @media (max-width: 1268px) {

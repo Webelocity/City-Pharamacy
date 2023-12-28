@@ -1,5 +1,5 @@
 import React from "react";
-import "./CategoryProductsSwiper.scss";
+import "./HomeCategoryProductsSwiper.scss";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 
 // Import Swiper styles
@@ -11,24 +11,24 @@ import { FreeMode, Navigation } from "swiper/modules";
 import { Divider, Rating, useMediaQuery } from "@mui/material";
 import SwiperNavButton from "../SwiperNavButton";
 
-const CategoryProductsSwiper = ({ data }) => {
+const SingleCategoryProductsSwiper = ({ data }) => {
   const small = useMediaQuery("(max-width:600px)");
   const medium = useMediaQuery("(min-width:600px)");
   const large = useMediaQuery("(min-width:1200px)");
 
   return (
-    <div className="category-product-swiper-wrapper">
+    <div className="Hcategory-product-swiper-wrapper">
       <div className="products">
         <Swiper
-          slidesPerView={large ? 5 : medium ? 4 : small && 2.5}
-          spaceBetween={10}
+          slidesPerView={4}
+          spaceBetween={32}
           modules={[Navigation, FreeMode]}
           navigation={true}
           className="mySwiper"
           freeMode={true}
-          speed={800}>
+          speed={400}>
           <div className="top-section">
-            <h1>{data.name}</h1>
+            <h1>Featured Products</h1>
             <div className="top-buttons">
               <button>View more</button>
               <Divider
@@ -100,9 +100,8 @@ const CategoryProductsSwiper = ({ data }) => {
           ))}
         </Swiper>
       </div>
-      <button>View More</button>
     </div>
   );
 };
 
-export default CategoryProductsSwiper;
+export default SingleCategoryProductsSwiper;

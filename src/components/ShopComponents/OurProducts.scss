@@ -13,42 +13,6 @@
       gap: 24px;
     }
 
-    .categories-mobile {
-      display: none;
-
-      p {
-        color: #5C5F62;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 150%;
-        margin: 0px;
-      }
-
-      span {
-        position: relative;
-        left: -10px;
-      }
-
-      .green {
-        color: var(--Main-Green, var(--Fruit-Salad-600, #219D50));
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 150%;
-        margin: 0px;
-      }
-
-      @media (max-width: 1200px) {
-        display: flex;
-        padding: 4px 24px;
-        align-items: center;
-        gap: 15px;
-        border-radius: 80px;
-        background: #F7F7F7;
-      }
-    }
-
     .search {
       display: flex;
       align-items: flex-start;
@@ -106,37 +70,6 @@
         input {
           border: none;
         }
-      }
-    }
-
-    .categories {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      @media (max-width: 1200px) {
-        display: none;
-      }
-
-      span {
-        position: relative;
-        left: -10px;
-      }
-
-      p {
-        color: #5C5F62;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 150%;
-      }
-
-      .green {
-        color: var(--Main-Green, var(--Fruit-Salad-600, #219D50));
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 150%;
-        margin: 0px;
       }
     }
   }

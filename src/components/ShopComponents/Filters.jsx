@@ -2,34 +2,40 @@ import React, {useState} from 'react';
 import './Filters.scss';
 import {Collapse, List, ListItemButton, ListItemIcon, ListItemText, Slider} from "@mui/material";
 import {ExpandLess, ExpandMore, StarBorder} from "@mui/icons-material";
+import {useNavigate} from 'react-router-dom'
 
 function valuetext(value) {
     return `${value}`;
 }
 
 const Filters = () => {
+    const navigate = useNavigate();
     const [value, setValue] = React.useState([20, 37]);
     const [openPrice, setOpenPrice] = useState(true)
     const [filtersCategory, setFiltersCategory] = useState(
         [
-            {name: "Beauty", open: false},
-            {name: "COVID-19 Essentials", open: false},
-            {name: "Health & Wellness", open: false},
-            {name: "Home Care & Devices", open: false},
-            {name: "Baby & Child", open: false},
-            {name: "Personal Care", open: false},
+            {name: "Beauty", open: false, category: "beauty"},
+            {name: "COVID-19 Essentials", open: false, category: "covid"},
+            {name: "Health & Wellness", open: false, category: "health"},
+            {name: "Home Care & Devices", open: false, category: "home-care"},
+            {name: "Baby & Child", open: false, category: "baby"},
+            {name: "Personal Care", open: false, category: "personal"},
         ])
 
     const handleClick = (name) => {
+        const filterToRedirect = filtersCategory.filter(filter => {
+            return filter.name === name;
+        });
         setFiltersCategory(prevFilters => {
             return prevFilters.map(filter => {
                 if (filter.name === name) {
                     return {...filter, open: !filter.open}; // Toggle the 'open' attribute
-                }
-                return filter;
+                } else return {...filter, open: false}
             });
         });
+        navigate(`/shop/${filterToRedirect[0].category}`)
     };
+
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -37,7 +43,7 @@ const Filters = () => {
 
     return (
         <div className='filters-wrapper'>
-            <div className='shop-all'>
+            <div className='shop-all' onClick={() => navigate('/shop')}>
                 <div className='inside-wrapper'>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                         <path
@@ -58,7 +64,7 @@ const Filters = () => {
                 {filtersCategory.map(category =>
                     <>
                         <ListItemButton className='collapse' onClick={() => handleClick(category.name)}>
-                            <ListItemText primary={`${category.name}`}/>
+                            <ListItemText className={`list ${category.open && 'open'}`} primary={`${category.name}`}/>
                             {category.open ? <ExpandLess/> : <ExpandMore/>}
                         </ListItemButton>
                         <Collapse in={category.open} timeout="auto" unmountOnExit>

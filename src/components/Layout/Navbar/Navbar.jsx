@@ -3,7 +3,7 @@ import "./Navbar.css";
 import logo from "../../../assets/City Pharmacy.png";
 import search from "../../../assets/icons.png";
 import { Link, useNavigate } from "react-router-dom";
-import { BsArrowRight, BsChevronDown } from "react-icons/bs";
+import {  BsChevronDown } from "react-icons/bs";
 import { useMediaQuery } from "@mui/material";
 import Phone from "../../../assets/phone.png";
 import clock from "../../../assets/clocl.png";
@@ -14,7 +14,6 @@ import transfer from "../../../assets/transfer.png";
 
 const NavBar = () => {
   const navbar = useRef(null);
-  const navigate = useNavigate();
   const matches = useMediaQuery("(max-width:780px)");
   const [showMenu, setShowMenu] = useState(0);
   useEffect(() => {

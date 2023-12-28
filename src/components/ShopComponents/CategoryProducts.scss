@@ -1,0 +1,209 @@
+.category-products-wrapper {
+  display: flex;
+  padding: 24px 21px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  flex: 1 0 0;
+  border-radius: 10px;
+  background: #FFF;
+
+  .show-result-wrapper {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    @media (max-width: 1200px) {
+      flex-direction: column-reverse;
+    }
+
+    .filter-for-mobile {
+      display: flex;
+      height: 71px;
+      padding: 11px 0px;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+
+      button {
+        display: flex;
+        padding: 10px 13px;
+        align-items: center;
+        gap: 10px;
+        border-radius: 10px;
+        border: 1.5px solid #DADADA;
+        background: #FFF;
+        color: var(--Main-Black, #1E1E1E);
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        text-transform: capitalize;
+      }
+    }
+
+    p {
+      color: #9E9E9E;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 150%; /* 24px */
+    }
+
+    .MuiInputBase-root {
+      border-radius: 10px 10px 0px 0px;
+      border: 1px solid rgba(0, 0, 0, 0.10);
+      background: #F8F8F8;
+      color: var(--Fruit-Salad-600, #219D50);
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 150%; /* 18px */
+      width: 200px;
+    }
+  }
+
+  .products-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2%;
+    width: 100%;
+    flex-wrap: wrap;
+    @media (max-width: 1200px) {
+      justify-content: center;
+    }
+
+    .inside-swiper {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 24px;
+      position: relative;
+      margin-bottom: 24px;
+      width: 18%;
+      min-width: 140px;
+
+      .image-part {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        gap: 24px;
+        flex: 1 0 0;
+        align-self: stretch;
+        border-radius: 16px;
+        border: 1px solid #DADADA;
+        width: 100%;
+
+        img {
+          border-radius: 16px;
+        }
+
+        button {
+          display: flex;
+          padding: 10px 20px;
+          justify-content: center;
+          align-items: center;
+          gap: 10px;
+          border-radius: 10px;
+          background: var(--Main-Green, #219D50);
+          position: absolute;
+          right: 4px;
+          top: 4px;
+          border: none;
+          color: var(--Main-White, #FFF);
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+          text-transform: capitalize;
+
+          @media (max-width: 1200px) {
+            color: var(--Foggy-Gray-0, #FFF);
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            text-transform: capitalize;
+            display: flex;
+            padding: 8px 12px;
+            justify-content: center;
+            align-items: center;
+            gap: 4px;
+            position: absolute;
+            right: 2px;
+            border-radius: 4px;
+            background: var(--Fruit-Salad-600, #219D50);
+          }
+        }
+      }
+
+      .price-rating {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+
+        .MuiRating-root {
+          font-size: 20px;
+          color: var(--Fruit-Salad-600, #219D50);
+          @media (max-width: 1200px) {
+            font-size: 16px;
+          }
+        }
+
+        p {
+          color: #3C3C3C;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 150%; /* 30px */
+          letter-spacing: 0.3px;
+          margin: 0px;
+          text-align: start;
+          @media (max-width: 1200px) {
+            color: #3C3C3C;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 140%; /* 16.8px */
+          }
+        }
+
+        .price {
+          color: var(--Fruit-Salad-600, #219D50);
+          font-size: 24px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 150%; /* 36px */
+          letter-spacing: 0.36px;
+          @media (max-width: 1200px) {
+            color: var(--Fruit-Salad-600, #219D50);
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 140%; /* 22.4px */
+          }
+        }
+      }
+    }
+  }
+
+  .pagination {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    .MuiButtonBase-root {
+      height: 40px;
+      width: 41px;
+      border-radius: 10px;
+    }
+
+    .css-1to7aaw-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+      background-color: #323232;
+    }
+  }
+}

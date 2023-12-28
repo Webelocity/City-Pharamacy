@@ -1,0 +1,17 @@
+.cart-stepper-wrapper {
+  display: flex;
+  width: 350px;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  .MuiStepper-root {
+    display: flex;
+    width: 350px;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .MuiSvgIcon-root {
+    color:#219D50 !important;
+  }
+}

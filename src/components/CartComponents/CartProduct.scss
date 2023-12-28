@@ -1,0 +1,128 @@
+.cart-product-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+  align-self: stretch;
+  width: 100%;
+
+  .product-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    width: 100%;
+
+    .name-price {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 4px;
+      align-self: stretch;
+
+      p {
+        color: #393939;
+        font-feature-settings: 'clig' off, 'liga' off;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 24px; /* 120% */
+        letter-spacing: -0.08px;
+      }
+
+      .price {
+        color: #171717;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-transform: capitalize;
+      }
+
+      .original-price {
+        color: var(--Grey-300, #B6B7C3);
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-decoration: line-through;
+        text-transform: capitalize;
+      }
+    }
+
+    .color-quantity {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+
+      .color {
+        display: flex;
+        padding: 8px 16px;
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
+        align-self: stretch;
+        border-radius: 10px;
+        background: #F8F8F8;
+
+        .color-circle {
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          border:1px solid #303030;
+        }
+      }
+
+      .quantity {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+        gap: 16px;
+
+        .MuiButtonBase-root {
+          border-radius:10px;
+          display: flex;
+          padding: 12px 24px;
+          justify-content: center;
+          align-items: center;
+          gap: 10px;
+          border: 1.5px solid #DADADA;
+          background: #FFF;
+        }
+
+        button {
+          display: flex;
+          padding: 10px 0px;
+          justify-content: center;
+          align-items: center;
+          gap: 10px;
+          align-self: stretch;
+          color: var(--Main-Green, var(--Fruit-Salad-600, #219D50));
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+          text-transform: capitalize;
+          border:none;
+          background-color: #FFFF;
+        }
+
+        .quantity-2 {
+          display: flex;
+          padding: 4px 4px;
+          justify-content: center;
+          align-items: center;
+          gap: 16px;
+          border-radius: 10px;
+          border: 1.5px solid #DADADA;
+
+          .MuiButtonBase-root {
+            padding: 0px !important;
+            border: none;
+          }
+        }
+      }
+    }
+  }
+}

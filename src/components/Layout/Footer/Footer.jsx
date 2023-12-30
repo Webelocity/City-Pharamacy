@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <div className="Footer">
       <div className="footer-wrapper">
-        <div className="upper">
+        <div className="upperbox">
           <div className="box">
             <h3 className="head">Navigation</h3>
             <div className="itms">
@@ -54,7 +54,7 @@ const Footer = () => {
               <Link className="item" to="/">
                 Compression Therapy{" "}
               </Link>
-              <Link className="item" to="/">
+              <Link className="item" to="/Vaccinations">
                 Vaccinations
               </Link>
               <Link className="item" to="/">
@@ -91,6 +91,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
+        <hr className="hr" />
         <div className="lower">
           <img src={logo} alt="logo" />
           <p>© 2023 CityPharmacy. All Rights Reserved. </p>

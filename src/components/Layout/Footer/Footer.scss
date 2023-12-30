@@ -3,16 +3,20 @@
   padding: 56px 0px;
   flex-direction: column;
   align-items: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
   .footer-wrapper {
     width: 100%;
     min-width: 1300px;
     display: flex;
     flex-direction: column;
-    .upper {
+    gap: 63px;
+    .upperbox {
       display: flex;
       align-items: flex-start;
       gap: 40px;
       align-self: center;
+      width: 100%;
+      max-width: 1300px;
       @media (max-width: 960px) {
         flex-direction: column;
         align-items: center;
@@ -55,6 +59,12 @@
           }
         }
       }
+    }
+    .hr {
+      width: -webkit-fill-available;
+      height: 0;
+      background-color: #219d50;
+      max-width: 80%;
     }
     .lower {
       display: flex;

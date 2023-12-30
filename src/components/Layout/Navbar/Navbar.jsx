@@ -3,7 +3,7 @@ import "./Navbar.css";
 import logo from "../../../assets/City Pharmacy.png";
 import search from "../../../assets/icons.png";
 import { Link, useNavigate } from "react-router-dom";
-import {  BsChevronDown } from "react-icons/bs";
+import { BsChevronDown } from "react-icons/bs";
 import { useMediaQuery } from "@mui/material";
 import Phone from "../../../assets/phone.png";
 import clock from "../../../assets/clocl.png";
@@ -131,7 +131,7 @@ const NavBar = () => {
                 <Link to="/Vaccinations">Vaccinations </Link>
                 <Link to="/Testing">Testing </Link>
                 <Link to="/CompressionStockings">Compression stockings </Link>
-                <Link to="/ConsultPharmacist ">Consult a Pharmacist </Link>
+                <Link to="/Consult_a_pharmacist">Consult a Pharmacist </Link>
                 <Link to="/About">About </Link>
                 <Link to="/Contact">Contact</Link>
               </div>

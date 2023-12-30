@@ -9,6 +9,8 @@ import Product from "./pages/Product/Product";
 import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
 import Cart from "./pages/Cart/Cart";
+import ConsultPharmacist from "./pages/ConsultPharmacist/ConsultPharmacist";
+import Vaccine from "./pages/Vaccine/Vaccine";
 
 function App() {
   return (
@@ -19,6 +21,12 @@ function App() {
             <Route path="/" index element={<Home />} />
             <Route path="/About" index element={<About />} />
             <Route path="/Contact" index element={<Contact />} />
+            <Route path="/Vaccinations" index element={<Vaccine />} />
+            <Route
+              path="/Consult_a_pharmacist"
+              index
+              element={<ConsultPharmacist />}
+            />
             <Route path="/forget-password" index element={<ForgetPassword />} />
             <Route path="/shop">
               <Route index element={<Shop />} />

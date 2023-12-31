@@ -11,6 +11,9 @@ import Contact from "./pages/Contact/Contact";
 import Cart from "./pages/Cart/Cart";
 import ConsultPharmacist from "./pages/ConsultPharmacist/ConsultPharmacist";
 import Vaccine from "./pages/Vaccine/Vaccine";
+import Testing from "./pages/Testing/Testing";
+import TravelHealth from "./pages/TravelHealth/TravelHealth";
+import Compression from "./pages/Compression/Compression";
 
 function App() {
   return (
@@ -22,6 +25,9 @@ function App() {
             <Route path="/About" index element={<About />} />
             <Route path="/Contact" index element={<Contact />} />
             <Route path="/Vaccinations" index element={<Vaccine />} />
+            <Route path="/Testing" index element={<Testing />} />
+            <Route path="/Travel" index element={<TravelHealth />} />
+            <Route path="/Compression" index element={<Compression />} />
             <Route
               path="/Consult_a_pharmacist"
               index

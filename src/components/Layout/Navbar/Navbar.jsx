@@ -130,7 +130,7 @@ const NavBar = () => {
                 <Link to="/MinorAlligments">Minor Aliments</Link>
                 <Link to="/Vaccinations">Vaccinations </Link>
                 <Link to="/Testing">Testing </Link>
-                <Link to="/CompressionStockings">Compression stockings </Link>
+                <Link to="/Compression ">Compression stockings </Link>
                 <Link to="/Consult_a_pharmacist">Consult a Pharmacist </Link>
                 <Link to="/About">About </Link>
                 <Link to="/Contact">Contact</Link>

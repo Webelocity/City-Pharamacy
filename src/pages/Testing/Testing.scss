@@ -1,0 +1,249 @@
+.TestingWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  scroll-behavior: smooth;
+  .SectionOne {
+    display: flex;
+    padding: 0px 80px;
+    padding-top: 24px;
+    align-items: center;
+    position: relative;
+    width: -webkit-fill-available;
+    justify-content: center;
+    .wrap {
+      width: -webkit-fill-available;
+      max-width: 1360px;
+      display: flex;
+      align-items: center;
+      gap: clamp(40px, 67px, 80px);
+      z-index: 2;
+      justify-content: space-between;
+      .textbox {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        align-self: stretch;
+        text-align: left;
+        justify-content: center;
+        .header {
+          color: var(--Main-Green, var(--Fruit-Salad-600, #219d50));
+          // font-family: Gabarito;
+          font-size: 64px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 120%; /* 76.8px */
+        }
+        .note {
+          color: #3c3c3c;
+          // font-family: Roboto;
+          font-size: 24px;
+          font-style: italic;
+          font-weight: 600;
+          line-height: 130%; /* 31.2px */
+          letter-spacing: 0.36px;
+          text-align: left;
+          font-style: italic;
+        }
+        .greennote {
+          color: var(--Fruit-Salad-600, #219d50);
+          // font-family: Roboto;
+          font-size: 24px;
+          font-style: italic;
+          font-weight: 600;
+          line-height: 130%; /* 31.2px */
+          letter-spacing: 0.36px;
+        }
+      }
+    }
+    .topImage {
+      position: absolute;
+      top: 0%;
+      left: 0;
+      z-index: 1;
+    }
+    .bottomImage {
+      position: absolute;
+      top: 0%;
+      right: 0;
+      z-index: 1;
+    }
+  }
+  .SectionTwo {
+    display: flex;
+    padding: 80px;
+    padding-top: 110px;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    background: var(--Foggy-Gray-50, #f5f5f1);
+    position: relative;
+    .wrap {
+      max-width: 1360px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: clamp(70px, 80px, 90px);
+      align-self: stretch;
+      z-index: 2;
+      .text {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        gap: 8px;
+        .subheader {
+          color: var(--Fruit-Salad-800, #1c5f36);
+          // font-family: Roboto;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 131.5%; /* 21.04px */
+          letter-spacing: 1.44px;
+          text-transform: uppercase;
+        }
+        .header {
+          color: #3c3c3c;
+          // font-family: Gabarito;
+          font-size: 48px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 120%; /* 57.6px */
+        }
+        .note {
+          color: var(--Main-Black, #1e1e1e);
+          // font-family: Roboto;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 150%; /* 30px */
+          letter-spacing: 0.3px;
+          margin: 24px 0;
+        }
+        .buttonswrap {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          align-self: stretch;
+          .button {
+            display: flex;
+            padding: 12px 24px;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            border-radius: 10px;
+            background: var(--Main-Green, #219d50);
+            color: var(--Main-White, #fff);
+            // font-family: Roboto;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            text-transform: capitalize;
+            border: none;
+            &:hover {
+              background: #0c7935;
+            }
+          }
+        }
+      }
+    }
+    .bg {
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      z-index: 1;
+    }
+  }
+  .SectionThree {
+    display: flex;
+    padding: 80px;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    position: relative;
+    .wrap {
+      max-width: 1360px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: clamp(70px, 80px, 90px);
+      align-self: stretch;
+      z-index: 2;
+      .text {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        gap: 8px;
+        .subheader {
+          color: var(--Fruit-Salad-800, #1c5f36);
+          // font-family: Roboto;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 131.5%; /* 21.04px */
+          letter-spacing: 1.44px;
+          text-transform: uppercase;
+        }
+        .header {
+          color: #3c3c3c;
+          // font-family: Gabarito;
+          font-size: 48px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 120%; /* 57.6px */
+        }
+        .note {
+          color: var(--Main-Black, #1e1e1e);
+          // font-family: Roboto;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 150%; /* 30px */
+          letter-spacing: 0.3px;
+          margin: 24px 0;
+        }
+        .buttonswrap {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          align-self: stretch;
+          .button {
+            display: flex;
+            padding: 12px 24px;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            border-radius: 10px;
+            background: var(--Main-Green, #219d50);
+            color: var(--Main-White, #fff);
+            // font-family: Roboto;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            text-transform: capitalize;
+            border: none;
+            &:hover {
+              background: #0c7935;
+            }
+          }
+        }
+      }
+    }
+    .bg {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: 1;
+    }
+    .secbg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+  }
+}

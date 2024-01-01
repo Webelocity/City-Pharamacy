@@ -261,6 +261,11 @@
           &:hover {
             background: #0c7935;
           }
+          &:disabled {
+            background: #04190c;
+            cursor: not-allowed;
+            pointer-events: none;
+          }
         }
         .horizontalFields {
           display: flex;

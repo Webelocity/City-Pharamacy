@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Contact.scss";
 import nurse from "../../assets/ContactImage.png";
 import bottm from "../../assets/Circle Background bottm.png";
@@ -12,7 +12,47 @@ const Contact = () => {
   //   center: { lat: 59.95, lng: 30.33 },
   //   zoom: 11,
   // };
+  const [disabled, setDisabled] = useState(true);
   const [submit, setsubmit] = useState(false);
+  const isValidEmailSch = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+  const [isvalidEmail, setIsValidEmail] = useState(true);
+
+  const [contact, setContact] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setContact({ ...contact, [name]: value });
+    if (name === "email") {
+      if (value.match(isValidEmailSch)) {
+        setIsValidEmail(true);
+      } else {
+        setIsValidEmail(false);
+      }
+    }
+    console.log(contact);
+  };
+
+  useEffect(() => {
+    const validate = () => {
+      if (
+        contact.name &&
+        contact.email &&
+        contact.phone &&
+        contact.message &&
+        isvalidEmail
+      ) {
+        setDisabled(false);
+      } else {
+        setDisabled(true);
+      }
+    };
+    validate();
+  }, [contact, isvalidEmail]);
 
   return (
     <div className="ContactWrapper">
@@ -182,13 +222,17 @@ const Contact = () => {
                   id="name"
                   placeholder="Full Name*"
                   className="short"
+                  value={contact.name}
+                  onChange={handleChange}
                 />
                 <input
                   type="email"
-                  name="Email"
-                  id="Email"
+                  name="email"
+                  id="email"
                   placeholder="Email Address*"
                   className="short"
+                  value={contact.email}
+                  onChange={handleChange}
                 />
               </div>
               <input
@@ -196,14 +240,21 @@ const Contact = () => {
                 name="phone"
                 id="phone"
                 placeholder="Phone Number"
+                value={contact.phone}
+                onChange={handleChange}
               />
               <textarea
                 type="textarea"
-                name="Message"
+                name="message"
                 id="Message"
                 placeholder="Message*"
+                value={contact.message}
+                onChange={handleChange}
               />
-              <button className="button" onClick={() => setsubmit(true)}>
+              <button
+                className="button"
+                onClick={() => setsubmit(true)}
+                disabled={disabled}>
                 Send Inquiry
               </button>
             </div>

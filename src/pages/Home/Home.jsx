@@ -42,6 +42,10 @@ import hearthands from "../../assets/hearthand.png";
 import doctorreading from "../../assets/readingpresc.png";
 import HomeCategoryProductsSwiper from "../../components/HomeComponents/HomeCategoryProductsSwiper";
 import photo from "../../assets/Image.svg";
+import prod1 from "../../assets/prod1.png";
+import prod2 from "../../assets/prod2.png";
+import prod3 from "../../assets/prod3.png";
+import prod4 from "../../assets/prod4.png";
 import SingleCategoryProductsSwiper from "../../components/HomeComponents/SingleCategoryProductsSwiper";
 
 const Home = () => {
@@ -61,7 +65,7 @@ const Home = () => {
         name: "Collagen Powder - Vital Protein",
         price: 39.6,
         rating: 5,
-        photo: photo,
+        photo: prod1,
       },
       {
         name: "Collagen Powder - Vital Protein",
@@ -73,19 +77,19 @@ const Home = () => {
         name: "Collagen Powder - Vital Protein",
         price: 39.6,
         rating: 5,
-        photo: photo,
+        photo: prod2,
       },
       {
         name: "Collagen Powder - Vital Protein",
         price: 39.6,
         rating: 5,
-        photo: photo,
+        photo: prod3,
       },
       {
         name: "Collagen Powder - Vital Protein",
         price: 39.6,
         rating: 5,
-        photo: photo,
+        photo: prod4,
       },
       {
         name: "Collagen Powder - Vital Protein",

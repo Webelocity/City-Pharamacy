@@ -13,6 +13,9 @@ import { Link } from "react-router-dom";
 import cart from "../../assets/cartIcon.svg";
 import SingleCategoryProductsSwiper from "../../components/HomeComponents/SingleCategoryProductsSwiper";
 import photo from "../../assets/Image.svg";
+import sock1 from "../../assets/sock1.png";
+import sock2 from "../../assets/sock2.png";
+import sock3 from "../../assets/sock3.png";
 
 const Compression = () => {
   const Beauty = {
@@ -22,25 +25,25 @@ const Compression = () => {
         name: "Collagen Powder - Vital Protein",
         price: 39.6,
         rating: 5,
-        photo: photo,
+        photo: sock1,
       },
       {
         name: "Collagen Powder - Vital Protein",
         price: 39.6,
         rating: 5,
-        photo: photo,
+        photo: sock2,
       },
       {
         name: "Collagen Powder - Vital Protein",
         price: 39.6,
         rating: 5,
-        photo: photo,
+        photo: sock3,
       },
       {
         name: "Collagen Powder - Vital Protein",
         price: 39.6,
         rating: 5,
-        photo: photo,
+        photo: sock1,
       },
       {
         name: "Collagen Powder - Vital Protein",

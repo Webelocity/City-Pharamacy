@@ -28,13 +28,13 @@ const Footer = () => {
           <div className="box">
             <h3 className="head">Prescription</h3>
             <div className="itms">
-              <Link className="item" to="/">
+              <Link className="item" to="/Fillprescription">
                 Fill Prescription Online 
               </Link>
-              <Link className="item" to="/">
+              <Link className="item" to="/Refillprescription">
                 Prescription Refill
               </Link>
-              <Link className="item" to="/">
+              <Link className="item" to="/Transferprescription">
                 Prescription Transfer
               </Link>
             </div>
@@ -42,22 +42,22 @@ const Footer = () => {
           <div className="box">
             <h3 className="head">Services</h3>
             <div className="itms">
-              <Link className="item" to="/">
+              <Link className="item" to="/Consult_a_pharmacist">
                 Consult a Pharmacist
               </Link>
-              <Link className="item" to="/">
+              <Link className="item" to="/MinorAliments">
                 Minor Ailments{" "}
               </Link>
-              <Link className="item" to="/">
+              <Link className="item" to="/Travel">
                 Travel Health & Vaccines{" "}
               </Link>
-              <Link className="item" to="/">
+              <Link className="item" to="/Compression">
                 Compression Therapy{" "}
               </Link>
               <Link className="item" to="/Vaccinations">
                 Vaccinations
               </Link>
-              <Link className="item" to="/">
+              <Link className="item" to="/Testing">
                 Testing
               </Link>
             </div>

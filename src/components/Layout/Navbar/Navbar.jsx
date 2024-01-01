@@ -97,7 +97,7 @@ const NavBar = () => {
                   />
                   {showMenu === 2 && (
                     <div className="drop-menu two">
-                      <Link to="/prescription?mode=online" className="menu-box">
+                      <Link to="/Fillprescription" className="menu-box">
                         <img src={fill} alt="icon" />
                         <div className="text-div">
                           <span className="menuitemtitle">
@@ -105,7 +105,7 @@ const NavBar = () => {
                           </span>
                         </div>
                       </Link>
-                      <Link to="/prescription?mode=refill" className="menu-box">
+                      <Link to="/Refillprescription" className="menu-box">
                         <img src={refill} alt="icon" />
                         <div className="text-div">
                           <span className="menuitemtitle">
@@ -113,9 +113,7 @@ const NavBar = () => {
                           </span>
                         </div>
                       </Link>
-                      <Link
-                        to="/prescription?mode=transfer"
-                        className="menu-box">
+                      <Link to="/Transferprescription" className="menu-box">
                         <img src={transfer} alt="icon" />
                         <div className="text-div">
                           <span className="menuitemtitle">
@@ -127,7 +125,7 @@ const NavBar = () => {
                   )}
                 </div>
                 <Link to="/Travel">Travel</Link>
-                <Link to="/MinorAlligments">Minor Aliments</Link>
+                <Link to="/MinorAliments">Minor Aliments</Link>
                 <Link to="/Vaccinations">Vaccinations </Link>
                 <Link to="/Testing">Testing </Link>
                 <Link to="/Compression ">Compression stockings </Link>

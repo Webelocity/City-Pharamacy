@@ -65,13 +65,13 @@ const Footer = () => {
           <div className="box">
             <h3 className="head">LEGAL</h3>
             <div className="itms">
-              <Link className="item" to="/">
+              <Link className="item" to="/Shipping_policy">
                 Shipping & Returning Policy
               </Link>
-              <Link className="item" to="/">
+              <Link className="item" to="/Privacy_policy">
                 Privacy Policy
               </Link>
-              <Link className="item" to="/">
+              <Link className="item" to="/Terms">
                 Terms of Use
               </Link>
             </div>

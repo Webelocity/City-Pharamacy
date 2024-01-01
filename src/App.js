@@ -14,6 +14,13 @@ import Vaccine from "./pages/Vaccine/Vaccine";
 import Testing from "./pages/Testing/Testing";
 import TravelHealth from "./pages/TravelHealth/TravelHealth";
 import Compression from "./pages/Compression/Compression";
+import MinorAliments from "./pages/MinorAliments/MinorAliments";
+import Fillprescription from "./pages/Prescription/FillPrescription";
+import Transferprescription from "./pages/Prescription/Transferprescription";
+import Refillprescription from "./pages/Prescription/Refillprescription";
+import Shippingpolicy from "./pages/Shippingpolicy/Shippingpolicy";
+import Privacypolicy from "./pages/Privacypolicy/Privacypolicy";
+import Terms from "./pages/Terms/Terms";
 
 function App() {
   return (
@@ -28,6 +35,25 @@ function App() {
             <Route path="/Testing" index element={<Testing />} />
             <Route path="/Travel" index element={<TravelHealth />} />
             <Route path="/Compression" index element={<Compression />} />
+            <Route path="/MinorAliments" index element={<MinorAliments />} />
+            <Route path="/Shipping_policy" index element={<Shippingpolicy />} />
+            <Route path="/Privacy_policy" index element={<Privacypolicy />} />
+            <Route path="/Terms" index element={<Terms />} />
+            <Route
+              path="/Fillprescription"
+              index
+              element={<Fillprescription />}
+            />
+            <Route
+              path="/Transferprescription"
+              index
+              element={<Transferprescription />}
+            />
+            <Route
+              path="/Refillprescription"
+              index
+              element={<Refillprescription />}
+            />
             <Route
               path="/Consult_a_pharmacist"
               index

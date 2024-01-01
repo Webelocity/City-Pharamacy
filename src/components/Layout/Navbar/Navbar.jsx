@@ -11,13 +11,16 @@ import cart from "../../../assets/cart.png";
 import fill from "../../../assets/fill.png";
 import refill from "../../../assets/refill.png";
 import transfer from "../../../assets/transfer.png";
+import LoginSignUpModal from "../../LoginSignUpModal";
 
 const NavBar = () => {
   const navbar = useRef(null);
   const matches = useMediaQuery("(max-width:780px)");
-  const [showMenu, setShowMenu] = useState(0);
+  const [showMenu, setShowMenu] = useState(false);
+  const [showForm, setshowForm] = useState(false);
   //Set it to TRUE to show the notification icon
   const [user, setuser] = useState(false);
+  const [mod, setMod] = useState("none");
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -66,8 +69,18 @@ const NavBar = () => {
   }
   useOutsideAlerter(navbar);
 
+  function handlePopup(type) {
+    setshowForm(true);
+    setMod(type);
+  }
+
   return (
     <div className="Navbar">
+      <LoginSignUpModal
+        open={showForm}
+        handleClose={() => setshowForm(false)}
+        type={mod}
+      />
       <div className="nav-wrapper">
         <div className="upper">
           <div className="left">
@@ -143,8 +156,19 @@ const NavBar = () => {
             </div>
           ) : (
             <div className="right">
-              <button>Login</button>
-              <button className="green">Sign Up</button>
+              <button
+                onClick={() => {
+                  handlePopup("login");
+                }}>
+                Login
+              </button>
+              <button
+                className="green"
+                onClick={() => {
+                  handlePopup("signup");
+                }}>
+                Sign Up
+              </button>
             </div>
           )}
         </div>

@@ -10,6 +10,7 @@ span {
 }
 .App {
   text-align: center;
+  scroll-behavior: smooth;
 }
 
 a,

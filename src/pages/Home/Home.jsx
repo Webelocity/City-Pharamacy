@@ -47,9 +47,12 @@ import prod2 from "../../assets/prod2.png";
 import prod3 from "../../assets/prod3.png";
 import prod4 from "../../assets/prod4.png";
 import SingleCategoryProductsSwiper from "../../components/HomeComponents/SingleCategoryProductsSwiper";
+import Appointment from "../../components/Appointment";
 
 const Home = () => {
   const [value, setvalue] = useState(1);
+  const [showForm, setshowForm] = useState(false);
+
   const switchTab = (move) => {
     if (move === "forward" && value < 4) {
       setvalue((current) => current + 1);
@@ -132,6 +135,7 @@ const Home = () => {
 
   return (
     <div className="HomeWrapper">
+      <Appointment open={showForm} handleClose={() => setshowForm(false)} />
       <div className="SectionOne">
         <div className="tabs-outer">
           <Tabs value={value} className="wrapper">
@@ -1089,7 +1093,9 @@ const Home = () => {
               <p className="title">
                 Effortlessly book, manage, and consult online
               </p>
-              <Link className="button">Book Now</Link>
+              <button className="button" onClick={() => setshowForm(true)}>
+                Book Now
+              </button>
             </div>
             <div className="box">
               <div className="imagebg">

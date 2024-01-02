@@ -2,7 +2,7 @@ import React from "react";
 import "./Transferprescription.scss";
 import bottm from "../../assets/Circle Background bottm.png";
 import bg from "../../assets/testingBG.png";
-import transfer1 from "../../assets/transfer2.png";
+import transfer1 from "../../assets/Prescription Transfer.png";
 import transfer2 from "../../assets/transfer2.png";
 
 const Transferprescription = () => {

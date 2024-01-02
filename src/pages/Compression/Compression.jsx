@@ -16,8 +16,11 @@ import photo from "../../assets/Image.svg";
 import sock1 from "../../assets/sock1.png";
 import sock2 from "../../assets/sock2.png";
 import sock3 from "../../assets/sock3.png";
+import Appointment from "../../components/Appointment";
 
 const Compression = () => {
+  const [showForm, setshowForm] = React.useState(false);
+
   const Beauty = {
     name: "Beauty",
     products: [
@@ -92,6 +95,8 @@ const Compression = () => {
 
   return (
     <div className="CompressionWrapper">
+      <Appointment open={showForm} handleClose={() => setshowForm(false)} />
+
       <div className="SectionOne">
         <div className="wrap">
           <div className="textbox">
@@ -138,7 +143,9 @@ const Compression = () => {
               services, we ensure both your comfort and the maximum
               effectiveness of each compression garment.
             </p>
-            <button className="button">Book a Fitting Appointment</button>
+            <button className="button" onClick={() => setshowForm(true)}>
+              Book a Fitting Appointment
+            </button>
           </div>
         </div>
       </div>

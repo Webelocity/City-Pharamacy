@@ -9,10 +9,15 @@ import consult3 from "../../assets/consult3.png";
 import consult4 from "../../assets/consult4.png";
 import consult5 from "../../assets/consult5.png";
 import { Link } from "react-router-dom";
+import Appointment from "../../components/Appointment";
 
 const ConsultPharmacist = () => {
+  const [showForm, setshowForm] = React.useState(false);
+
   return (
     <div className="ConsultPharmacistWrapper">
+      <Appointment open={showForm} handleClose={() => setshowForm(false)} />
+
       <div className="SectionOne">
         <div className="wrap">
           <div className="textbox">
@@ -54,7 +59,9 @@ const ConsultPharmacist = () => {
               prepared. Start a conversation with our pharmacists and embark on
               your path to optimal health.
             </p>
-            <Link className="button">Optimize Your Medications Today</Link>
+            <button className="button" onClick={() => setshowForm(true)}>
+              Optimize Your Medications Today
+            </button>
           </div>
         </div>
         <img src={bg} alt="dots" className="bg" />
@@ -72,7 +79,9 @@ const ConsultPharmacist = () => {
               illnesses and evaluates your overall immunization status, ensuring
               you're safeguarded for your journey.
             </p>
-            <Link className="button">Book Your Travel Consultation Now</Link>
+            <button className="button" onClick={() => setshowForm(true)}>
+              Book Your Travel Consultation Now
+            </button>
           </div>
           <img src={consult3} alt="image" className="bottomimg" />
         </div>
@@ -134,7 +143,9 @@ const ConsultPharmacist = () => {
                 Discover the right resources, understand the benefits, and
                 embark on a healthier path with us.
               </p>
-              <Link className="button">Start Your Smoke-Free Future</Link>
+              <button className="button" onClick={() => setshowForm(true)}>
+                Start Your Smoke-Free Future
+              </button>
             </div>
           </div>
         </div>
@@ -156,7 +167,9 @@ const ConsultPharmacist = () => {
                 and adhere to it correctly, optimizing your health and
                 well-being.
               </p>
-              <Link className="button">Dive Deeper into Your Medications</Link>
+              <button className="button" onClick={() => setshowForm(true)}>
+                Dive Deeper into Your Medications
+              </button>
             </div>
           </div>
           <img src={consult5} alt="image" />

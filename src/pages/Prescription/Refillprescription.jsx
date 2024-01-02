@@ -2,7 +2,7 @@ import React from "react";
 import "./Transferprescription.scss";
 import bottm from "../../assets/Circle Background bottm.png";
 import bg from "../../assets/testingBG.png";
-import refill1 from "../../assets/refill2.png";
+import refill1 from "../../assets/Prescription Transfer.png";
 import refill2 from "../../assets/refill2.png";
 
 const Refillprescription = () => {
@@ -21,7 +21,7 @@ const Refillprescription = () => {
               With our free delivery, you'll never miss a dose again.
             </p>
           </div>
-          <img src={refill2} alt="doctor and paitient" />
+          <img src={refill1} alt="doctor and paitient" />
         </div>
         <img src={bottm} alt="background" className="bottomImage" />
         <img src={bottm} alt="dots" className="topImage" />

@@ -2,7 +2,7 @@ import React from "react";
 import "./FillPrescription.scss";
 import bottm from "../../assets/Circle Background bottm.png";
 import bg from "../../assets/testingBG.png";
-import Fill1 from "../../assets/Fill2.png";
+import Fill1 from "../../assets/Fill Prescription Online.png";
 import Fill2 from "../../assets/Fill2.png";
 
 const Fillprescription = () => {

@@ -24,10 +24,15 @@ import MinorAliments17 from "../../assets/MinorAliments17.png";
 import MinorAliments18 from "../../assets/MinorAliments18.png";
 import MinorAliments19 from "../../assets/MinorAliments19.png";
 import MinorAliments20 from "../../assets/MinorAlimentsLast.png";
+import Appointment from "../../components/Appointment";
 
 const Minoraliments = () => {
+  const [showForm, setshowForm] = React.useState(false);
+
   return (
     <div className="MinorAlimentsWrapper">
+      <Appointment open={showForm} handleClose={() => setshowForm(false)} />
+
       <div className="SectionOne">
         <div className="wrap">
           <div className="textbox">
@@ -755,7 +760,9 @@ const Minoraliments = () => {
                 Trust in City Pharmacy's expertise for <br /> a health journey
                 tailored just for you.
               </p>
-              <button className="button">Book Your Appointment</button>
+              <button className="button" onClick={() => setshowForm(true)}>
+                Book Your Appointment
+              </button>
               <img src={bg} alt="backdround" className="secondbg" />
             </div>
           </div>

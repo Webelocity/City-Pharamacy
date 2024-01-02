@@ -10,10 +10,15 @@ import Travel4 from "../../assets/Travel4.png";
 import Travel5 from "../../assets/Travel5.png";
 import Travel6 from "../../assets/Travel6.png";
 import Travel7 from "../../assets/Travel7.png";
+import Appointment from "../../components/Appointment";
 
 const TravelHealth = () => {
+  const [showForm, setshowForm] = React.useState(false);
+
   return (
     <div className="TravelHealthWrapper">
+      <Appointment open={showForm} handleClose={() => setshowForm(false)} />
+
       <div className="SectionOne">
         <div className="wrap">
           <div className="textbox">
@@ -29,7 +34,9 @@ const TravelHealth = () => {
               City Pharmacy equips you with the knowledge and <br /> protection
               you need for safe travel.
             </p>
-            <button className="button">Book Your Pre-Travel Consult Now</button>
+            <button className="button" onClick={() => setshowForm(true)}>
+              Book Your Pre-Travel Consult Now
+            </button>
           </div>
           <img src={Travel1} alt="doctor and paitient" />
         </div>

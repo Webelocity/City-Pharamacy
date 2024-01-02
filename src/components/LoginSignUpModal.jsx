@@ -104,7 +104,9 @@ const LoginSignUpModal = ({ open, handleClose, type }) => {
               </p>
               <div className="buttons">
                 <button>Register</button>
-                <button className="white-button">Cancel</button>
+                <button className="white-button" onClick={handleClose}>
+                  Cancel
+                </button>
               </div>
             </>
           ) : (
@@ -151,7 +153,9 @@ const LoginSignUpModal = ({ open, handleClose, type }) => {
               </div>
               <div className="buttons">
                 <button>Login</button>
-                <button className="white-button">Cancel</button>
+                <button className="white-button" onClick={handleClose}>
+                  Cancel
+                </button>
               </div>
             </>
           )}

@@ -1563,6 +1563,7 @@
             align-items: center;
             gap: 10px;
             border-radius: 10px;
+            background: transparent;
             border: 1.5px solid var(--Main-Green, #219d50);
             color: var(--Main-Green, var(--Fruit-Salad-600, #219d50));
             // font-family: Roboto;
@@ -1572,6 +1573,7 @@
             line-height: normal;
             text-transform: capitalize;
             text-decoration: none;
+            align-self: stretch;
             &:hover {
               background: #219d50;
               color: #fff;

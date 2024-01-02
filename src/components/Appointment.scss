@@ -1,0 +1,191 @@
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 45%;
+  border-radius: 10px;
+  background: #fff;
+  overflow: auto;
+  border: none;
+  @media (max-width: 1200px) {
+    width: 90%;
+  }
+
+  .form-wrap {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    // width: calc(100% - 62px);
+    padding: 24px;
+    gap: 24px;
+    @media (max-width: 1200px) {
+      padding: 24px;
+      width: calc(100% - 48px);
+    }
+    .title {
+      display: flex;
+      padding-left: 8px;
+      align-items: center;
+      justify-content: space-between;
+      align-self: stretch;
+      svg {
+        transition: 300ms;
+        cursor: pointer;
+        &:hover {
+          scale: 1.25;
+        }
+      }
+    }
+    .desc {
+      color: var(--Variable-Grey-Text, #5c5f62);
+      // font-family: Roboto;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%; /* 24px */
+    }
+    .form {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+      align-self: stretch;
+      .head {
+        color: var(--Variable-Grey-Text, #5c5f62);
+        // font-family: Roboto;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 150%; /* 21px */
+      }
+      .fieldswrap {
+        display: flex;
+        padding-bottom: 12px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        align-self: stretch;
+        input,
+        textarea {
+          border-radius: 10px;
+          border: 1px solid #dedede;
+          padding: 10px 16px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          width: -webkit-fill-available;
+          color: #616161;
+          // font-family: Roboto;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 150%; /* 24px */
+        }
+        textarea::placeholder {
+          color: #616161;
+          // font-family: Roboto;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 150%; /* 24px */
+        }
+        textarea {
+          flex: 1 0 0;
+        }
+        input.short {
+          max-width: 50%;
+        }
+        .horizontalFields {
+          display: flex;
+          align-items: flex-start;
+          gap: 22px;
+          align-self: stretch;
+        }
+      }
+      .calendly {
+        display: flex;
+        padding-top: 24px;
+        align-items: center;
+        gap: 4px;
+        align-self: stretch;
+        border-top: 1px dashed rgba(0, 0, 0, 0.2);
+      }
+    }
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: 12px;
+
+      button {
+        display: flex;
+        padding: 12px 24px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        align-self: stretch;
+        border-radius: 10px;
+        background: var(--Main-Green, #219d50);
+        border: none;
+        color: var(--Main-White, #fff);
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-transform: capitalize;
+        cursor: pointer;
+        &:hover {
+          background: #0c7935;
+        }
+        &:disabled {
+          background: #04190c;
+          cursor: not-allowed;
+          pointer-events: none;
+        }
+      }
+
+      .white-button {
+        display: flex;
+        padding: 12px 24px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        align-self: stretch;
+        border-radius: 10px;
+        border: 1.5px solid #dadada;
+        background: #fff;
+        color: var(--Main-Black, #1e1e1e);
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-transform: capitalize;
+        &:hover {
+          background: #219d50;
+          color: #fff;
+        }
+      }
+    }
+
+    input {
+      width: calc(100% - 29px);
+      height: 27px;
+      color: #122146;
+      font-size: 16px;
+      border-radius: 12px;
+      border: 1px solid #dedede;
+      padding: 14.5px 17px 14.5px 17px;
+      &:focus {
+        outline: 1px solid #00588f;
+        box-shadow: 0px 4px 6px -2px rgba(0, 0, 0, 0.05),
+          0px 10px 15px -3px rgba(32, 66, 137, 0.1);
+      }
+      &::placeholder {
+        color: #616161;
+        font-weight: 400;
+        font-size: 16px;
+      }
+    }
+  }
+}

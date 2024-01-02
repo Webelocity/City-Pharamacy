@@ -24,10 +24,15 @@ import MinorAliments17 from "../../assets/MinorAliments17.png";
 import MinorAliments18 from "../../assets/MinorAliments18.png";
 import MinorAliments19 from "../../assets/MinorAliments19.png";
 import MinorAliments20 from "../../assets/MinorAlimentsLast.png";
+import Appointment from "../../components/Appointment";
 
 const Minoraliments = () => {
+  const [showForm, setshowForm] = React.useState(false);
+
   return (
     <div className="MinorAlimentsWrapper">
+      <Appointment open={showForm} handleClose={() => setshowForm(false)} />
+
       <div className="SectionOne">
         <div className="wrap">
           <div className="textbox">
@@ -133,7 +138,12 @@ const Minoraliments = () => {
                 are less than 30 total bumps or pimples, and not all of them
                 appear inflamed or red.
               </p>
-              <button className="button">Book Now</button>
+              <a
+                className="button"
+                href="https://citypharmacy.medmeapp.ca/schedule/groups/minorAilments?appointmentType=Acne&province=ON"
+                target="blank">
+                Book Now
+              </a>
             </div>
             <div className="whitebox">
               <img src={MinorAliments2} alt="image" />
@@ -150,7 +160,12 @@ const Minoraliments = () => {
                 <br /> <span>Duration of Symptoms: </span>Symptoms typically
                 persist for more than 7 days continuously.
               </p>
-              <button className="button">Book Now</button>
+              <a
+                className="button"
+                href="https://citypharmacy.medmeapp.ca/schedule/groups/minorAilments?appointmentType=Allergies&province=ON"
+                target="blank">
+                Book Now
+              </a>
             </div>
             <div className="whitebox">
               <img src={MinorAliments3} alt="image" />
@@ -169,7 +184,12 @@ const Minoraliments = () => {
                 <br /> <span>Size:</span>Generally, each ulcer is less than 1cm
                 in diameter.
               </p>
-              <button className="button">Book Now</button>
+              <a
+                className="button"
+                href="https://citypharmacy.medmeapp.ca/schedule/groups/minorAilments?appointmentType=CankerSores&province=ON"
+                target="blank">
+                Book Now
+              </a>
             </div>
           </div>
           <div className="boxesWrap">
@@ -191,7 +211,12 @@ const Minoraliments = () => {
                 <br /> <span>Mouth Changes:</span>Accompanying symptoms may
                 include a dry mouth and/or a loss of taste.
               </p>
-              <button className="button">Book Now</button>
+              <a
+                className="button"
+                href="https://citypharmacy.medmeapp.ca/schedule/groups/minorAilments?appointmentType=OralThrush&province=ON"
+                target="blank">
+                Book Now
+              </a>
             </div>
             <div className="whitebox">
               <img src={MinorAliments5} alt="image" />
@@ -211,7 +236,12 @@ const Minoraliments = () => {
                 <br /> <span>Scaly Patches: </span>Skin that is scaly, patchy,
                 and often inflamed
               </p>
-              <button className="button">Book Now</button>
+              <a
+                className="button"
+                href="https://citypharmacy.medmeapp.ca/schedule/groups/minorAilments?appointmentType=SkinRash&province=ON"
+                target="blank">
+                Book Now
+              </a>
             </div>
             <div className="whitebox">
               <img src={MinorAliments6} alt="image" />
@@ -226,7 +256,12 @@ const Minoraliments = () => {
                 <br /> <span>Affected Sleep:</span>Disrupted or altered sleep
                 patterns due to discomfort.
               </p>
-              <button className="button">Book Now</button>
+              <a
+                className="button"
+                href="https://citypharmacy.medmeapp.ca/schedule/groups/minorAilments?appointmentType=DiaperRash&province=ON"
+                target="blank">
+                Book Now
+              </a>
             </div>
           </div>
           <div className="boxesWrap">
@@ -245,7 +280,12 @@ const Minoraliments = () => {
                 <br /> <span>Duration of Pain:</span> The pain can persist for a
                 few hours and may extend up to several days.
               </p>
-              <button className="button">Book Now</button>
+              <a
+                className="button"
+                href="https://citypharmacy.medmeapp.ca/schedule/groups/minorAilments?appointmentType=PeriodCramps&province=ON"
+                target="blank">
+                Book Now
+              </a>
             </div>
             <div className="whitebox">
               <img src={MinorAliments8} alt="image" />
@@ -264,7 +304,12 @@ const Minoraliments = () => {
                 <br /> <span>Nausea: </span>Feelings of nausea, especially after
                 eating.
               </p>
-              <button className="button">Book Now</button>
+              <a
+                className="button"
+                href="https://citypharmacy.medmeapp.ca/schedule/groups/minorAilments?appointmentType=HeartBurn&province=ON"
+                target="blank">
+                Book Now
+              </a>
             </div>
             <div className="whitebox">
               <img src={MinorAliments9} alt="image" />
@@ -282,7 +327,12 @@ const Minoraliments = () => {
                 <br /> <span>Physical Changes:</span>Presence of a lump in the
                 anal/rectum area.
               </p>
-              <button className="button">Book Now</button>
+              <a
+                className="button"
+                href="https://citypharmacy.medmeapp.ca/schedule/groups/minorAilments?appointmentType=Hemorrhoids&province=ON"
+                target="blank">
+                Book Now
+              </a>
             </div>
           </div>
           <div className="boxesWrap">
@@ -302,7 +352,12 @@ const Minoraliments = () => {
                 <br /> <span>Skin Changes:</span> Redness or inflamed skin
                 surrounding the rash.
               </p>
-              <button className="button">Book Now</button>
+              <a
+                className="button"
+                href="https://citypharmacy.medmeapp.ca/schedule/groups/minorAilments?appointmentType=ColdSores&province=ON"
+                target="blank">
+                Book Now
+              </a>
             </div>
             <div className="whitebox">
               <img src={MinorAliments11} alt="image" />
@@ -318,7 +373,12 @@ const Minoraliments = () => {
                 <br /> <span>Affected Areas: </span>Commonly affects the face,
                 arms, or legs.
               </p>
-              <button className="button">Book Now</button>
+              <a
+                className="button"
+                href="https://citypharmacy.medmeapp.ca/schedule/groups/minorAilments?appointmentType=Impetigo&province=ON"
+                target="blank">
+                Book Now
+              </a>
             </div>
             <div className="whitebox">
               <img src={MinorAliments12} alt="image" />
@@ -332,7 +392,12 @@ const Minoraliments = () => {
                 <br /> <span>Burning Sensation:</span>A sharp, burning pain that
                 can feel like a sting.
               </p>
-              <button className="button">Book Now</button>
+              <a
+                className="button"
+                href="https://citypharmacy.medmeapp.ca/schedule/groups/minorAilments?appointmentType=InsectBites&province=ON"
+                target="blank">
+                Book Now
+              </a>
             </div>
           </div>
           <div className="boxesWrap">
@@ -353,7 +418,12 @@ const Minoraliments = () => {
                 <br /> <span>Allergic Reactions:</span> Mild allergic reactions
                 such as hives, rash, and light swelling at the bite site.
               </p>
-              <button className="button">Book Now</button>
+              <a
+                className="button"
+                href="https://citypharmacy.medmeapp.ca/schedule/groups/minorAilments?appointmentType=TickBites&province=ON"
+                target="blank">
+                Book Now
+              </a>
             </div>
             <div className="whitebox">
               <img src={MinorAliments14} alt="image" />
@@ -373,7 +443,12 @@ const Minoraliments = () => {
                 associated with overworking or direct injury to a muscle or
                 joint.
               </p>
-              <button className="button">Book Now</button>
+              <a
+                className="button"
+                href="https://citypharmacy.medmeapp.ca/schedule/groups/minorAilments?appointmentType=MuscleAches&province=ON"
+                target="blank">
+                Book Now
+              </a>
             </div>
             <div className="whitebox">
               <img src={MinorAliments15} alt="image" />
@@ -386,7 +461,12 @@ const Minoraliments = () => {
                 <br /> <span>Difficulty with Food and Drink:</span> Inability to
                 keep food or drink down for more than 12 hours.
               </p>
-              <button className="button">Book Now</button>
+              <a
+                className="button"
+                href="https://citypharmacy.medmeapp.ca/schedule/groups/minorAilments?appointmentType=MorningSickness&province=ON"
+                target="blank">
+                Book Now
+              </a>
             </div>
           </div>
           <div className="boxesWrap">
@@ -409,7 +489,12 @@ const Minoraliments = () => {
                 <br /> <span>Intermittent Abdominal Pain:</span>Experiencing
                 abdominal pain that appears and disappears.
               </p>
-              <button className="button">Book Now</button>
+              <a
+                className="button"
+                href="https://citypharmacy.medmeapp.ca/schedule/groups/minorAilments?appointmentType=Threadworms&province=ON"
+                target="blank">
+                Book Now
+              </a>
             </div>
             <div className="whitebox">
               <img src={MinorAliments17} alt="image" />
@@ -428,7 +513,12 @@ const Minoraliments = () => {
                 <br /> <span>Light Sensitivity: </span>Finding bright lights
                 uncomfortable or painful to the eyes.
               </p>
-              <button className="button">Book Now</button>
+              <a
+                className="button"
+                target="blank"
+                href="https://citypharmacy.medmeapp.ca/schedule/groups/minorAilments?appointmentType=PinkEye&province=ON">
+                Book Now
+              </a>
             </div>
             <div className="whitebox">
               <img src={MinorAliments18} alt="image" />
@@ -451,7 +541,12 @@ const Minoraliments = () => {
                 <br /> <br /> <span>Note: </span>Our pharmacists are equipped to
                 assess and prescribe for UTIs in females only.
               </p>
-              <button className="button">Book Now</button>
+              <a
+                className="button"
+                href="https://citypharmacy.medmeapp.ca/schedule/groups/minorAilments?appointmentType=UrinaryTractInfection&province=ON"
+                target="blank">
+                Book Now
+              </a>
             </div>
           </div>
           <div className="boxesWrap">
@@ -476,7 +571,12 @@ const Minoraliments = () => {
                   <br /> <span>Rash and Redness:</span>Rash and redness in the
                   vaginal area, indicating irritation.
                 </p>
-                <button className="button">Book Now</button>
+                <a
+                  className="button"
+                  href="https://citypharmacy.medmeapp.ca/schedule/groups/minorAilments?appointmentType=YeastInfection&province=ON"
+                  target="blank">
+                  Book Now
+                </a>
               </div>
             </div>
           </div>
@@ -660,7 +760,9 @@ const Minoraliments = () => {
                 Trust in City Pharmacy's expertise for <br /> a health journey
                 tailored just for you.
               </p>
-              <button className="button">Book Your Appointment</button>
+              <button className="button" onClick={() => setshowForm(true)}>
+                Book Your Appointment
+              </button>
               <img src={bg} alt="backdround" className="secondbg" />
             </div>
           </div>

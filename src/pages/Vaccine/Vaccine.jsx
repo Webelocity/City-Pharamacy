@@ -50,8 +50,18 @@ const Vaccine = () => {
               shielded and reduce the spread this season.
             </p>
             <div className="buttonswrap">
-              <Link className="button">Stay Flu-Free </Link>
-              <Link className="button">Flu Shot for Seniors</Link>
+              <a
+                className="button"
+                href="https://citypharmacy.medmeapp.ca/schedule/6841"
+                target="blank">
+                Stay Flu-Free 
+              </a>
+              <a
+                className="button"
+                href="https://citypharmacy.medmeapp.ca/schedule/6128"
+                target="blank">
+                Flu Shot for Seniors
+              </a>
             </div>
           </div>
         </div>
@@ -84,9 +94,12 @@ const Vaccine = () => {
                       protection.
                     </p>
                   </div>
-                  <button className="button">
+                  <a
+                    className="button"
+                    target="blank"
+                    href="https://citypharmacy.medmeapp.ca/schedule/11221">
                     Schedule Your Shingles Vaccination
-                  </button>
+                  </a>
                 </div>
               </div>
               <div className="box">
@@ -103,9 +116,12 @@ const Vaccine = () => {
                       students. Once vaccinated, no boosters are required.
                     </p>
                   </div>
-                  <button className="button">
+                  <a
+                    className="button"
+                    href="https://citypharmacy.medmeapp.ca/schedule/11221"
+                    target="blank">
                     Protect Yourself from Pneumococcal Infections
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -127,9 +143,12 @@ const Vaccine = () => {
                     might require further doses to ensure their safety.
                   </p>
                 </div>
-                <button className="button">
+                <a
+                  className="button"
+                  target="blank"
+                  href="https://citypharmacy.medmeapp.ca/schedule/11221">
                   Boost Your Immunity Against Pneumonia
-                </button>
+                </a>
               </div>
             </div>
           </div>

@@ -9,10 +9,15 @@ import Testing3 from "../../assets/Testing3.png";
 import Testing4 from "../../assets/Testing4.png";
 import Testing5 from "../../assets/Testing5.png";
 import { Link } from "react-router-dom";
+import Appointment from "../../components/Appointment";
 
 const Testing = () => {
+  const [showForm, setshowForm] = React.useState(false);
+
   return (
     <div className="TestingWrapper">
+      <Appointment open={showForm} handleClose={() => setshowForm(false)} />
+
       <div className="SectionOne">
         <div className="wrap">
           <div className="textbox">
@@ -53,7 +58,12 @@ const Testing = () => {
               City Pharmacy.
             </p>
             <div className="buttonswrap">
-              <Link className="button">Book Your PCR Test Now</Link>
+              <a
+                className="button"
+                href="https://citypharmacy.medmeapp.ca/schedule/3759"
+                target="blank">
+                Book Your PCR Test Now
+              </a>
             </div>
           </div>
         </div>
@@ -71,8 +81,18 @@ const Testing = () => {
               their health. Schedule your shot today at City Pharmacy.
             </p>
             <div className="buttonswrap">
-              <Link className="button">Book Pfizer</Link>
-              <Link className="button">Book Moderna</Link>
+              <a
+                className="button"
+                href="https://citypharmacy.medmeapp.ca/schedule/8333"
+                target="blank">
+                Book Pfizer
+              </a>
+              <a
+                className="button"
+                href="https://citypharmacy.medmeapp.ca/schedule/8334"
+                target="blank">
+                Book Moderna
+              </a>
             </div>
           </div>
           <img src={Testing3} alt="image" />
@@ -98,7 +118,9 @@ const Testing = () => {
               disorders and bolstering your body's natural defenses. 
             </p>
             <div className="buttonswrap">
-              <Link className="button">Book Your Vitamin D Test Now</Link>
+              <button className="button" onClick={() => setshowForm(true)}>
+                Book Your Vitamin D Test Now
+              </button>
             </div>
           </div>
         </div>
@@ -115,7 +137,9 @@ const Testing = () => {
               assessments, helping you maintain optimal health and vitality.
             </p>
             <div className="buttonswrap">
-              <Link className="button">Book Vitamin D Test</Link>
+              <button className="button" onClick={() => setshowForm(true)}>
+                Book Vitamin D Test
+              </button>
             </div>
           </div>
           <img src={Testing5} alt="image" />

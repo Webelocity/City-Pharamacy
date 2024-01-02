@@ -37,6 +37,7 @@ const Appointment = ({ open, handleClose }) => {
         Booking.last_name &&
         Booking.email &&
         Booking.phone &&
+        Booking.service &&
         Booking.message &&
         isvalidEmail
       ) {
@@ -129,14 +130,23 @@ const Appointment = ({ open, handleClose }) => {
                   onChange={handleChange}
                 />
               </div>
-              <input
-                type="text"
+              <select
                 name="service"
                 id="service"
-                placeholder="Please select the service you wish to book an appointment for"
                 value={Booking.service}
-                onChange={handleChange}
-              />
+                onChange={handleChange}>
+                <option value="">
+                  Please select the service you wish to book an appointment for
+                </option>
+                <option value="Vitamin_D_test">Vitamin D test</option>
+                <option value="Travel_Consultation">
+                  Pre-travel Consultation
+                </option>
+                <option value="Book_a_fittin">
+                  Book a fitting (compression stocking)
+                </option>
+                <option value="Contact_form">Contact form</option>
+              </select>
               <textarea
                 type="textarea"
                 name="message"

@@ -217,6 +217,12 @@ svg path {
   display: flex;
   align-items: center;
   gap: 4px;
+  cursor: pointer;
+  transition: 300ms;
+}
+
+.cartMini:hover {
+  scale: 1.1;
 }
 .shopButton .cartMini .total {
   color: var(--Main-Green, var(--Fruit-Salad-600, #219d50));

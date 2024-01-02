@@ -10,7 +10,6 @@ import Travel4 from "../../assets/Travel4.png";
 import Travel5 from "../../assets/Travel5.png";
 import Travel6 from "../../assets/Travel6.png";
 import Travel7 from "../../assets/Travel7.png";
-import { Link } from "react-router-dom";
 
 const TravelHealth = () => {
   return (
@@ -84,7 +83,12 @@ const TravelHealth = () => {
                   </p>
                 </div>
                 <div className="buttonsWrap">
-                  <button className="button">Get Vaccinated</button>
+                  <a
+                    className="button"
+                    href="https://citypharmacy.medmeapp.ca/schedule/11221"
+                    target="blank">
+                    Get Vaccinated
+                  </a>
                   <button className="button white">book for Hepatitis B</button>
                 </div>
               </div>
@@ -107,9 +111,12 @@ const TravelHealth = () => {
                   </p>
                 </div>
                 <div className="buttonsWrap">
-                  <button className="button">
+                  <a
+                    className="button"
+                    href="https://citypharmacy.medmeapp.ca/schedule/11221"
+                    target="blank">
                     Schedule Your Twinrix Shot Today
-                  </button>
+                  </a>
                   <button className="button white">Book for hepatitis A</button>
                 </div>
               </div>
@@ -129,9 +136,12 @@ const TravelHealth = () => {
                   </p>
                 </div>
                 <div className="buttonsWrap">
-                  <button className="button">
+                  <a
+                    className="button"
+                    href="https://citypharmacy.medmeapp.ca/schedule/11221"
+                    target="blank">
                     Get Vaccinated Before Your Trip
-                  </button>
+                  </a>
                   <button className="button white">
                     Book for typhoid & Paratyphoid Fever
                   </button>

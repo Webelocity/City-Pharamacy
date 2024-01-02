@@ -53,7 +53,12 @@ const Testing = () => {
               City Pharmacy.
             </p>
             <div className="buttonswrap">
-              <Link className="button">Book Your PCR Test Now</Link>
+              <a
+                className="button"
+                href="https://citypharmacy.medmeapp.ca/schedule/3759"
+                target="blank">
+                Book Your PCR Test Now
+              </a>
             </div>
           </div>
         </div>
@@ -71,8 +76,18 @@ const Testing = () => {
               their health. Schedule your shot today at City Pharmacy.
             </p>
             <div className="buttonswrap">
-              <Link className="button">Book Pfizer</Link>
-              <Link className="button">Book Moderna</Link>
+              <a
+                className="button"
+                href="https://citypharmacy.medmeapp.ca/schedule/8333"
+                target="blank">
+                Book Pfizer
+              </a>
+              <a
+                className="button"
+                href="https://citypharmacy.medmeapp.ca/schedule/8334"
+                target="blank">
+                Book Moderna
+              </a>
             </div>
           </div>
           <img src={Testing3} alt="image" />

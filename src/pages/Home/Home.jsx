@@ -181,9 +181,9 @@ const Home = () => {
                     healthy trip. Trust in our guidance for a worry-free
                     adventure.
                   </p>
-                  <button className="cta">
+                  <Link className="cta" to="/Travel">
                     Book Your Travel Vaccine Appointment
-                  </button>
+                  </Link>
                   <div className="buttons">
                     <img
                       src={prev}
@@ -228,9 +228,9 @@ const Home = () => {
                   <p className="header">
                     Expert Care for Everyday Health Concerns{" "}
                   </p>
-                  <button className="cta">
+                  <Link className="cta" to="/Consult_a_pharmacist">
                     Consult with Our Pharmacists Now
-                  </button>
+                  </Link>
                   <div className="buttons">
                     <img
                       src={prev}
@@ -272,7 +272,9 @@ const Home = () => {
                     COVID-19 PCR test <hr />
                   </p>
                   <p className="header">Fast, Reliable COVID-19 Testing </p>
-                  <button className="cta">Schedule Your PCR Test Today</button>
+                  <Link className="cta" to="/Testing">
+                    Schedule Your PCR Test Today
+                  </Link>
                   <div className="buttons">
                     <img
                       src={prev}
@@ -316,11 +318,12 @@ const Home = () => {
                   <p className="header">
                     Fill Your Prescription Anytime, Anywhere.{" "}
                   </p>
-                  <button
+                  <Link
                     className="cta"
+                    to="/Fillprescription"
                     style={{ marginBottom: "0", width: "100%" }}>
                     Submit Your Prescription Today
-                  </button>
+                  </Link>
                   <div className="lastSlideCTA">
                     <button className="reorder">
                       Reorder Your Medications
@@ -427,7 +430,9 @@ const Home = () => {
                   rest. Experience the convenience of modern healthcare with a
                   personal touch.
                 </p>
-                <Link className="button">Fill Your Prescription</Link>
+                <Link className="button" to="/Fillprescription">
+                  Fill Your Prescription
+                </Link>
               </div>
             </div>
             <div className="box">
@@ -438,7 +443,9 @@ const Home = () => {
                   With our quick and convenient refills, your medications are
                   always ready when you need them.
                 </p>
-                <Link className="button white">Refill Now</Link>
+                <Link className="button white" to="/Refillprescription">
+                  Refill Now
+                </Link>
               </div>
             </div>
             <div className="box">
@@ -449,7 +456,9 @@ const Home = () => {
                   Transfer your prescription to City Pharmacy and discover a
                   world of caring, efficient, and hassle-free service.
                 </p>
-                <Link className="button white">Transfer Now</Link>
+                <Link className="button white" to="/Transferprescription">
+                  Transfer Now
+                </Link>
               </div>
             </div>
           </div>
@@ -470,7 +479,9 @@ const Home = () => {
               conditions, ensuring you're promptly on the path to wellness.
             </p>
             <p className="question">Experiencing Symptoms?</p>
-            <Link className="button">Let Us Help</Link>
+            <Link className="button" to="/MinorAliments">
+              Let Us Help
+            </Link>
           </div>
         </div>
         <img src={shopbackground} alt="dots" className="topImage" />
@@ -538,7 +549,9 @@ const Home = () => {
               Prioritize your health with City Pharmacy efficient COVID-19 and
               Vitamin D testing services and more.
             </p>
-            <Link className="button">Explore More</Link>
+            <Link className="button" to="/Testing">
+              Explore More
+            </Link>
           </div>
         </div>
         <img src={shopbackground} alt="dots" className="topImage" />
@@ -560,7 +573,9 @@ const Home = () => {
                 your loved ones with our range of vaccinations. Your health is
                 our priority.
               </p>
-              <Link className="button green">Explore Vaccination Options</Link>
+              <Link className="button green" to="/Vaccinations">
+                Explore Vaccination Options
+              </Link>
             </div>
             <div className="whitebox">
               <p className="title">Travel with Confidence</p>
@@ -569,7 +584,9 @@ const Home = () => {
                 health with City Pharmacy's travel vaccines against infections
                 like typhoid or hepatitis A.
               </p>
-              <Link className="button">Get Travel Protection</Link>
+              <Link className="button" to="Travel">
+                Get Travel Protection
+              </Link>
             </div>
           </div>
           <img src={meds} alt="meds" />
@@ -586,7 +603,9 @@ const Home = () => {
               compression stockings. From precise fitting to choosing the right
               style, we guide you every step of the way. 
             </p>
-            <Link className="button green">Start Compression Comfort</Link>
+            <Link className="button green" to="/Compression">
+              Start Compression Comfort
+            </Link>
           </div>
         </div>
         <img
@@ -608,7 +627,9 @@ const Home = () => {
               like the COVID-19 vaccine to embracing digital advancements, our
               focus remains on your health and our commitment.
             </p>
-            <Link className="button">Discover Our Story</Link>
+            <Link className="button" to="/About">
+              Discover Our Story
+            </Link>
           </div>
         </div>
       </div>
@@ -671,7 +692,9 @@ const Home = () => {
               management to travel advice, our pharmacists are here to provide
               tailored guidance every step of the way.
             </p>
-            <Link className="button green">Consult with Experts</Link>
+            <Link className="button green" to="/Consult_a_pharmacist">
+              Consult with Experts
+            </Link>
           </div>
           <img src={DoctorwithPat} alt="doctor and paitient" />
         </div>
@@ -1040,7 +1063,9 @@ const Home = () => {
               </p>
             </div>
           </div>
-          <Link className="button">Contact Us</Link>
+          <Link className="button" to="/Contact">
+            Contact Us
+          </Link>
         </div>
       </div>
       <div className="SectionFort">
@@ -1053,7 +1078,9 @@ const Home = () => {
               <p className="title">
                 Free Prescription Delivery to all of Greater Toronto Area
               </p>
-              <Link className="button">Fill Your Prescription</Link>
+              <Link className="button" to="/Fillprescription">
+                Fill Your Prescription
+              </Link>
             </div>
             <div className="box">
               <div className="imagebg">
@@ -1069,7 +1096,9 @@ const Home = () => {
                 <img src={hearthands} alt="hands" />
               </div>{" "}
               <p className="title">Trusted health partner for generations</p>
-              <Link className="button">Get Consultation</Link>
+              <Link className="button" to="/Consult_a_pharmacist">
+                Get Consultation
+              </Link>
             </div>
           </div>
         </div>

@@ -125,7 +125,9 @@ const Compression = () => {
               compression garments, JOBST stands as the epitome of excellence in
               compression therapy.
             </p>
-            <button className="button">Explore Our Compression Range</button>
+            <Link className="button" to="/shop">
+              Explore Our Compression Range
+            </Link>
           </div>
           <div className="whitebox">
             <img src={Compression3} alt="image" />

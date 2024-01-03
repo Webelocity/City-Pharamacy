@@ -8,7 +8,7 @@ const Method = ({method, checkedMethod, setChecked}) => {
         <div className={`method ${checked && 'checked'}`} onClick={() => setChecked(method.name)}>
             <CityCheckbox checked={checked} />
             <h1>{method.name}</h1>
-            {method.svg}
+            <div className='image-svg'>{method.svg}</div>
             <p>{method.price}</p>
         </div>
     );

@@ -1,10 +1,42 @@
 .cart-product-wrapper {
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   gap: 16px;
   align-self: stretch;
   width: 100%;
+
+  img {
+    width: 20%;
+  }
+
+  .MuiButtonBase-root {
+    border-radius:10px;
+    display: flex;
+    padding: 12px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: 1.5px solid #DADADA;
+    background: #FFF;
+  }
+
+  .quantity-2 {
+    display: flex;
+    padding: 4px 4px;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    border-radius: 10px;
+    border: 1.5px solid #DADADA;
+    max-width: 114px;
+    width: 100%;
+
+    .MuiButtonBase-root {
+      padding: 0px !important;
+      border: none;
+    }
+  }
 
   .product-info {
     display: flex;
@@ -15,10 +47,25 @@
 
     .name-price {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 4px;
-      align-self: stretch;
+      width: 100%;
+      @media (max-width: 1200px) {
+        align-items: flex-start;
+        justify-content: space-between;
+      }
+
+      .name-price2 {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 4px;
+        align-self: stretch;
+        @media (max-width: 1200px) {
+          flex-direction: column;
+          align-items: flex-start;
+          text-align: start;
+        }
+      }
 
       p {
         color: #393939;
@@ -28,6 +75,12 @@
         font-weight: 500;
         line-height: 24px; /* 120% */
         letter-spacing: -0.08px;
+        @media (max-width: 1200px) {
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 140%; /* 19.6px */
+        }
       }
 
       .price {
@@ -37,6 +90,12 @@
         font-weight: 700;
         line-height: normal;
         text-transform: capitalize;
+        @media (max-width: 1200px) {
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 140%; /* 22.4px */
+        }
       }
 
       .original-price {
@@ -47,15 +106,33 @@
         line-height: normal;
         text-decoration: line-through;
         text-transform: capitalize;
+        @media (max-width: 1200px) {
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 140%; /* 16.8px */
+        }
       }
     }
 
     .color-quantity {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
       width: 100%;
+      @media (max-width: 1200px) {
+        align-items: flex-start;
+        gap:10px
+      }
 
+      .color-quantity2 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        @media (max-width: 1200px) {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
       .color {
         display: flex;
         padding: 8px 16px;
@@ -65,6 +142,21 @@
         align-self: stretch;
         border-radius: 10px;
         background: #F8F8F8;
+        max-width: 100px;
+        @media (max-width: 1200px) {
+          align-items: center;
+          justify-content: center;
+          gap: 12px;
+          padding:8px
+        }
+
+        p {
+          color: #303030;
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 140%; /* 16.8px */
+        }
 
         .color-circle {
           width: 24px;
@@ -79,17 +171,6 @@
         justify-content: flex-end;
         align-items: flex-start;
         gap: 16px;
-
-        .MuiButtonBase-root {
-          border-radius:10px;
-          display: flex;
-          padding: 12px 24px;
-          justify-content: center;
-          align-items: center;
-          gap: 10px;
-          border: 1.5px solid #DADADA;
-          background: #FFF;
-        }
 
         button {
           display: flex;
@@ -106,6 +187,9 @@
           text-transform: capitalize;
           border:none;
           background-color: #FFFF;
+          @media (max-width: 1200px) {
+            width: 100%;
+          }
         }
 
         .quantity-2 {

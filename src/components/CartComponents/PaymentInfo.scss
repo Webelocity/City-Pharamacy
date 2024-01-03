@@ -5,6 +5,9 @@
   align-items: flex-start;
   gap: 24px;
   width: 70%;
+  @media (max-width: 1200px) {
+    width: 100%;
+  }
 
   .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.Mui-checked, .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.MuiCheckbox-indeterminate{
     color:green;
@@ -52,9 +55,11 @@
       line-height: normal;
       text-transform: capitalize;
     }
-
     .MuiButtonBase-root {
       background-color: transparent;
+      @media (max-width: 1200px) {
+        padding: 0 !important;
+      }
     }
 
     h1 {
@@ -83,6 +88,9 @@
         align-items: center;
         gap: 16px;
         align-self: stretch;
+        @media (max-width: 1200px) {
+          flex-direction: column;
+        }
       }
     }
 
@@ -143,6 +151,9 @@
               font-style: normal;
               font-weight: 400;
               line-height: 150%; /* 24px */
+              @media (max-width: 1200px) {
+                text-align: start;
+              }
             }
 
             .name {
@@ -151,13 +162,15 @@
               align-items: center;
               gap: 8px;
               align-self: stretch;
-
-
+              @media (max-width: 1200px) {
+                align-items: flex-start;
+              }
 
               .n {
                 display: flex;
                 gap: 10px;
                 flex: 1 0 0;
+                flex-wrap: wrap;
 
                 p {
                   color: #080E26;
@@ -195,6 +208,9 @@
       align-items: flex-start;
       gap: 8px;
       align-self: stretch;
+      @media (max-width: 1200px) {
+        flex-direction: column;
+      }
 
       .single-payment-method {
         display: flex;
@@ -205,7 +221,7 @@
         border-radius: 10px;
         border: 1px solid #DEDEDE;
         background: #FFF;
-        width: 100%;
+        width: calc(100% - 48px);
         cursor: pointer;
 
         &.checked {
@@ -253,6 +269,7 @@
 
                 .MuiButtonBase-root {
                   background-color: transparent;
+
                 }
 
                 .n {

@@ -9,6 +9,10 @@
   border: 2px dashed #DEDEDE;
   background: #FFF;
 
+  @media (max-width: 1200px) {
+    width: calc(100% - 48px);
+  }
+
   .method-wrapper {
     display: flex;
     flex-direction: column;
@@ -30,10 +34,25 @@
       border: 1px solid #DEDEDE;
       background: #FFF;
       cursor: pointer;
+      @media (max-width: 1200px) {
+        gap:10px;
+      }
 
       &.checked {
         border: 1px solid var(--Main-Green, #4C9B58);
         background: #F8F8F8;
+      }
+
+      .image-svg {
+        width: 20%;
+        @media (max-width: 1200px) {
+          min-width: 70px;
+        }
+
+
+        img {
+          width: 100%;
+        }
       }
 
       h1 {

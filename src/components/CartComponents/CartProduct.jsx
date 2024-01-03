@@ -39,7 +39,7 @@ const CartProduct = ({data}) => {
                             </button>
                             {!matches && <>
                                 <div className='quantity-2'>
-                                    <IconButton>
+                                    <IconButton className='no-border'>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="33"
                                              viewBox="0 0 32 33"
                                              fill="none">
@@ -51,7 +51,7 @@ const CartProduct = ({data}) => {
                                         </svg>
                                     </IconButton>
                                     <p>2</p>
-                                    <IconButton>
+                                    <IconButton className='no-border'>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="33"
                                              viewBox="0 0 32 33"
                                              fill="none">

@@ -169,12 +169,31 @@
       .quantity {
         display: flex;
         justify-content: flex-end;
-        align-items: flex-start;
         gap: 16px;
+        @media (max-width: 1200px) {
+          align-items: flex-start;
+          justify-content: flex-start;
+        }
+
+        .MuiButtonBase-root {
+          border-radius:10px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 10px;
+          border: 1.5px solid #DADADA;
+          background: #FFF;
+          padding: 0px 15px !important;
+
+          &.no-border {
+            border:none;
+            padding:0 !important;
+          }
+        }
 
         button {
           display: flex;
-          padding: 10px 0px;
+          padding: 10px ;
           justify-content: center;
           align-items: center;
           gap: 10px;
@@ -200,11 +219,6 @@
           gap: 16px;
           border-radius: 10px;
           border: 1.5px solid #DADADA;
-
-          .MuiButtonBase-root {
-            padding: 0px !important;
-            border: none;
-          }
         }
       }
     }

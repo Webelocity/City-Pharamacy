@@ -3,6 +3,7 @@ import CityInput from "../CItyInput";
 import {MuiTelInput} from "mui-tel-input";
 
 const PersonalInfo = ({handleChange, personalInfo}) => {
+
     return (
         <div className='personal-info'>
             <h1>
@@ -44,6 +45,7 @@ const PersonalInfo = ({handleChange, personalInfo}) => {
                             },
                         }}
                         fullWidth
+                        defaultCountry="CA"
                         value={personalInfo.phone}
                         onChange={(value) => handleChange(null, {name:"phone", value})}/>
                 </div>

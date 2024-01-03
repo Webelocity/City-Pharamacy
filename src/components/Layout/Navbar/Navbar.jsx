@@ -13,12 +13,14 @@ import refill from "../../../assets/refill.png";
 import transfer from "../../../assets/transfer.png";
 import LoginSignUpModal from "../../LoginSignUpModal";
 import { IconButton, InputAdornment, InputBase } from "@mui/material";
+import Sidecart from "../../Sidecart";
 
 const NavBar = () => {
   const navbar = useRef(null);
   const matches = useMediaQuery("(max-width:780px)");
   const [showMenu, setShowMenu] = useState(false);
   const [showForm, setshowForm] = useState(false);
+  const [showCart, setshowCart] = useState(false);
   //Set it to TRUE to show the notification icon
   const [user, setuser] = useState(false);
   const [mod, setMod] = useState("none");
@@ -82,6 +84,7 @@ const NavBar = () => {
         handleClose={() => setshowForm(false)}
         type={mod}
       />
+      <Sidecart open={showCart} handleClose={() => setshowCart(false)} />
       <div className="nav-wrapper">
         <div className="upper">
           <div className="left">
@@ -265,7 +268,7 @@ const NavBar = () => {
               <Link to="/shop" className="ShopBut">
                 Shop
               </Link>
-              <div className="cartMini">
+              <div className="cartMini" onClick={() => setshowCart(true)}>
                 <img src={cart} alt="cart" />
                 <span className="total">0 / 0.00$</span>
               </div>

@@ -34,7 +34,6 @@ const Contact = () => {
         setIsValidEmail(false);
       }
     }
-    console.log(contact);
   };
 
   useEffect(() => {

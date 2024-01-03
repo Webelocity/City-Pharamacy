@@ -1,0 +1,309 @@
+.payment-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 24px;
+  width: 70%;
+
+  .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.Mui-checked, .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.MuiCheckbox-indeterminate{
+    color:green;
+  }
+
+  .MuiInputBase-root {
+    color: #122146;
+    font-size: 16px;
+    border-radius: 12px;
+
+    &:focus {
+      box-shadow: 0px 4px 6px -2px rgba(0, 0, 0, 0.05), 0px 10px 15px -3px rgba(32, 66, 137, 0.10);
+    }
+
+    &::placeholder {
+      color: #616161;
+      font-weight: 400;
+      font-size: 16px;
+    }
+  }
+
+  .personal-info {
+    display: flex;
+    padding: 40px 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    border-radius: 10px;
+    background: #FFF;
+    width: calc(100% - 48px);
+
+    button {
+      display: flex;
+      padding: 10px 20px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      border-radius: 10px;
+      background: var(--Green-Light, rgba(104, 212, 145, 0.27));
+      border:none;
+      color: var(--Main-Green, var(--Fruit-Salad-600, #219D50));
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      text-transform: capitalize;
+    }
+
+    .MuiButtonBase-root {
+      background-color: transparent;
+    }
+
+    h1 {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--Basic-Black, #000);
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 150%; /* 36px */
+      letter-spacing: 0.36px;
+      margin: 0px;
+    }
+
+    .information {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 24px;
+      align-self: stretch;
+
+      .row {
+        display: flex;
+        padding-top: 10px;
+        align-items: center;
+        gap: 16px;
+        align-self: stretch;
+      }
+    }
+
+    .shipping-address {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 24px;
+      align-self: stretch;
+
+      p {
+        color: #595959;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 150%; /* 21px */
+      }
+
+      .info {
+        display: flex;
+        padding: 8px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 8px;
+        align-self: stretch;
+        border-radius: 10px;
+        border: 1px solid #EBECFF;
+        background: #FFF;
+
+        .single-address {
+          display: flex;
+          padding: 16px 24px;
+          align-items: flex-start;
+          gap: 10px;
+          align-self: stretch;
+          border-radius: 10px;
+          border: 1px solid #DEDEDE;
+          background: #FFF;
+          cursor: pointer;
+
+          &.checked {
+            border: 1px solid var(--Main-Green, #4C9B58);
+            background: #F8F8F8;
+          }
+
+          .address {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 8px;
+            flex: 1 0 0;
+
+            p {
+              color: var(--Grey-500, #717286);
+              font-size: 16px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 150%; /* 24px */
+            }
+
+            .name {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              gap: 8px;
+              align-self: stretch;
+
+
+
+              .n {
+                display: flex;
+                gap: 10px;
+                flex: 1 0 0;
+
+                p {
+                  color: #080E26;
+                  font-size: 16px;
+                  font-style: normal;
+                  font-weight: 500;
+                  line-height: 150%; /* 24px */
+
+
+                  &.default {
+                    color: var(--Main-Green, #4C9B58);
+                    font-size: 12px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 150%; /* 18px */
+                    display: flex;
+                    padding: 4px 8px;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 8px;
+                    border-radius: 20px;
+                    background: #D3EBDC;
+                  }
+                }
+              }
+            }
+
+          }
+        }
+      }
+    }
+
+    .payment-method-selector {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      align-self: stretch;
+
+      .single-payment-method {
+        display: flex;
+        padding: 24px;
+        align-items: flex-start;
+        align-self: stretch;
+        gap: 16px;
+        border-radius: 10px;
+        border: 1px solid #DEDEDE;
+        background: #FFF;
+        width: 100%;
+        cursor: pointer;
+
+        &.checked {
+          border: 1px solid var(--Main-Green, #4C9B58);
+          background: #F8F8F8;
+        }
+
+
+        .payment-info {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 24px;
+          flex: 1 0 0;
+
+          h1 {
+            color: #080E26;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 150%; /* 24px */
+          }
+
+          .payment-name {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 24px;
+            flex: 1 0 0;
+            width: 100%;
+
+            .title {
+              display: flex;
+              gap: 16px;
+              align-self: stretch;
+              width: 100%;
+
+              .name {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 8px;
+                align-self: stretch;
+                width: 100%;
+
+                .MuiButtonBase-root {
+                  background-color: transparent;
+                }
+
+                .n {
+                  display: flex;
+                  gap: 10px;
+                  flex: 1 0 0;
+
+                  p {
+                    color: #080E26;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 150%; /* 24px */
+
+
+                    &.default {
+                      color: var(--Main-Green, #4C9B58);
+                      font-size: 12px;
+                      font-style: normal;
+                      font-weight: 600;
+                      line-height: 150%; /* 18px */
+                      display: flex;
+                      padding: 4px 8px;
+                      justify-content: center;
+                      align-items: center;
+                      gap: 8px;
+                      border-radius: 20px;
+                      background: #D3EBDC;
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          .card_holder {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+
+            p {
+              color: var(--Grey-500, #717286);
+              font-size: 14px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 150%; /* 21px */
+            }
+          }
+        }
+      }
+    }
+  }
+}

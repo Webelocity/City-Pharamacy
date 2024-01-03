@@ -11,7 +11,37 @@
     align-items: flex-start;
   }
 
-  .MuiSvgIcon-root {
-    color:#219D50 !important;
+  .css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root.Mui-active {
+    fill: var(--Fruit-Salad-600, #219D50);
+    stroke-width: 1.5px;
+    stroke: var(--Main-White, #FFF);
+  }
+
+  .css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root {
+    stroke-width: 1.5px;
+    stroke: var(--Main-White, #FFF);
+  }
+
+  .MuiStepLabel-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%; /* 21px */
+
+    &.Mui-active {
+      color: #219D50;
+      font-weight: 600;
+    }
+    &.Mui-completed {
+      color: #219D50;
+    }
+  }
+
+  .css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root.Mui-completed {
+    color: #219D50;
   }
 }

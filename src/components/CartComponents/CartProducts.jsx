@@ -10,7 +10,7 @@ const products = [
     {name: "Nora - Oil Premium", image: image, color: "Pink", price: 24.99, originalPrice: 29.99, quantity: 2},
 ]
 
-const CartProducts = () => {
+const CartProducts = ({setActiveStep}) => {
     return (
         <div className='cart-products'>
             <div className='top-part'>
@@ -34,7 +34,7 @@ const CartProducts = () => {
             <div className='products'>
                 {products.map((product, index) =>
                     <>
-                        <CartProduct data={product}/>
+                        <CartProduct key={index} data={product}/>
                         {index !== products.length - 1 &&
                             <Divider sx={{width: "100%", borderColor: "rgba(0, 0, 0, 0.05)"}}/>
                         }

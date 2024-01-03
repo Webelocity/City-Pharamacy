@@ -2,10 +2,12 @@ import React from 'react';
 import './RightSideInfo.scss'
 import photo from '../../assets/product.svg'
 import {IconButton, Rating, useMediaQuery} from "@mui/material";
+import {useNavigate} from "react-router-dom";
 
 const RightSideInfo = () => {
     const data = {colors: ['#C6B6C4', '#D3FCE2'], models: [1, 2]};
-    const matches = useMediaQuery('(max-width:1200px)')
+    const matches = useMediaQuery('(max-width:1200px)');
+    const navigate = useNavigate();
     return (
         <div className='product-info-wrapper'>
             <div className='top-side'>
@@ -133,7 +135,7 @@ const RightSideInfo = () => {
                     </svg>
                     Add to cart
                 </button>
-                <button className='green-light'>
+                <button onClick={() => navigate('/cart')} className='green-light'>
                     Buy Now
                 </button>
                 {!matches &&

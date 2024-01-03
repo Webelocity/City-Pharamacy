@@ -96,7 +96,7 @@ const TravelHealth = () => {
                     target="blank">
                     Get Vaccinated
                   </a>
-                  <button className="button white">book for Hepatitis B</button>
+                  <p className="button white">book for Hepatitis B</p>
                 </div>
               </div>
             </div>
@@ -124,7 +124,7 @@ const TravelHealth = () => {
                     target="blank">
                     Schedule Your Twinrix Shot Today
                   </a>
-                  <button className="button white">Book for hepatitis A</button>
+                  <p className="button white">Book for hepatitis A</p>
                 </div>
               </div>
               <img src={Travel4} alt="iamge" />
@@ -149,9 +149,9 @@ const TravelHealth = () => {
                     target="blank">
                     Get Vaccinated Before Your Trip
                   </a>
-                  <button className="button white">
+                  <p className="button white">
                     Book for typhoid & Paratyphoid Fever
-                  </button>
+                  </p>
                 </div>
               </div>
             </div>

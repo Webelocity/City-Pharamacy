@@ -124,20 +124,22 @@ const Minoraliments = () => {
           </div>
           <div className="boxesWrap">
             <div className="whitebox">
-              <img src={MinorAliments1} alt="image" />
-              <p className="header">Acne</p>
-              <p className="note">
-                If you're experiencing mild acne, you might notice the following
-                symptoms:
-                <br />
-                <br /> <span>Whiteheads and Blackheads:</span> These are small,
-                non-inflamed bumps on the skin.
-                <br /> <span>Small Red Bumps and Pimples with Pus: </span>These
-                are slightly inflamed, often with a white center.
-                <br /> <span>Limited Number of Lesions:</span> Typically, there
-                are less than 30 total bumps or pimples, and not all of them
-                appear inflamed or red.
-              </p>
+              <div className="upperpartWrap">
+                <img src={MinorAliments1} alt="image" />
+                <p className="header">Acne</p>
+                <p className="note">
+                  If you're experiencing mild acne, you might notice the
+                  following symptoms:
+                  <br />
+                  <br /> <span>Whiteheads and Blackheads: </span> These are
+                  small, non-inflamed bumps on the skin.
+                  <br /> <span>Small Red Bumps and Pimples with Pus: </span>
+                  These are slightly inflamed, often with a white center.
+                  <br /> <span>Limited Number of Lesions: </span> Typically,
+                  there are less than 30 total bumps or pimples, and not all of
+                  them appear inflamed or red.
+                </p>
+              </div>
               <a
                 className="button"
                 href="https://citypharmacy.medmeapp.ca/schedule/groups/minorAilments?appointmentType=Acne&province=ON"
@@ -146,20 +148,22 @@ const Minoraliments = () => {
               </a>
             </div>
             <div className="whitebox">
-              <img src={MinorAliments2} alt="image" />
-              <p className="header">Allergic rhinitis</p>
-              <p className="note">
-                If you're experiencing allergic rhinitis, commonly known as hay
-                fever, you might notice the following symptoms:
-                <br />
-                <br /> <span>Sneezing: </span> Frequent, sometimes
-                uncontrollable sneezing episodes.
-                <br /> <span>Nasal Congestion:</span>A stuffy or excessively
-                runny nose. Itchiness: An itchy sensation in the nose, eyes, or
-                throat.
-                <br /> <span>Duration of Symptoms: </span>Symptoms typically
-                persist for more than 7 days continuously.
-              </p>
+              <div className="upperpartWrap">
+                <img src={MinorAliments2} alt="image" />
+                <p className="header">Allergic rhinitis</p>
+                <p className="note">
+                  If you're experiencing allergic rhinitis, commonly known as
+                  hay fever, you might notice the following symptoms:
+                  <br />
+                  <br /> <span>Sneezing: </span> Frequent, sometimes
+                  uncontrollable sneezing episodes.
+                  <br /> <span>Nasal Congestion: </span>A stuffy or excessively
+                  runny nose. Itchiness: An itchy sensation in the nose, eyes,
+                  or throat.
+                  <br /> <span>Duration of Symptoms: </span>Symptoms typically
+                  persist for more than 7 days continuously.
+                </p>
+              </div>
               <a
                 className="button"
                 href="https://citypharmacy.medmeapp.ca/schedule/groups/minorAilments?appointmentType=Allergies&province=ON"
@@ -168,22 +172,24 @@ const Minoraliments = () => {
               </a>
             </div>
             <div className="whitebox">
-              <img src={MinorAliments3} alt="image" />
-              <p className="header">Aphthous Ulcers (canker sores)</p>
-              <p className="note">
-                Canker sores can be identified by the following symptoms:
-                <br />
-                <br /> <span>Painful Ulcers:</span> White- or cream-coloured
-                ulcers that are round or oval, often accompanied by a sharp
-                pain.
-                <br /> <span>Raised Red Border:</span>The ulcers typically have
-                a distinct raised red border.
-                <br /> <span>Location:</span> These ulcers commonly appear
-                inside the cheeks, on the lips, sides of the tongue, and on the
-                roof or floor of the mouth.
-                <br /> <span>Size:</span>Generally, each ulcer is less than 1cm
-                in diameter.
-              </p>
+              <div className="upperpartWrap">
+                <img src={MinorAliments3} alt="image" />
+                <p className="header">Aphthous Ulcers (canker sores)</p>
+                <p className="note">
+                  Canker sores can be identified by the following symptoms:
+                  <br />
+                  <br /> <span>Painful Ulcers: </span> White- or cream-coloured
+                  ulcers that are round or oval, often accompanied by a sharp
+                  pain.
+                  <br /> <span>Raised Red Border: </span>The ulcers typically
+                  have a distinct raised red border.
+                  <br /> <span>Location: </span> These ulcers commonly appear
+                  inside the cheeks, on the lips, sides of the tongue, and on
+                  the roof or floor of the mouth.
+                  <br /> <span>Size: </span>Generally, each ulcer is less than
+                  1cm in diameter.
+                </p>
+              </div>
               <a
                 className="button"
                 href="https://citypharmacy.medmeapp.ca/schedule/groups/minorAilments?appointmentType=CankerSores&province=ON"
@@ -194,23 +200,25 @@ const Minoraliments = () => {
           </div>
           <div className="boxesWrap">
             <div className="whitebox">
-              <img src={MinorAliments4} alt="image" />
-              <p className="header">Candidal stomatitis (oral thrush)</p>
-              <p className="note">
-                Oral thrush is characterized by the following symptoms:
-                <br />
-                <br />{" "}
-                <span>White/Creamy Patches: Whiteheads and Blackheads:</span>
-                Noticeable white or creamy-white spots or patches on the lips,
-                inside of the mouth, tongue, and/or the roof of the mouth.
-                <br /> <span>Cottage Cheese Appearance: </span> These patches
-                often have a texture or appearance similar to cottage cheese.
-                <br /> <span>Scrapable Patches:</span> The white patches can
-                typically be scraped off, revealing a red, sensitive area
-                underneath.
-                <br /> <span>Mouth Changes:</span>Accompanying symptoms may
-                include a dry mouth and/or a loss of taste.
-              </p>
+              <div className="upperpartWrap">
+                <img src={MinorAliments4} alt="image" />
+                <p className="header">Candidal stomatitis (oral thrush)</p>
+                <p className="note">
+                  Oral thrush is characterized by the following symptoms:
+                  <br />
+                  <br />{" "}
+                  <span>White/Creamy Patches: Whiteheads and Blackheads: </span>
+                  Noticeable white or creamy-white spots or patches on the lips,
+                  inside of the mouth, tongue, and/or the roof of the mouth.
+                  <br /> <span>Cottage Cheese Appearance: </span> These patches
+                  often have a texture or appearance similar to cottage cheese.
+                  <br /> <span>Scrapable Patches: </span> The white patches can
+                  typically be scraped off, revealing a red, sensitive area
+                  underneath.
+                  <br /> <span>Mouth Changes: </span>Accompanying symptoms may
+                  include a dry mouth and/or a loss of taste.
+                </p>
+              </div>
               <a
                 className="button"
                 href="https://citypharmacy.medmeapp.ca/schedule/groups/minorAilments?appointmentType=OralThrush&province=ON"
@@ -219,23 +227,25 @@ const Minoraliments = () => {
               </a>
             </div>
             <div className="whitebox">
-              <img src={MinorAliments5} alt="image" />
-              <p className="header">
-                Dermatitis (atopic, eczema, allergic and contact)
-              </p>
-              <p className="note">
-                Symptoms of Dermatitis, including Atopic Dermatitis (Eczema),
-                typically involve
-                <br />
-                <br /> <span>Dry, Itchy Skin: </span> Persistent dryness,
-                redness, and itchiness of the skin.
-                <br /> <span>Blisters:</span>Cracked skin with occasional oozing
-                blisters. throat.
-                <br /> <span>Skin Discoloration: </span>Areas of skin that
-                appear darker or lighter than the surrounding skin.
-                <br /> <span>Scaly Patches: </span>Skin that is scaly, patchy,
-                and often inflamed
-              </p>
+              <div className="upperpartWrap">
+                <img src={MinorAliments5} alt="image" />
+                <p className="header">
+                  Dermatitis (atopic, eczema, allergic and contact)
+                </p>
+                <p className="note">
+                  Symptoms of Dermatitis, including Atopic Dermatitis (Eczema),
+                  typically involve
+                  <br />
+                  <br /> <span>Dry, Itchy Skin: </span> Persistent dryness,
+                  redness, and itchiness of the skin.
+                  <br /> <span>Blisters: </span>Cracked skin with occasional
+                  oozing blisters. throat.
+                  <br /> <span>Skin Discoloration: </span>Areas of skin that
+                  appear darker or lighter than the surrounding skin.
+                  <br /> <span>Scaly Patches: </span>Skin that is scaly, patchy,
+                  and often inflamed
+                </p>
+              </div>
               <a
                 className="button"
                 href="https://citypharmacy.medmeapp.ca/schedule/groups/minorAilments?appointmentType=SkinRash&province=ON"
@@ -244,18 +254,20 @@ const Minoraliments = () => {
               </a>
             </div>
             <div className="whitebox">
-              <img src={MinorAliments6} alt="image" />
-              <p className="header">Diaper Dermatitis</p>
-              <p className="note">
-                Symptoms of Diaper Rash, commonly seen in babies and toddlers,
-                include: <br />
-                <br /> <span>Persistent Rashes:</span> Rashes and redness around
-                the diaper area lasting more than 3 days.
-                <br /> <span>Pain and Discomfort:</span> Noticeable pain and
-                crying during urination, diaper changes, and defecation.
-                <br /> <span>Affected Sleep:</span>Disrupted or altered sleep
-                patterns due to discomfort.
-              </p>
+              <div className="upperpartWrap">
+                <img src={MinorAliments6} alt="image" />
+                <p className="header">Diaper Dermatitis</p>
+                <p className="note">
+                  Symptoms of Diaper Rash, commonly seen in babies and toddlers,
+                  include: <br />
+                  <br /> <span>Persistent Rashes: </span> Rashes and redness
+                  around the diaper area lasting more than 3 days.
+                  <br /> <span>Pain and Discomfort: </span> Noticeable pain and
+                  crying during urination, diaper changes, and defecation.
+                  <br /> <span>Affected Sleep: </span>Disrupted or altered sleep
+                  patterns due to discomfort.
+                </p>
+              </div>
               <a
                 className="button"
                 href="https://citypharmacy.medmeapp.ca/schedule/groups/minorAilments?appointmentType=DiaperRash&province=ON"
@@ -266,20 +278,22 @@ const Minoraliments = () => {
           </div>
           <div className="boxesWrap">
             <div className="whitebox">
-              <img src={MinorAliments7} alt="image" />
-              <p className="header">Dysmenorrhea</p>
-              <p className="note">
-                Also known as menstrual cramps, and you may experience the
-                following symptoms:
-                <br />
-                <br /> <span>Abdominal Pain:</span> Pain and cramps in the lower
-                abdominal area.
-                <br /> <span>Lower Back Pain: </span>Discomfort in the lower
-                back, often beginning a few hours before the onset of
-                menstruation.
-                <br /> <span>Duration of Pain:</span> The pain can persist for a
-                few hours and may extend up to several days.
-              </p>
+              <div className="upperpartWrap">
+                <img src={MinorAliments7} alt="image" />
+                <p className="header">Dysmenorrhea</p>
+                <p className="note">
+                  Also known as menstrual cramps, and you may experience the
+                  following symptoms:
+                  <br />
+                  <br /> <span>Abdominal Pain: </span> Pain and cramps in the
+                  lower abdominal area.
+                  <br /> <span>Lower Back Pain: </span>Discomfort in the lower
+                  back, often beginning a few hours before the onset of
+                  menstruation.
+                  <br /> <span>Duration of Pain: </span> The pain can persist
+                  for a few hours and may extend up to several days.
+                </p>
+              </div>
               <a
                 className="button"
                 href="https://citypharmacy.medmeapp.ca/schedule/groups/minorAilments?appointmentType=PeriodCramps&province=ON"
@@ -288,22 +302,24 @@ const Minoraliments = () => {
               </a>
             </div>
             <div className="whitebox">
-              <img src={MinorAliments8} alt="image" />
-              <p className="header">Gastroesophageal reflux disease (GERD)</p>
-              <p className="note">
-                Symptoms of Acid Reflux (GERD) often include
-                <br />
-                <br /> <span>Burping/Stomach Acid: </span> Frequent burping or
-                the sensation of stomach acid rising into the mouth.
-                <br /> <span>Burning Sensation:</span>A burning feeling in the
-                stomach or lower chest, often rising up to the neck.
-                <br /> <span>Sleep Disruption: </span>Difficulty getting a good
-                night's sleep due to heartburn.
-                <br /> <span>Upper Stomach Pain: </span>Pain or discomfort in
-                the middle of the upper stomach area.
-                <br /> <span>Nausea: </span>Feelings of nausea, especially after
-                eating.
-              </p>
+              <div className="upperpartWrap">
+                <img src={MinorAliments8} alt="image" />
+                <p className="header">Gastroesophageal reflux disease (GERD)</p>
+                <p className="note">
+                  Symptoms of Acid Reflux (GERD) often include
+                  <br />
+                  <br /> <span>Burping/Stomach Acid: </span> Frequent burping or
+                  the sensation of stomach acid rising into the mouth.
+                  <br /> <span>Burning Sensation: </span>A burning feeling in
+                  the stomach or lower chest, often rising up to the neck.
+                  <br /> <span>Sleep Disruption: </span>Difficulty getting a
+                  good night's sleep due to heartburn.
+                  <br /> <span>Upper Stomach Pain: </span>Pain or discomfort in
+                  the middle of the upper stomach area.
+                  <br /> <span>Nausea: </span>Feelings of nausea, especially
+                  after eating.
+                </p>
+              </div>
               <a
                 className="button"
                 href="https://citypharmacy.medmeapp.ca/schedule/groups/minorAilments?appointmentType=HeartBurn&province=ON"
@@ -312,21 +328,23 @@ const Minoraliments = () => {
               </a>
             </div>
             <div className="whitebox">
-              <img src={MinorAliments9} alt="image" />
-              <p className="header">Hemorrhoids</p>
-              <p className="note">
-                When experiencing Hemorrhoids, the following symptoms may be
-                present:
-                <br />
-                <br /> <span>Discomfort:</span>Itching, burning, or swelling in
-                the anal/rectum area, which may or may not be painful.
-                <br /> <span>Bleeding:</span>Bright red blood noticeable during
-                or after bowel movements.
-                <br /> <span>Bowel Movement Issues:</span> Constipation and
-                difficulty in having a bowel movement.
-                <br /> <span>Physical Changes:</span>Presence of a lump in the
-                anal/rectum area.
-              </p>
+              <div className="upperpartWrap">
+                <img src={MinorAliments9} alt="image" />
+                <p className="header">Hemorrhoids</p>
+                <p className="note">
+                  When experiencing Hemorrhoids, the following symptoms may be
+                  present:
+                  <br />
+                  <br /> <span>Discomfort: </span>Itching, burning, or swelling
+                  in the anal/rectum area, which may or may not be painful.
+                  <br /> <span>Bleeding: </span>Bright red blood noticeable
+                  during or after bowel movements.
+                  <br /> <span>Bowel Movement Issues: </span> Constipation and
+                  difficulty in having a bowel movement.
+                  <br /> <span>Physical Changes: </span>Presence of a lump in
+                  the anal/rectum area.
+                </p>
+              </div>
               <a
                 className="button"
                 href="https://citypharmacy.medmeapp.ca/schedule/groups/minorAilments?appointmentType=Hemorrhoids&province=ON"
@@ -337,21 +355,23 @@ const Minoraliments = () => {
           </div>
           <div className="boxesWrap">
             <div className="whitebox">
-              <img src={MinorAliments10} alt="image" />
-              <p className="header">Herpes labialis (cold sores)</p>
-              <p className="note">
-                <br /> <span>Rash/Bumps:</span> Rash or bumps around the border
-                of the lip.
-                <br />{" "}
-                <span>
-                  Fluid DischargeSmall Red Bumps and Pimples with Pus:{" "}
-                </span>
-                Presence of clear, sticky fluid around the rash.
-                <br /> <span>Sensory Symptoms:</span> Itching, tingling, or
-                burning sensations preceding the rash.
-                <br /> <span>Skin Changes:</span> Redness or inflamed skin
-                surrounding the rash.
-              </p>
+              <div className="upperpartWrap">
+                <img src={MinorAliments10} alt="image" />
+                <p className="header">Herpes labialis (cold sores)</p>
+                <p className="note">
+                  <br /> <span>Rash/Bumps: </span> Rash or bumps around the
+                  border of the lip.
+                  <br />{" "}
+                  <span>
+                    Fluid DischargeSmall Red Bumps and Pimples with Pus:{" "}
+                  </span>
+                  Presence of clear, sticky fluid around the rash.
+                  <br /> <span>Sensory Symptoms: </span> Itching, tingling, or
+                  burning sensations preceding the rash.
+                  <br /> <span>Skin Changes: </span> Redness or inflamed skin
+                  surrounding the rash.
+                </p>
+              </div>
               <a
                 className="button"
                 href="https://citypharmacy.medmeapp.ca/schedule/groups/minorAilments?appointmentType=ColdSores&province=ON"
@@ -360,19 +380,21 @@ const Minoraliments = () => {
               </a>
             </div>
             <div className="whitebox">
-              <img src={MinorAliments11} alt="image" />
-              <p className="header">Impetigo</p>
-              <p className="note">
-                When experiencing Impetigo, you may notice the following
-                symptoms:
-                <br />
-                <br /> <span>Blisters and Rash: </span> Bumps that evolve into
-                blisters, surrounded by a rash.
-                <br /> <span>Crusting:</span>Yellow discharge that dries to form
-                a "golden" or "honey-coloured" crust.
-                <br /> <span>Affected Areas: </span>Commonly affects the face,
-                arms, or legs.
-              </p>
+              <div className="upperpartWrap">
+                <img src={MinorAliments11} alt="image" />
+                <p className="header">Impetigo</p>
+                <p className="note">
+                  When experiencing Impetigo, you may notice the following
+                  symptoms:
+                  <br />
+                  <br /> <span>Blisters and Rash: </span> Bumps that evolve into
+                  blisters, surrounded by a rash.
+                  <br /> <span>Crusting: </span>Yellow discharge that dries to
+                  form a "golden" or "honey-coloured" crust.
+                  <br /> <span>Affected Areas: </span>Commonly affects the face,
+                  arms, or legs.
+                </p>
+              </div>
               <a
                 className="button"
                 href="https://citypharmacy.medmeapp.ca/schedule/groups/minorAilments?appointmentType=Impetigo&province=ON"
@@ -381,17 +403,19 @@ const Minoraliments = () => {
               </a>
             </div>
             <div className="whitebox">
-              <img src={MinorAliments12} alt="image" />
-              <p className="header">Insect bites and urticaria (hives)</p>
-              <p className="note">
-                When experiencing insect bites and hives, you may notice the
-                following symptoms: <br />
-                <br /> <span>Bumps and Blisters:</span>Presence of small bumps
-                or blisters, often accompanied by pain, itching, redness, or
-                swelling.
-                <br /> <span>Burning Sensation:</span>A sharp, burning pain that
-                can feel like a sting.
-              </p>
+              <div className="upperpartWrap">
+                <img src={MinorAliments12} alt="image" />
+                <p className="header">Insect bites and urticaria (hives)</p>
+                <p className="note">
+                  When experiencing insect bites and hives, you may notice the
+                  following symptoms: <br />
+                  <br /> <span>Bumps and Blisters: </span>Presence of small
+                  bumps or blisters, often accompanied by pain, itching,
+                  redness, or swelling.
+                  <br /> <span>Burning Sensation: </span>A sharp, burning pain
+                  that can feel like a sting.
+                </p>
+              </div>
               <a
                 className="button"
                 href="https://citypharmacy.medmeapp.ca/schedule/groups/minorAilments?appointmentType=InsectBites&province=ON"
@@ -402,22 +426,25 @@ const Minoraliments = () => {
           </div>
           <div className="boxesWrap">
             <div className="whitebox">
-              <img src={MinorAliments13} alt="image" />
-              <p className="header">
-                Tick bites, post-exposure prophylaxis to prevent Lyme disease
-              </p>
-              <p className="note">
-                When experiencing tick bites, particularly from black-legged
-                ticks, you may notice the following symptoms:
-                <br />
-                <br /> <span>Tick Bite Identification:</span> A bite typically
-                from a black-legged tick.
-                <br /> <span>Skin Reactions: </span>Presence of a red lump, with
-                potential development of swelling, blistering, bruising,
-                itching, or other infections.
-                <br /> <span>Allergic Reactions:</span> Mild allergic reactions
-                such as hives, rash, and light swelling at the bite site.
-              </p>
+              <div className="upperpartWrap">
+                <img src={MinorAliments13} alt="image" />
+                <p className="header">
+                  Tick bites, post-exposure prophylaxis to prevent Lyme disease
+                </p>
+                <p className="note">
+                  When experiencing tick bites, particularly from black-legged
+                  ticks, you may notice the following symptoms:
+                  <br />
+                  <br /> <span>Tick Bite Identification: </span> A bite
+                  typically from a black-legged tick.
+                  <br /> <span>Skin Reactions: </span>Presence of a red lump,
+                  with potential development of swelling, blistering, bruising,
+                  itching, or other infections.
+                  <br /> <span>Allergic Reactions: </span> Mild allergic
+                  reactions such as hives, rash, and light swelling at the bite
+                  site.
+                </p>
+              </div>
               <a
                 className="button"
                 href="https://citypharmacy.medmeapp.ca/schedule/groups/minorAilments?appointmentType=TickBites&province=ON"
@@ -426,23 +453,25 @@ const Minoraliments = () => {
               </a>
             </div>
             <div className="whitebox">
-              <img src={MinorAliments14} alt="image" />
-              <p className="header">Musculoskeletal sprains and strains</p>
-              <p className="note">
-                If you're experiencing muscle aches, particularly from sprains
-                and strains, look out for these symptoms:
-                <br />
-                <br /> <span>Pain and Tenderness: </span> Varying levels of
-                pain, swelling, or tenderness, ranging from light to medium
-                intensity.
-                <br /> <span>Visible Changes:</span>Presence of redness or
-                bruising on the affected area.
-                <br /> <span>Movement Limitation: </span>Experiencing limited
-                motion and muscle weakness.
-                <br /> <span>Injury Context: </span>The injury is often
-                associated with overworking or direct injury to a muscle or
-                joint.
-              </p>
+              <div className="upperpartWrap">
+                <img src={MinorAliments14} alt="image" />
+                <p className="header">Musculoskeletal sprains and strains</p>
+                <p className="note">
+                  If you're experiencing muscle aches, particularly from sprains
+                  and strains, look out for these symptoms:
+                  <br />
+                  <br /> <span>Pain and Tenderness: </span> Varying levels of
+                  pain, swelling, or tenderness, ranging from light to medium
+                  intensity.
+                  <br /> <span>Visible Changes: </span>Presence of redness or
+                  bruising on the affected area.
+                  <br /> <span>Movement Limitation: </span>Experiencing limited
+                  motion and muscle weakness.
+                  <br /> <span>Injury Context: </span>The injury is often
+                  associated with overworking or direct injury to a muscle or
+                  joint.
+                </p>
+              </div>
               <a
                 className="button"
                 href="https://citypharmacy.medmeapp.ca/schedule/groups/minorAilments?appointmentType=MuscleAches&province=ON"
@@ -451,16 +480,18 @@ const Minoraliments = () => {
               </a>
             </div>
             <div className="whitebox">
-              <img src={MinorAliments15} alt="image" />
-              <p className="header">Nausea and vomiting of pregnancy</p>
-              <p className="note">
-                If you're experiencing morning sickness during pregnancy, be
-                aware of these symptoms: <br />
-                <br /> <span>Nausea or Vomiting:</span> Occurring at any time of
-                the day due to pregnancy.
-                <br /> <span>Difficulty with Food and Drink:</span> Inability to
-                keep food or drink down for more than 12 hours.
-              </p>
+              <div className="upperpartWrap">
+                <img src={MinorAliments15} alt="image" />
+                <p className="header">Nausea and vomiting of pregnancy</p>
+                <p className="note">
+                  If you're experiencing morning sickness during pregnancy, be
+                  aware of these symptoms: <br />
+                  <br /> <span>Nausea or Vomiting: </span> Occurring at any time
+                  of the day due to pregnancy.
+                  <br /> <span>Difficulty with Food and Drink: </span> Inability
+                  to keep food or drink down for more than 12 hours.
+                </p>
+              </div>
               <a
                 className="button"
                 href="https://citypharmacy.medmeapp.ca/schedule/groups/minorAilments?appointmentType=MorningSickness&province=ON"
@@ -471,24 +502,27 @@ const Minoraliments = () => {
           </div>
           <div className="boxesWrap">
             <div className="whitebox">
-              <img src={MinorAliments16} alt="image" />
-              <p className="header">Pinworms and threadworms</p>
-              <p className="note">
-                Be aware of these symptoms if you suspect an infection with
-                threadworms or pinworms:
-                <br />
-                <br /> <span>Worm Detection:</span> Presence of worms in stool
-                or near the anus.
-                <br /> <span>Anal Itching: </span>Particularly intense at night.
-                <br /> <span>Restless Sleep:</span>Discomfort leading to
-                disturbed sleep patterns.
-                <br /> <span>Vaginal Itching:</span>Occurs if adult worms
-                migrate to the vaginal area.
-                <br /> <span>Irritability and Concentration Issues:</span>
-                Feeling unusually irritable and having difficulty focusing.
-                <br /> <span>Intermittent Abdominal Pain:</span>Experiencing
-                abdominal pain that appears and disappears.
-              </p>
+              <div className="upperpartWrap">
+                <img src={MinorAliments16} alt="image" />
+                <p className="header">Pinworms and threadworms</p>
+                <p className="note">
+                  Be aware of these symptoms if you suspect an infection with
+                  threadworms or pinworms:
+                  <br />
+                  <br /> <span>Worm Detection: </span> Presence of worms in
+                  stool or near the anus.
+                  <br /> <span>Anal Itching: </span>Particularly intense at
+                  night.
+                  <br /> <span>Restless Sleep: </span>Discomfort leading to
+                  disturbed sleep patterns.
+                  <br /> <span>Vaginal Itching: </span>Occurs if adult worms
+                  migrate to the vaginal area.
+                  <br /> <span>Irritability and Concentration Issues: </span>
+                  Feeling unusually irritable and having difficulty focusing.
+                  <br /> <span>Intermittent Abdominal Pain: </span>Experiencing
+                  abdominal pain that appears and disappears.
+                </p>
+              </div>
               <a
                 className="button"
                 href="https://citypharmacy.medmeapp.ca/schedule/groups/minorAilments?appointmentType=Threadworms&province=ON"
@@ -497,22 +531,24 @@ const Minoraliments = () => {
               </a>
             </div>
             <div className="whitebox">
-              <img src={MinorAliments17} alt="image" />
-              <p className="header">Pink Eye (Conjunctivitis)</p>
-              <p className="note">
-                Recognize these common symptoms of conjunctivitis:
-                <br />
-                <br /> <span>Eye Redness: </span>Noticeable redness in one or
-                both eyes.
-                <br /> <span>Morning Eye Difficulty:</span>Challenges in opening
-                eyes upon waking, often due to discharge.
-                <br /> <span>Discharge from Eye: </span>Presence of sticky or
-                watery fluids from the eye.
-                <br /> <span>Discomfort: </span>Experiencing mild scratching,
-                itching, or burning sensations in the eye.
-                <br /> <span>Light Sensitivity: </span>Finding bright lights
-                uncomfortable or painful to the eyes.
-              </p>
+              <div className="upperpartWrap">
+                <img src={MinorAliments17} alt="image" />
+                <p className="header">Pink Eye (Conjunctivitis)</p>
+                <p className="note">
+                  Recognize these common symptoms of conjunctivitis:
+                  <br />
+                  <br /> <span>Eye Redness: </span>Noticeable redness in one or
+                  both eyes.
+                  <br /> <span>Morning Eye Difficulty: </span>Challenges in
+                  opening eyes upon waking, often due to discharge.
+                  <br /> <span>Discharge from Eye: </span>Presence of sticky or
+                  watery fluids from the eye.
+                  <br /> <span>Discomfort: </span>Experiencing mild scratching,
+                  itching, or burning sensations in the eye.
+                  <br /> <span>Light Sensitivity: </span>Finding bright lights
+                  uncomfortable or painful to the eyes.
+                </p>
+              </div>
               <a
                 className="button"
                 target="blank"
@@ -521,26 +557,28 @@ const Minoraliments = () => {
               </a>
             </div>
             <div className="whitebox">
-              <img src={MinorAliments18} alt="image" />
-              <p className="header">Urinary Tract Infections (UTI)</p>
-              <p className="note">
-                Be aware of these typical UTI symptoms:
-                <br />
-                <br /> <span>Frequent Urination:</span> An increased need to
-                urinate, often accompanied by pain.
-                <br /> <span>Painful Urination:</span>Discomfort or pain during
-                urination.
-                <br /> <span>Lower Abdominal Pain:</span> Aching or discomfort
-                in the lower abdomen.
-                <br /> <span>Blood in Urine:</span>Presence of a small amount of
-                blood in the urine.
-                <br /> <span>No Vaginal Discharge: </span>Not experiencing any
-                vaginal discharge.
-                <br /> <span>Cloudy Urine: </span>Urine that appears cloudy or
-                has a foul smell.
-                <br /> <br /> <span>Note: </span>Our pharmacists are equipped to
-                assess and prescribe for UTIs in females only.
-              </p>
+              <div className="upperpartWrap">
+                <img src={MinorAliments18} alt="image" />
+                <p className="header">Urinary Tract Infections (UTI)</p>
+                <p className="note">
+                  Be aware of these typical UTI symptoms:
+                  <br />
+                  <br /> <span>Frequent Urination: </span> An increased need to
+                  urinate, often accompanied by pain.
+                  <br /> <span>Painful Urination: </span>Discomfort or pain
+                  during urination.
+                  <br /> <span>Lower Abdominal Pain: </span> Aching or
+                  discomfort in the lower abdomen.
+                  <br /> <span>Blood in Urine: </span>Presence of a small amount
+                  of blood in the urine.
+                  <br /> <span>No Vaginal Discharge: </span>Not experiencing any
+                  vaginal discharge.
+                  <br /> <span>Cloudy Urine: </span>Urine that appears cloudy or
+                  has a foul smell.
+                  <br /> <br /> <span>Note: </span>Our pharmacists are equipped
+                  to assess and prescribe for UTIs in females only.
+                </p>
+              </div>
               <a
                 className="button"
                 href="https://citypharmacy.medmeapp.ca/schedule/groups/minorAilments?appointmentType=UrinaryTractInfection&province=ON"
@@ -551,24 +589,26 @@ const Minoraliments = () => {
           </div>
           <div className="boxesWrap">
             <div className="whitebox horizontal">
-              <div>
-                <img src={MinorAliments19} alt="image" />
-                <p className="header" style={{ width: "max-content" }}>
-                  Vulvovaginal candidiasis <br /> (yeast infection)
-                </p>
+              <div className="upperpartWrap">
+                <div>
+                  <img src={MinorAliments19} alt="image" />
+                  <p className="header" style={{ width: "max-content" }}>
+                    Vulvovaginal candidiasis <br /> (yeast infection)
+                  </p>
+                </div>
               </div>
               <div>
                 <p className="note">
                   Recognize these common symptoms of a vaginal yeast infection:
                   <br />
-                  <br /> <span>Thick, White Discharge:</span>A thick, white,
+                  <br /> <span>Thick, White Discharge: </span>A thick, white,
                   odour-free discharge resembling cottage cheese. Itching and
                   Burning: Itching, burning sensations in the vaginal area.
                   <br /> <span>Itching and Burning: </span>
                   Itching, burning sensations in the vaginal area.
-                  <br /> <span>Pain During Urination/Intercourse:</span>{" "}
+                  <br /> <span>Pain During Urination/Intercourse: </span>{" "}
                   Discomfort or pain during urination and/or sexual intercourse.
-                  <br /> <span>Rash and Redness:</span>Rash and redness in the
+                  <br /> <span>Rash and Redness: </span>Rash and redness in the
                   vaginal area, indicating irritation.
                 </p>
                 <a

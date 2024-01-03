@@ -11,6 +11,7 @@ import { FreeMode, Navigation, Controller } from "swiper/modules";
 import { Divider, Rating, useMediaQuery } from "@mui/material";
 import SwiperNavButton from "../SwiperNavButton";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const HomeCategoryProductsSwiper = ({ data }) => {
   const small = useMediaQuery("(max-width:600px)");
@@ -35,7 +36,9 @@ const HomeCategoryProductsSwiper = ({ data }) => {
           <div className="top-section">
             <h1>Featured Products</h1>
             <div className="top-buttons">
-              <button>View more</button>
+              <Link className="button" to="/shop">
+                View more
+              </Link>
               <Divider
                 sx={{ height: "30px", marginTop: "8px !important" }}
                 orientation="vertical"

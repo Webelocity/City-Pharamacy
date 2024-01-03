@@ -22,6 +22,7 @@ import doctor from "../../assets/doctor.png";
 import pills from "../../assets/pills.png";
 import test from "../../assets/test.png";
 import author from "../../assets/author.png";
+import author2 from "../../assets/Ellipse 1.png";
 import pierre from "../../assets/pierre.png";
 import comf from "../../assets/comfort.png";
 import icon1 from "../../assets/featureIcon.png";
@@ -232,7 +233,7 @@ const Home = () => {
                   <p className="header">
                     Expert Care for Everyday Health Concerns{" "}
                   </p>
-                  <Link className="cta" to="/Consult_a_pharmacist">
+                  <Link className="cta" to="/MinorAliments">
                     Consult with Our Pharmacists Now
                   </Link>
                   <div className="buttons">
@@ -329,14 +330,14 @@ const Home = () => {
                     Submit Your Prescription Today
                   </Link>
                   <div className="lastSlideCTA">
-                    <button className="reorder">
+                    <Link className="reorder" to="/Refillprescription">
                       Reorder Your Medications
-                    </button>
-                    <button className="switch">
+                    </Link>
+                    <Link className="switch" to="/Transferprescription">
                       {" "}
                       <img src={smilyface} alt="smilyface" /> Switch to Trusted
                       Care
-                    </button>
+                    </Link>
                   </div>
 
                   <div className="buttons">
@@ -811,7 +812,7 @@ const Home = () => {
               </p>
               <div className="author">
                 <div className="name">
-                  <img src={author} alt="author" />
+                  <img src={author2} alt="author" />
                   <p>Sherrie B</p>
                 </div>
                 <div className="stars">

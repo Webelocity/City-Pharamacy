@@ -121,7 +121,10 @@ const LoginSignUpModal = ({ open, handleClose, type }) => {
                   type="email"
                 />
               </div>
-              <Link to="/forget-password" className="forgot-password">
+              <Link
+                to="/forget-password"
+                className="forgot-password"
+                onClick={handleClose}>
                 <p>Forget your password?</p>
               </Link>
               <div className="form-row">

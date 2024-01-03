@@ -146,6 +146,11 @@ const Appointment = ({ open, handleClose }) => {
                   Book a fitting (compression stocking)
                 </option>
                 <option value="Contact_form">Contact form</option>
+                <option value="Medication_management">
+                  Medication Management
+                </option>
+                <option value="Smoke_cessation">Smoke Cessation</option>
+                <option value="Medication_review">Medication Review</option>
               </select>
               <textarea
                 type="textarea"

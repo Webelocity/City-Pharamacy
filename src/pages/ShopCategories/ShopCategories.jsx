@@ -8,7 +8,7 @@ import SwiperNavButton from "../../components/SwiperNavButton";
 import {Swiper, SwiperSlide} from "swiper/react";
 import covid from "../../assets/covid.svg";
 import Step from "../../components/Step";
-import {useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 
 const ShopCategories = () => {
     const matches = useMediaQuery('(max-width:1200px)');
@@ -16,14 +16,15 @@ const ShopCategories = () => {
     const medium = useMediaQuery('(min-width:600px)');
     const large = useMediaQuery('(min-width:1200px)');
     const categories = [
-        {name: "COVID-19 Essentials", numberOfItems: 28, photo: covid},
-        {name: "COVID-19 Essentials", numberOfItems: 28, photo: covid},
-        {name: "COVID-19 Essentials", numberOfItems: 28, photo: covid},
-        {name: "COVID-19 Essentials", numberOfItems: 28, photo: covid},
-        {name: "COVID-19 Essentials", numberOfItems: 28, photo: covid},
-        {name: "COVID-19 Essentials", numberOfItems: 28, photo: covid},
+        {name: "COVID-19 Essentials", numberOfItems: 28, photo: covid, id:"covid"},
+        {name: "COVID-19 Essentials", numberOfItems: 28, photo: covid, id:"covid"},
+        {name: "COVID-19 Essentials", numberOfItems: 28, photo: covid, id:"covid"},
+        {name: "COVID-19 Essentials", numberOfItems: 28, photo: covid, id:"covid"},
+        {name: "COVID-19 Essentials", numberOfItems: 28, photo: covid, id:"covid"},
+        {name: "COVID-19 Essentials", numberOfItems: 28, photo: covid, id:"covid"},
     ];
     const {id} = useParams();
+    const navigate = useNavigate();
 
     const path = [{name:"Categories"}, {name:`${id}`}]
     return (
@@ -102,7 +103,7 @@ const ShopCategories = () => {
                                 <div className='inside-swiper'>
                                     <h1>{category.name}</h1>
                                     <p>{category.numberOfItems} items</p>
-                                    <button>Shop Now</button>
+                                    <button onClick={() => navigate(`/shop/${category.id}`)}>Shop Now</button>
                                     <img src={category.photo} alt={category.name}/>
                                 </div>
                             </SwiperSlide>

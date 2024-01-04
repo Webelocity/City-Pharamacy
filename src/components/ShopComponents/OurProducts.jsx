@@ -11,20 +11,22 @@ import {FreeMode, Navigation} from 'swiper/modules';
 import './OurProducts.scss'
 import covid from '../../assets/covid.svg'
 import Step from "../Step";
+import {useNavigate} from "react-router-dom";
 
 const OurProducts = () => {
     const categories = [
-        {name: "COVID-19 Essentials", numberOfItems: 28, photo: covid},
-        {name: "COVID-19 Essentials", numberOfItems: 28, photo: covid},
-        {name: "COVID-19 Essentials", numberOfItems: 28, photo: covid},
-        {name: "COVID-19 Essentials", numberOfItems: 28, photo: covid},
-        {name: "COVID-19 Essentials", numberOfItems: 28, photo: covid},
-        {name: "COVID-19 Essentials", numberOfItems: 28, photo: covid},
+            {name: "COVID-19 Essentials", numberOfItems: 28, photo: covid, id:"covid"},
+            {name: "COVID-19 Essentials", numberOfItems: 28, photo: covid, id:"covid"},
+            {name: "COVID-19 Essentials", numberOfItems: 28, photo: covid, id:"covid"},
+            {name: "COVID-19 Essentials", numberOfItems: 28, photo: covid, id:"covid"},
+            {name: "COVID-19 Essentials", numberOfItems: 28, photo: covid, id:"covid"},
+            {name: "COVID-19 Essentials", numberOfItems: 28, photo: covid, id:"covid"},
     ]
 
     const small = useMediaQuery('(max-width:600px)');
     const medium = useMediaQuery('(min-width:600px)');
     const large = useMediaQuery('(min-width:1200px)');
+    const navigate = useNavigate();
 
     const path = [{name:"Categories"}]
 
@@ -73,7 +75,7 @@ const OurProducts = () => {
                     >
                         {categories.map(category =>
                             <SwiperSlide>
-                                <div className='inside-swiper'>
+                                <div className='inside-swiper' onClick={() => navigate(`/shop/${category.id}`)}>
                                     <h1>{category.name}</h1>
                                     <p>{category.numberOfItems} items</p>
                                     <img src={category.photo} alt={category.name}/>

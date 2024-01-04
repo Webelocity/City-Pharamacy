@@ -27,7 +27,6 @@ const Appointment = ({ open, handleClose }) => {
         setIsValidEmail(false);
       }
     }
-    console.log(Booking);
   };
 
   useEffect(() => {

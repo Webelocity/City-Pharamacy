@@ -49,13 +49,14 @@ const CategoryProductsSwiper = ({ data, largeAmountOfProducts = false }) => {
             </div>
           </div>
 
-          {data.products.map((product) => (
-            <SwiperSlide>
+          {data.products.map((product,index) => (
+            <SwiperSlide key={index}>
               <ShopProducts
                 name={product.name}
                 photo={product.photo}
                 price={product.price}
                 rating={product.rating}
+                id={product.id}
               />
             </SwiperSlide>
           ))}

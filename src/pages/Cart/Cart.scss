@@ -15,6 +15,9 @@
       align-items: flex-start;
       gap: 24px;
       align-self: stretch;
+      @media (max-width: 1200px) {
+        flex-direction: column;
+      }
     }
   }
 }

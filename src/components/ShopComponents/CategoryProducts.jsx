@@ -8,21 +8,21 @@ import PriceModal from "./PriceModal";
 
 
 const products = [
-    {name: "Collagen Powder - Vital Protein", price: 39.6, rating: 5, photo: photo},
-    {name: "Collagen Powder - Vital Protein", price: 39.6, rating: 5, photo: photo},
-    {name: "Collagen Powder - Vital Protein", price: 39.6, rating: 5, photo: photo},
-    {name: "Collagen Powder - Vital Protein", price: 39.6, rating: 5, photo: photo},
-    {name: "Collagen Powder - Vital Protein", price: 39.6, rating: 5, photo: photo},
-    {name: "Collagen Powder - Vital Protein", price: 39.6, rating: 5, photo: photo},
-    {name: "Collagen Powder - Vital Protein", price: 39.6, rating: 5, photo: photo},
-    {name: "Collagen Powder - Vital Protein", price: 39.6, rating: 5, photo: photo},
-    {name: "Collagen Powder - Vital Protein", price: 39.6, rating: 5, photo: photo},
-    {name: "Collagen Powder - Vital Protein", price: 39.6, rating: 5, photo: photo},
-    {name: "Collagen Powder - Vital Protein", price: 39.6, rating: 5, photo: photo},
-    {name: "Collagen Powder - Vital Protein", price: 39.6, rating: 5, photo: photo},
-    {name: "Collagen Powder - Vital Protein", price: 39.6, rating: 5, photo: photo},
-    {name: "Collagen Powder - Vital Protein", price: 39.6, rating: 5, photo: photo},
-    {name: "Collagen Powder - Vital Protein", price: 39.6, rating: 5, photo: photo},
+    {name: "Collagen Powder - Vital Protein", price: 39.6, rating: 5, photo: photo, id:1},
+    {name: "Collagen Powder - Vital Protein", price: 39.6, rating: 5, photo: photo, id:1},
+    {name: "Collagen Powder - Vital Protein", price: 39.6, rating: 5, photo: photo, id:1},
+    {name: "Collagen Powder - Vital Protein", price: 39.6, rating: 5, photo: photo, id:1},
+    {name: "Collagen Powder - Vital Protein", price: 39.6, rating: 5, photo: photo, id:1},
+    {name: "Collagen Powder - Vital Protein", price: 39.6, rating: 5, photo: photo, id:1},
+    {name: "Collagen Powder - Vital Protein", price: 39.6, rating: 5, photo: photo, id:1},
+    {name: "Collagen Powder - Vital Protein", price: 39.6, rating: 5, photo: photo, id:1},
+    {name: "Collagen Powder - Vital Protein", price: 39.6, rating: 5, photo: photo, id:1},
+    {name: "Collagen Powder - Vital Protein", price: 39.6, rating: 5, photo: photo, id:1},
+    {name: "Collagen Powder - Vital Protein", price: 39.6, rating: 5, photo: photo, id:1},
+    {name: "Collagen Powder - Vital Protein", price: 39.6, rating: 5, photo: photo, id:1},
+    {name: "Collagen Powder - Vital Protein", price: 39.6, rating: 5, photo: photo, id:1},
+    {name: "Collagen Powder - Vital Protein", price: 39.6, rating: 5, photo: photo, id:1},
+    {name: "Collagen Powder - Vital Protein", price: 39.6, rating: 5, photo: photo, id:1},
 ]
 
 
@@ -115,7 +115,7 @@ const CategoryProducts = () => {
             <div className='products-wrapper'>
                 {products.map(product =>
                     <ShopProducts name={product.name} photo={product.photo} price={product.price}
-                                  rating={product.rating}/>
+                                  rating={product.rating} id={product.id}/>
                 )}
             </div>
             <div className='pagination'>

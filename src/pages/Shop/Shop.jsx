@@ -1,13 +1,48 @@
 import React from 'react';
 import './Shop.scss'
-import OurProducts from "../../components/ShopComponents/OurProducts";
-import Products from "../../components/ShopComponents/Products";
+import ShopByCategory from "../../components/ShopComponents/ShopByCategory";
+import Categories from "../../components/ShopComponents/Categories";
+import CategoryBanner from "../../components/ShopComponents/CategoryBanner";
+import covid from "../../assets/covid.svg";
+import BestSeller from "../../components/ShopComponents/BestSeller";
+import photo from '../../assets/Image (1).svg'
 
 const Shop = () => {
+    const featured = {
+        name: "Featured Products",
+        products: [
+            {name: "Collagen Powder - Vital Protein", price: 39.6, rating: 5, photo: covid, id: 1},
+            {name: "Collagen Powder - Vital Protein", price: 39.6, rating: 5, photo: covid, id: 1},
+            {name: "Collagen Powder - Vital Protein", price: 39.6, rating: 5, photo: covid, id: 1},
+            {name: "Collagen Powder - Vital Protein", price: 39.6, rating: 5, photo: covid, id: 1},
+            {name: "Collagen Powder - Vital Protein", price: 39.6, rating: 5, photo: covid, id: 1},
+            {name: "Collagen Powder - Vital Protein", price: 39.6, rating: 5, photo: covid, id: 1},
+            {name: "Collagen Powder - Vital Protein", price: 39.6, rating: 5, photo: covid, id: 1},
+            {name: "Collagen Powder - Vital Protein", price: 39.6, rating: 5, photo: covid, id: 1},
+            {name: "Collagen Powder - Vital Protein", price: 39.6, rating: 5, photo: covid, id: 1},
+            {name: "Collagen Powder - Vital Protein", price: 39.6, rating: 5, photo: covid, id: 1},
+            {name: "Collagen Powder - Vital Protein", price: 39.6, rating: 5, photo: covid, id: 1},
+        ]
+    }
+
+    const BestSellerData = [
+        {name: "Collagen Powder - Vital Protein", price: 39.6, photo: photo, id: 1},
+        {name: "Collagen Powder - Vital Protein", price: 39.6, photo: photo, id: 1},
+        {name: "Collagen Powder - Vital Protein", price: 39.6, photo: photo, id: 1},
+        {name: "Collagen Powder - Vital Protein", price: 39.6, photo: photo, id: 1},
+        {name: "Collagen Powder - Vital Protein", price: 39.6, photo: photo, id: 1},
+        {name: "Collagen Powder - Vital Protein", price: 39.6, photo: photo, id: 1},
+        {name: "Collagen Powder - Vital Protein", price: 39.6, photo: photo, id: 1},
+        {name: "Collagen Powder - Vital Protein", price: 39.6, photo: photo, id: 1},
+        {name: "Collagen Powder - Vital Protein", price: 39.6, photo: photo, id: 1},
+    ]
     return (
         <div className='shop-wrapper'>
-            <OurProducts />
-            <Products />
+            <ShopByCategory/>
+            <Categories/>
+            <CategoryBanner categoryName={'COVID-19 Essentials'} category='covid' featuredProducts={featured}/>
+            <BestSeller data={BestSellerData} />
+            <CategoryBanner categoryName={'Health & Wellness'} category='health' featuredProducts={featured}/>
         </div>
     );
 };

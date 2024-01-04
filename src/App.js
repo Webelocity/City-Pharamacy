@@ -21,6 +21,7 @@ import Refillprescription from "./pages/Prescription/Refillprescription";
 import Shippingpolicy from "./pages/Shippingpolicy/Shippingpolicy";
 import Privacypolicy from "./pages/Privacypolicy/Privacypolicy";
 import Terms from "./pages/Terms/Terms";
+import PaymentSuccess from "./components/CartComponents/PaymentSuccess";
 
 function App() {
   return (
@@ -64,6 +65,7 @@ function App() {
               <Route index element={<Shop />} />
               <Route path=":id" element={<ShopCategories />} />
             </Route>
+            <Route path="/payment/success" index element={<PaymentSuccess />} />
             <Route path="product/:id" element={<Product />} />
             <Route path="/cart" index element={<Cart />} />
           </Routes>

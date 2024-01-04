@@ -117,7 +117,7 @@ const Sidecart = ({ open, handleClose }) => {
                 </div>
               </div>
             </div>
-            <div className="item last">
+            <div className="item">
               <img src={prod} alt="product" />
               <div className="data">
                 <p className="name">Nora - Oil Premium</p>

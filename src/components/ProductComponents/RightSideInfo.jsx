@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './RightSideInfo.scss'
 import photo from '../../assets/product.svg'
 import {IconButton, Rating, useMediaQuery} from "@mui/material";
@@ -8,6 +8,19 @@ const RightSideInfo = () => {
     const data = {colors: ['#C6B6C4', '#D3FCE2'], models: [1, 2]};
     const matches = useMediaQuery('(max-width:1200px)');
     const navigate = useNavigate();
+    const [color, setColor] = useState(data.colors[0]);
+    const [model, setModel] = useState(data.models[0]);
+    const [quantity, setQuantity] = useState(1);
+    const increaseQuantity = () => {
+        setQuantity(prevState => prevState + 1)
+    }
+
+    const decreaseQuantity = () => {
+        if (quantity > 1) {
+            setQuantity(prevState => prevState - 1)
+        }
+    }
+
     return (
         <div className='product-info-wrapper'>
             <div className='top-side'>
@@ -72,16 +85,18 @@ const RightSideInfo = () => {
                 <div className='colors-wrapper'>
                     <p>Colors</p>
                     <div className='colors'>
-                        {data.colors.map(color =>
-                            <div className='colors-picker' style={{backgroundColor: color}}/>
+                        {data.colors.map(colorToMap =>
+                            <div className={`colors-picker ${colorToMap === color && 'selected'}`}
+                                 onClick={() => setColor(colorToMap)} style={{backgroundColor: colorToMap}}/>
                         )}
                     </div>
                 </div>
                 <div className='models-wrapper'>
                     <p>Model</p>
                     <div className='models'>
-                        {data.models.map(model =>
-                            <img src={photo} alt='product'/>
+                        {data.models.map(modelToMap =>
+                            <img className={`${modelToMap === model && 'selected'}`}
+                                 onClick={() => setModel(modelToMap)} src={photo} alt='product'/>
                         )}
                     </div>
                 </div>
@@ -89,7 +104,7 @@ const RightSideInfo = () => {
             <div className='quantity-buy'>
                 {!matches &&
                     <div className='quantity'>
-                        <IconButton>
+                        <IconButton onClick={decreaseQuantity}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33"
                                  fill="none">
                                 <path
@@ -99,8 +114,8 @@ const RightSideInfo = () => {
                                       stroke-linejoin="round"/>
                             </svg>
                         </IconButton>
-                        <p>2</p>
-                        <IconButton>
+                        <p>{quantity}</p>
+                        <IconButton onClick={increaseQuantity}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33"
                                  fill="none">
                                 <path

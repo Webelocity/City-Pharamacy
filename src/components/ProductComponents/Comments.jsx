@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './Comments.scss'
 import {Checkbox, Divider, Rating, useMediaQuery} from "@mui/material";
 import photo from '../../assets/product-comment.svg'
@@ -8,8 +8,9 @@ import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
 import ThumbDownIcon from '@mui/icons-material/ThumbDown';
 import ThumbDownOffAltIcon from '@mui/icons-material/ThumbDownOffAlt';
 
-const comments = [
+const commentsDummy = [
     {
+        id: 0,
         name: "Sherrie B",
         photo: photo,
         commented_since: "Yesterday",
@@ -19,6 +20,7 @@ const comments = [
         replies: []
     },
     {
+        id: 1,
         name: "Sherrie B",
         photo: photo,
         commented_since: "Yesterday",
@@ -27,6 +29,7 @@ const comments = [
         dislikes: 0,
         replies: [
             {
+                id: 0,
                 name: "Bella",
                 photo: photo,
                 commented_since: "2 weeks ago",
@@ -34,10 +37,10 @@ const comments = [
                 likes: 5,
                 dislikes: 0
             }
-
         ]
     },
     {
+        id: 2,
         name: "Sherrie B",
         photo: photo,
         commented_since: "Yesterday",
@@ -49,7 +52,75 @@ const comments = [
 ]
 
 const Comments = () => {
-    const matches = useMediaQuery('(max-width:1200px)')
+    const matches = useMediaQuery('(max-width:1200px)');
+    const [comments, setComments] = useState(commentsDummy);
+    const [comment, setComment] = useState({full_name: "", email_address: "", photo: photo, comment: ""});
+
+    const handleChange = (event) => {
+        const {value, name} = event.target;
+        setComment({...comment, [name]: value})
+    }
+
+    const handleSendMessage = () => {
+        const commentToAdd = {
+            id: comments.length,
+            name: `${comment.full_name}`,
+            photo: photo,
+            commented_since: `Just Now`,
+            comment: comment.comment,
+            likes: 0,
+            dislikes: 0,
+            replies: []
+        }
+        setComments([...comments, commentToAdd]);
+        setComment({full_name: "", email_address: "", photo: photo, comment: ""})
+        //TODO add comment to db
+    }
+
+    const handleLike = (event, idFromComment, idFromReply) => {
+        const checked = event.target.checked;
+
+        setComments(prevState => prevState.map(comment => {
+            if (comment.id !== idFromComment) return comment;
+
+            const updateLikes = (item) => ({
+                ...item,
+                likes: checked ? item.likes + 1 : item.likes - 1,
+            });
+
+            if (idFromReply || idFromReply === 0) {
+                const updatedReplies = comment.replies.map(reply =>
+                    (reply.id === idFromReply) ? updateLikes(reply) : reply
+                );
+                return { ...comment, replies: updatedReplies };
+            }
+
+            return updateLikes(comment);
+        }));
+    };
+
+    const handleDislike = (event, idFromComment, idFromReply) => {
+        const checked = event.target.checked;
+
+        setComments(prevState => prevState.map(comment => {
+            if (comment.id !== idFromComment) return comment;
+
+            const updateDislikes = (item) => ({
+                ...item,
+                dislikes: checked ? item.dislikes + 1 : item.dislikes - 1,
+            });
+
+            if (idFromReply || idFromReply === 0) {
+                const updatedReplies = comment.replies.map(reply =>
+                    (reply.id === idFromReply) ? updateDislikes(reply) : reply
+                );
+                return { ...comment, replies: updatedReplies };
+            }
+
+            return updateDislikes(comment);
+        }));
+    };
+
     return (
         <div className='comments-wrapper'>
             {comments.map(comment =>
@@ -71,6 +142,7 @@ const Comments = () => {
                         <button>Reply</button>
                         <div>
                             <Checkbox
+                                onChange={(event) => handleLike(event, comment.id)}
                                 icon={<ThumbUpOffAltIcon/>}
                                 checkedIcon={<ThumbUpIcon color="success"/>}
                             />
@@ -78,6 +150,7 @@ const Comments = () => {
                         </div>
                         <div>
                             <Checkbox
+                                onChange={(event) => handleDislike(event, comment.id)}
                                 icon={<ThumbDownOffAltIcon/>}
                                 checkedIcon={<ThumbDownIcon color="success"/>}
                             />
@@ -100,9 +173,10 @@ const Comments = () => {
                                 {reply.comment}
                             </p>
                             <div className='likes-dislikes-section'>
-                                <button>Reply</button>
+                                {/*<button>Reply</button>*/}
                                 <div>
                                     <Checkbox
+                                        onChange={(event) => handleLike(event, comment.id, reply.id)}
                                         icon={<ThumbUpOffAltIcon/>}
                                         checkedIcon={<ThumbUpIcon color="success"/>}
                                     />
@@ -110,6 +184,7 @@ const Comments = () => {
                                 </div>
                                 <div>
                                     <Checkbox
+                                        onChange={(event) => handleDislike(event, comment.id, reply.id)}
                                         icon={<ThumbDownOffAltIcon/>}
                                         checkedIcon={<ThumbDownIcon color="success"/>}
                                     />
@@ -124,11 +199,13 @@ const Comments = () => {
             <div className='write-comment-wrapper'>
                 <h1>WRITE A COMMENT</h1>
                 <div className='first-name'>
-                    <input placeholder="Full Name*"/>
-                    <input placeholder="Email Address*"/>
+                    <input value={comment.full_name} name="full_name" onChange={handleChange} placeholder="Full Name*"/>
+                    <input value={comment.email_address} name="email_address" onChange={handleChange} placeholder="Email Address*"/>
                 </div>
-                <textarea rows="5" cols="60" name="description" placeholder='Message*'>
+                <textarea value={comment.email_address} name="comment" onChange={handleChange} rows="5" cols="60"
+                          placeholder='Message*'>
                 </textarea>
+                <button onClick={handleSendMessage}>Send Message</button>
             </div>
             {matches &&
                 <div className='special-offers'>

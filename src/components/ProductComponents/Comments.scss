@@ -117,6 +117,23 @@
     border-radius: 10px;
     background: #FFF;
 
+    button {
+      display: flex;
+      padding: 12px 24px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      border-radius: 10px;
+      background: var(--Main-Green, #219D50);
+      border:none;
+      color: var(--Main-White, #FFF);
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      text-transform: capitalize;
+    }
+
     input{
       width: calc(100% - 29px);
       height: 27px;

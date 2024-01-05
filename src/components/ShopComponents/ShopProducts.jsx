@@ -2,10 +2,10 @@ import React from 'react';
 import {Rating} from "@mui/material";
 import {useNavigate} from "react-router-dom";
 
-const ShopProducts = ({photo, name, rating, price, id}) => {
+const ShopProducts = ({photo, name, rating, price, id, lessProductsRow}) => {
     const navigate = useNavigate();
     return (
-        <div className='inside-swiper' onClick={() => navigate(`/product/${id}`)}>
+        <div className={`inside-swiper ${lessProductsRow && 'shorter'}`} onClick={() => navigate(`/product/${id}`)}>
             <div className='image-part'>
                 <img src={photo} alt={name}/>
                 <button>

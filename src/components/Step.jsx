@@ -6,7 +6,7 @@ const Step = ({data}) => {
         <div className='categories-stepper'>
             <p>Home</p>
             {data.map((d, index) =>
-                <li className={`${data.length -1 === index && 'green'} `}><span>{d.name}</span></li>
+                <li className={`${data.length - 1 === index && 'green'} `}><span>{d}</span></li>
             )}
         </div>
     );

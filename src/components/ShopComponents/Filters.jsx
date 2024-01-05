@@ -1,31 +1,40 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './Filters.scss';
 import {Collapse, List, ListItemButton, ListItemIcon, ListItemText, Slider} from "@mui/material";
 import {ExpandLess, ExpandMore, StarBorder} from "@mui/icons-material";
-import {useNavigate} from 'react-router-dom'
+import {useNavigate, useParams} from 'react-router-dom'
 
 function valuetext(value) {
     return `${value}`;
 }
 
+const filtersCategoryToLook = [
+    {name: "Beauty", open: false, category: "Beauty"},
+    {name: "COVID-19 Essentials", open: false, category: "COVID-19 Essentials"},
+    {name: "Health & Wellness", open: false, category: "Health & Wellness"},
+    {name: "Home Care & Devices", open: false, category: "Home Care & Devices"},
+    {name: "Baby & Child", open: false, category: "Baby & Child"},
+    {name: "Personal Care", open: false, category: "Personal Care"},
+];
+
 const Filters = () => {
+    const {id, subcategory} = useParams();
+    let openedArray = [];
+    const OpenCategory = () => {
+        openedArray = filtersCategoryToLook.map(category => {
+            if (id === category.category) {
+                return {name: category.name, open: true, category: category.category}
+            } else return category
+        })
+        return openedArray
+    }
+
     const navigate = useNavigate();
     const [value, setValue] = React.useState([20, 37]);
     const [openPrice, setOpenPrice] = useState(true)
-    const [filtersCategory, setFiltersCategory] = useState(
-        [
-            {name: "Beauty", open: false, category: "beauty"},
-            {name: "COVID-19 Essentials", open: false, category: "covid"},
-            {name: "Health & Wellness", open: false, category: "health"},
-            {name: "Home Care & Devices", open: false, category: "home-care"},
-            {name: "Baby & Child", open: false, category: "baby"},
-            {name: "Personal Care", open: false, category: "personal"},
-        ])
+    const [filtersCategory, setFiltersCategory] = useState([])
 
     const handleClick = (name) => {
-        const filterToRedirect = filtersCategory.filter(filter => {
-            return filter.name === name;
-        });
         setFiltersCategory(prevFilters => {
             return prevFilters.map(filter => {
                 if (filter.name === name) {
@@ -33,8 +42,12 @@ const Filters = () => {
                 } else return {...filter, open: false}
             });
         });
-        navigate(`/shop/${filterToRedirect[0].category}`)
     };
+
+    useEffect(() => {
+        const array = OpenCategory();
+        setFiltersCategory(array)
+    }, [id]);
 
 
     const handleChange = (event, newValue) => {

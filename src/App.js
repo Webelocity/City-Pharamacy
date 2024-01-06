@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import ForgetPassword from "./pages/ForgetPassword/ForgetPassword";
 import Shop from "./pages/Shop/Shop";
-import ShopCategories from "./pages/ShopCategories/ShopCategories";
 import Layout from "./components/Layout/Layout";
 import Product from "./pages/Product/Product";
 import About from "./pages/About/About";
@@ -21,6 +20,9 @@ import Refillprescription from "./pages/Prescription/Refillprescription";
 import Shippingpolicy from "./pages/Shippingpolicy/Shippingpolicy";
 import Privacypolicy from "./pages/Privacypolicy/Privacypolicy";
 import Terms from "./pages/Terms/Terms";
+import PaymentSuccess from "./components/CartComponents/PaymentSuccess";
+import ShopCategories from "./pages/ShopCategories/ShopCategories";
+import ShopSubCategories from "./pages/ShopSubCategories/ShopSubCategories";
 
 function App() {
   return (
@@ -63,7 +65,9 @@ function App() {
             <Route path="/shop">
               <Route index element={<Shop />} />
               <Route path=":id" element={<ShopCategories />} />
+              <Route path=":id/:subcategory" element={<ShopSubCategories />} />
             </Route>
+            <Route path="/payment/success" index element={<PaymentSuccess />} />
             <Route path="product/:id" element={<Product />} />
             <Route path="/cart" index element={<Cart />} />
           </Routes>

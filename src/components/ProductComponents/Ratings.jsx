@@ -10,7 +10,7 @@ const Ratings = () => {
         <div className='ratings-wrapper'>
             <div className='ratings-section'>
                 <div className='rating-numbers'>
-                    <Rating size="large"/>
+                    <Rating size="large" value={4} readOnly />
                     <p>4.2</p>
                 </div>
                 <div className='ratings-data'>

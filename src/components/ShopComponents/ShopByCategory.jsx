@@ -1,6 +1,6 @@
 import React from 'react';
 import {Container, IconButton, InputAdornment, InputBase, useMediaQuery} from "@mui/material";
-import {Swiper, SwiperSlide} from 'swiper/react';
+import photo from '../../assets/Frame 76.png'
 
 // Import Swiper styles
 import 'swiper/css';
@@ -8,35 +8,27 @@ import 'swiper/css/navigation';
 
 // import required modules
 import {FreeMode, Navigation} from 'swiper/modules';
-import './OurProducts.scss'
+import './ShopByCategory.scss'
 import covid from '../../assets/covid.svg'
 import Step from "../Step";
-import {useNavigate} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 
-const OurProducts = () => {
-    const categories = [
-            {name: "COVID-19 Essentials", numberOfItems: 28, photo: covid, id:"covid"},
-            {name: "COVID-19 Essentials", numberOfItems: 28, photo: covid, id:"covid"},
-            {name: "COVID-19 Essentials", numberOfItems: 28, photo: covid, id:"covid"},
-            {name: "COVID-19 Essentials", numberOfItems: 28, photo: covid, id:"covid"},
-            {name: "COVID-19 Essentials", numberOfItems: 28, photo: covid, id:"covid"},
-            {name: "COVID-19 Essentials", numberOfItems: 28, photo: covid, id:"covid"},
-    ]
-
+const ShopByCategory = ({path, name, categories}) => {
     const small = useMediaQuery('(max-width:600px)');
     const medium = useMediaQuery('(min-width:600px)');
     const large = useMediaQuery('(min-width:1200px)');
     const navigate = useNavigate();
-
-    const path = [{name:"Categories"}]
+    const {id} = useParams();
 
     return (
-        <Container sx={{maxWidth:"1350px !important", paddingX:{xs:"0px !important", md:"auto"}}}>
+        <Container sx={{maxWidth: "1350px !important", paddingX: {xs: "0px !important", md: "auto"}}}>
             <div className='our-products-wrapper'>
-                <div className='top-part'>
-                    {small && <Step data={path}/>}
-                    <div className='search'>
-                        <h1>Our Products</h1>
+                <div className='top-banner-wrapper'>
+                    <div className='left-side-text'>
+                        <div className='title'>
+                            <p>Shop Deals</p>
+                            <h1>New Arrivals For You</h1>
+                        </div>
                         <InputBase
                             className='mui-register-password'
                             type='text'
@@ -61,31 +53,28 @@ const OurProducts = () => {
                             }
                         />
                     </div>
-                    {!small && <Step data={path} />}
+                    <img src={photo} alt='new-products'/>
+                </div>
+                <div className='top-part'>
+                    <Step data={path} />
+                    <div className='search'>
+                        {name}
+                    </div>
+
                 </div>
                 <div className='products'>
-                <Swiper
-                        slidesPerView={large ? 5 : medium ? 3 : small && 1.5}
-                        spaceBetween={30}
-                        modules={[Navigation,FreeMode]}
-                        navigation={true}
-                        className="mySwiper"
-                        freeMode={true}
-                        speed={800}
-                    >
-                        {categories.map(category =>
-                            <SwiperSlide>
-                                <div className='inside-swiper' onClick={() => navigate(`/shop/${category.id}`)}>
-                                    <h1>{category.name}</h1>
-                                    <p>{category.numberOfItems} items</p>
-                                    <img src={category.photo} alt={category.name}/>
-                                </div>
-                            </SwiperSlide>)}
-                    </Swiper>
+                    {categories.map(category =>
+                        <div className='inside-swiper'
+                             onClick={() => navigate(`${id ? `/shop/${id}/${category.id}` : `/shop/${category.id}`}`)}>
+                            <h1>{category.name}</h1>
+                            <p>{category.numberOfItems} items</p>
+                            <img src={category.photo} alt={category.name}/>
+                        </div>
+                    )}
                 </div>
             </div>
         </Container>
     );
 };
 
-export default OurProducts;
+export default ShopByCategory;

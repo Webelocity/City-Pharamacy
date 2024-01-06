@@ -6,8 +6,10 @@ import {openModal} from "../../redux/userSlice";
 import Method from "./Method";
 import CanadaPost from '../../assets/image 48.svg'
 import FedEx from '../../assets/image 49.svg'
+import {useNavigate} from "react-router-dom";
 
 const OrderTotal = ({activeStep, setActiveStep}) => {
+    const navigate = useNavigate();
     const dispatch = useDispatch()
     const user = useSelector(
         (state) => state.user.currentUser
@@ -118,7 +120,7 @@ const OrderTotal = ({activeStep, setActiveStep}) => {
                 <p className='stroke'>--------</p>
                 <p>$129.98</p>
             </div>
-            {user ?
+            {user ? activeStep === 1  ? <button onClick={() => navigate('/payment/success')} className='green'>Pay</button> :
                 <button className='green' onClick={() => setActiveStep(activeStep + 1)}>Proceed to Checkout</button> :
                 <button onClick={() => dispatch(openModal())}>Login | Sign Up</button>
             }

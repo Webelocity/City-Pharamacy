@@ -12,17 +12,17 @@ import { Divider, useMediaQuery } from "@mui/material";
 import SwiperNavButton from "../SwiperNavButton";
 import ShopProducts from "./ShopProducts";
 
-const CategoryProductsSwiper = ({ data, largeAmountOfProducts = false }) => {
-  const small = useMediaQuery("(max-width:600px)");
-  const medium = useMediaQuery("(min-width:600px)");
-  const large = useMediaQuery("(min-width:1200px)");
+const CategoryProductsSwiper = ({ data, largeAmountOfProducts, mediumAmountOfProducts, smallAmountOfProducts }) => {
+  const smallDisplay = useMediaQuery("(max-width:600px)");
+  const mediumDisplay = useMediaQuery("(min-width:600px)");
+  const largeDisplay = useMediaQuery("(min-width:1200px)");
 
   return (
     <div className="category-product-swiper-wrapper">
       <div className="products">
         <Swiper
           slidesPerView={
-            large ? (largeAmountOfProducts ? 7 : 5) : medium ? 4 : small && 2.5
+            largeDisplay ? largeAmountOfProducts : mediumDisplay ? mediumAmountOfProducts : smallDisplay && smallAmountOfProducts
           }
           spaceBetween={10}
           modules={[Navigation, FreeMode]}

@@ -173,6 +173,11 @@
         width: 67px;
         height: 67px;
         border-radius: 40px;
+        cursor: pointer;
+
+        &.selected {
+          border:1px solid black
+        }
       }
     }
 
@@ -193,6 +198,11 @@
           width: 67px;
           height: 67px;
           border-radius: 50%;
+          cursor: pointer;
+
+          &.selected {
+            border: 1px solid black;
+          }
         }
       }
     }

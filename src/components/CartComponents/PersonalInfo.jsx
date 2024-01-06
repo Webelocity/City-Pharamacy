@@ -47,7 +47,8 @@ const PersonalInfo = ({handleChange, personalInfo}) => {
                         fullWidth
                         defaultCountry="CA"
                         value={personalInfo.phone}
-                        onChange={(value) => handleChange(null, {name:"phone", value})}/>
+                        onChange={(value) => handleChange(null, {name:"phone", value})}
+                    />
                 </div>
             </div>
         </div>

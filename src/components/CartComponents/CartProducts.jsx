@@ -4,13 +4,8 @@ import CartProduct from "./CartProduct";
 import {Divider} from "@mui/material";
 import image from '../../assets/cart-image.svg'
 
-const products = [
-    {name: "Nora - Oil Premium", image: image, color: "Pink", price: 24.99, originalPrice: 29.99, quantity: 2},
-    {name: "Nora - Oil Premium", image: image, color: "Pink", price: 24.99, originalPrice: 29.99, quantity: 2},
-    {name: "Nora - Oil Premium", image: image, color: "Pink", price: 24.99, originalPrice: 29.99, quantity: 2},
-]
 
-const CartProducts = ({setActiveStep}) => {
+const CartProducts = ({products}) => {
     return (
         <div className='cart-products'>
             <div className='top-part'>

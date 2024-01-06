@@ -9,7 +9,7 @@ import FeaturedProducts from "../../components/ProductComponents/FeaturedProduct
 
 
 const Product = () => {
-    const path = [{name: "Categories"}, {name: "Health & Wellness"}, {name: "COVID-19 Essentials (45)"}, {name: "Nora - Oil Premium"}]
+    const path = ["Categories", "Health & Wellness", "COVID-19 Essentials (45)", "Nora - Oil Premium"]
     return (
         <>
             <Container sx={{maxWidth: "1350px !important", paddingX: {xs: "20px", md: "auto"}}}>

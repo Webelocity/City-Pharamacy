@@ -1,11 +1,10 @@
 import React from 'react';
-import {Rating} from "@mui/material";
 import {useNavigate} from "react-router-dom";
 
-const ShopProducts = ({photo, name, rating, price, id, lessProductsRow}) => {
+const CategoryCartProduct = ({photo, name, price, id}) => {
     const navigate = useNavigate();
     return (
-        <div className={`inside-swiper ${lessProductsRow && 'shorter'}`} onClick={() => navigate(`/product/${id}`)}>
+        <div className='inside-swiper' onClick={() => navigate(`/product/${id}`)}>
             <div className='image-part'>
                 <img src={photo} alt={name}/>
                 <button>
@@ -36,11 +35,6 @@ const ShopProducts = ({photo, name, rating, price, id, lessProductsRow}) => {
                 </button>
             </div>
             <div className='price-rating'>
-                <Rating
-                    color="success"
-                    name="simple-controlled"
-                    value={rating}
-                />
                 <p className='price'>{price}$</p>
                 <p>{name}</p>
             </div>
@@ -48,4 +42,4 @@ const ShopProducts = ({photo, name, rating, price, id, lessProductsRow}) => {
     );
 };
 
-export default ShopProducts;
+export default CategoryCartProduct;

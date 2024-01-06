@@ -396,6 +396,7 @@ svg path {
   flex-direction: column;
   row-gap: 8px;
   flex-wrap: wrap;
+  position: relative;
 }
 .mobileNav .upper {
   background: var(--Foggy-Gray-50, #f5f5f1);
@@ -433,7 +434,7 @@ svg path {
 }
 .mobileNav .middle {
   display: flex;
-  padding: 0 24px;
+  margin: 0 24px;
   padding-bottom: 16px;
   justify-content: center;
   align-items: flex-end;
@@ -458,7 +459,6 @@ svg path {
   padding: 0 24px;
   padding-top: 8px;
   padding-bottom: 12px;
-  position: relative;
 }
 .mobileNav .lower .right {
   display: flex;

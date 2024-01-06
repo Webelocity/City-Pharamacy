@@ -54,7 +54,7 @@ const Appointment = ({ open, handleClose }) => {
       onClose={handleClose}
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description">
-      <div className="modal">
+      <div className="Appointmodal">
         <div className="form-wrap">
           <div className="title">
             <h1>Book an Appointment Form</h1>

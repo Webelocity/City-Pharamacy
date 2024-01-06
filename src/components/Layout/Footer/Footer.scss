@@ -16,9 +16,8 @@
     gap: 63px;
     @media (max-width: 960px) {
       display: flex;
-      max-width: 390px;
+      // max-width: 390px;
       flex-direction: column;
-      align-items: flex-end;
     }
     .upperbox {
       display: flex;
@@ -28,11 +27,10 @@
       width: 100%;
       max-width: 1300px;
       @media (max-width: 960px) {
-        max-width: 390px;
-
+        // max-width: 390px;
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        width: calc(100vw - 50px);
       }
       .box {
         display: flex;
@@ -79,7 +77,8 @@
       background-color: #219d50;
       max-width: 80%;
       @media (max-width: 960px) {
-        max-width: 390px;
+        max-width: calc(100vw - 50px);
+        width: 100%;
       }
     }
     .lower {
@@ -91,7 +90,8 @@
       @media (max-width: 960px) {
         flex-direction: column;
         align-items: center;
-        max-width: 390px;
+        // max-width: 390px;
+        width: calc(100vw - 50px);
       }
       img {
         max-width: 255px;

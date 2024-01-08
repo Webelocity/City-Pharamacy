@@ -14,7 +14,7 @@
   align-items: center;
   width: 100%;
 }
-.upper {
+.nav-wrapper .upper {
   display: flex;
   padding: 38px 44px;
   justify-content: space-evenly;

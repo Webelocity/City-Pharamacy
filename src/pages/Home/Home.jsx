@@ -24,6 +24,7 @@ import test from "../../assets/test.png";
 import author from "../../assets/author.png";
 import author2 from "../../assets/Ellipse 1.png";
 import pierre from "../../assets/pierre.png";
+import pierrephone from "../../assets/pierrePhone.png";
 import comf from "../../assets/comfort.png";
 import icon1 from "../../assets/featureIcon.png";
 import icon2 from "../../assets/Featureicon2.png";
@@ -49,10 +50,12 @@ import prod3 from "../../assets/prod3.png";
 import prod4 from "../../assets/prod4.png";
 import SingleCategoryProductsSwiper from "../../components/HomeComponents/SingleCategoryProductsSwiper";
 import Appointment from "../../components/Appointment";
+import { useMediaQuery } from "@mui/material";
 
 const Home = () => {
   const [value, setvalue] = useState(1);
   const [showForm, setshowForm] = useState(false);
+  const Desktop = useMediaQuery("(min-width:1268px)");
 
   const switchTab = (move) => {
     if (move === "forward" && value < 4) {
@@ -186,22 +189,30 @@ const Home = () => {
                     healthy trip. Trust in our guidance for a worry-free
                     adventure.
                   </p>
-                  <Link className="cta" to="/Travel">
-                    Book Your Travel Vaccine Appointment
-                  </Link>
-                  <div className="buttons">
-                    <img
-                      src={prev}
-                      alt="arrow"
-                      onClick={() => switchTab("backwards")}
-                      style={{ opacity: "0.5" }}
-                    />
-                    <img
-                      src={next}
-                      alt="arrow"
-                      onClick={() => switchTab("forward")}
-                    />
-                  </div>
+                  {Desktop ? (
+                    <Link className="cta" to="/Travel">
+                      Book Your Travel Vaccine Appointment
+                    </Link>
+                  ) : (
+                    <Link className="cta" to="/Travel">
+                      Book Your Travel Consult
+                    </Link>
+                  )}
+                  {Desktop && (
+                    <div className="buttons">
+                      <img
+                        src={prev}
+                        alt="arrow"
+                        onClick={() => switchTab("backwards")}
+                        style={{ opacity: "0.5" }}
+                      />
+                      <img
+                        src={next}
+                        alt="arrow"
+                        onClick={() => switchTab("forward")}
+                      />
+                    </div>
+                  )}
                 </div>
                 <div className="right">
                   <img
@@ -236,18 +247,20 @@ const Home = () => {
                   <Link className="cta" to="/MinorAliments">
                     Consult with Our Pharmacists Now
                   </Link>
-                  <div className="buttons">
-                    <img
-                      src={prev}
-                      alt="arrow"
-                      onClick={() => switchTab("backwards")}
-                    />
-                    <img
-                      src={next}
-                      alt="arrow"
-                      onClick={() => switchTab("forward")}
-                    />
-                  </div>
+                  {Desktop && (
+                    <div className="buttons">
+                      <img
+                        src={prev}
+                        alt="arrow"
+                        onClick={() => switchTab("backwards")}
+                      />
+                      <img
+                        src={next}
+                        alt="arrow"
+                        onClick={() => switchTab("forward")}
+                      />
+                    </div>
+                  )}
                 </div>
                 <div className="right">
                   <img
@@ -280,18 +293,20 @@ const Home = () => {
                   <Link className="cta" to="/Testing">
                     Schedule Your PCR Test Today
                   </Link>
-                  <div className="buttons">
-                    <img
-                      src={prev}
-                      alt="arrow"
-                      onClick={() => switchTab("backwards")}
-                    />
-                    <img
-                      src={next}
-                      alt="arrow"
-                      onClick={() => switchTab("forward")}
-                    />
-                  </div>
+                  {Desktop && (
+                    <div className="buttons">
+                      <img
+                        src={prev}
+                        alt="arrow"
+                        onClick={() => switchTab("backwards")}
+                      />
+                      <img
+                        src={next}
+                        alt="arrow"
+                        onClick={() => switchTab("forward")}
+                      />
+                    </div>
+                  )}
                 </div>
                 <div className="right">
                   <img
@@ -326,7 +341,10 @@ const Home = () => {
                   <Link
                     className="cta"
                     to="/Fillprescription"
-                    style={{ marginBottom: "0", width: "100%" }}>
+                    style={{
+                      marginBottom: "0",
+                      width: "-webkit-fill-available",
+                    }}>
                     Submit Your Prescription Today
                   </Link>
                   <div className="lastSlideCTA">
@@ -339,20 +357,21 @@ const Home = () => {
                       Care
                     </Link>
                   </div>
-
-                  <div className="buttons">
-                    <img
-                      src={prev}
-                      alt="arrow"
-                      onClick={() => switchTab("backwards")}
-                    />
-                    <img
-                      src={next}
-                      alt="arrow"
-                      onClick={() => switchTab("forward")}
-                      style={{ opacity: "0.5" }}
-                    />
-                  </div>
+                  {Desktop && (
+                    <div className="buttons">
+                      <img
+                        src={prev}
+                        alt="arrow"
+                        onClick={() => switchTab("backwards")}
+                      />
+                      <img
+                        src={next}
+                        alt="arrow"
+                        onClick={() => switchTab("forward")}
+                        style={{ opacity: "0.5" }}
+                      />
+                    </div>
+                  )}
                 </div>
                 <div className="right">
                   <img
@@ -376,6 +395,20 @@ const Home = () => {
               </div>
             </TabPanel>
           </Tabs>
+          {!Desktop && (
+            <div className="buttons">
+              <img
+                src={prev}
+                alt="arrow"
+                onClick={() => switchTab("backwards")}
+              />
+              <img
+                src={next}
+                alt="arrow"
+                onClick={() => switchTab("forward")}
+              />
+            </div>
+          )}
         </div>
       </div>
       <div className="SectionTwo">
@@ -507,34 +540,36 @@ const Home = () => {
         <div className="bottom">
           <div className="left">
             <p className="heading">Special Offers</p>
-            <div className="box">
-              <img src={covid} alt="productImage" />
-              <p className="title">
-                New Arrivals
-                <span>Find your medicine</span>
-                <Link className="button" to="/shop">
-                  Explore More
-                </Link>
-                <p className="badge">
-                  30% <br />
-                  OFF
+            <div className="boxesWrapper">
+              <div className="box">
+                <img src={covid} alt="productImage" />
+                <p className="title">
+                  New Arrivals
+                  <span>Find your medicine</span>
+                  <Link className="button" to="/shop">
+                    Explore More
+                  </Link>
+                  <p className="badge">
+                    30% <br />
+                    OFF
+                  </p>
                 </p>
-              </p>
-            </div>
-            <div className="box green">
-              <img src={health} alt="productImage" />
-              <p className="title">
-                New Arrivals
-                <span>Find your medicine</span>
-                <Link className="button" to="/shop">
-                  Explore Now
-                </Link>
-                <p className="badge">
-                  Up To
-                  <br />
-                  50%
+              </div>
+              <div className="box green">
+                <img src={health} alt="productImage" />
+                <p className="title">
+                  New Arrivals
+                  <span>Find your medicine</span>
+                  <Link className="button" to="/shop">
+                    Explore Now
+                  </Link>
+                  <p className="badge">
+                    Up To
+                    <br />
+                    50%
+                  </p>
                 </p>
-              </p>
+              </div>
             </div>
           </div>
           <div className="right">
@@ -622,7 +657,7 @@ const Home = () => {
       </div>
       <div className="SectionFive" id="about">
         <div className="wrap">
-          <img src={pierre} alt="doctor and paitient" />
+          <img src={Desktop ? pierre : pierrephone} alt="doctor and paitient" />
           <div className="textbox">
             <p className="subheader">About City Pharmacy</p>
             <p className="header">4 Decades of Dedication, Evolving for You.</p>
@@ -905,13 +940,13 @@ const Home = () => {
               <p className="title">
                 New Arrivals
                 <span>Find your medicine</span>
-                <Link className="button green" to="/shop">
-                  Explore More
-                </Link>
-                <p className="badge">
-                  30% <br />
-                  OFF
-                </p>
+              </p>
+              <Link className="button green" to="/shop">
+                Explore More
+              </Link>
+              <p className="badge">
+                30% <br />
+                OFF
               </p>
             </div>
           </div>

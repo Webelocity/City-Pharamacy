@@ -24,8 +24,8 @@ const HomeCategoryProductsSwiper = ({ data }) => {
     <div className="Hcategory-product-swiper-wrapper">
       <div className="products">
         <Swiper
-          slidesPerView={4}
-          spaceBetween={32}
+          slidesPerView={large ? 4 : medium ? 3 : small && 2.6}
+          spaceBetween={large ? 32 : medium ? 20 : small && 12}
           modules={[Navigation, FreeMode, Controller]}
           navigation={true}
           className="mySwiper"
@@ -36,14 +36,18 @@ const HomeCategoryProductsSwiper = ({ data }) => {
           <div className="top-section">
             <h1>Featured Products</h1>
             <div className="top-buttons">
-              <Link className="button" to="/shop">
-                View more
-              </Link>
-              <Divider
-                sx={{ height: "30px", marginTop: "8px !important" }}
-                orientation="vertical"
-                flexItem
-              />
+              {large && (
+                <Link className="button" to="/shop">
+                  View more
+                </Link>
+              )}
+              {large && (
+                <Divider
+                  sx={{ height: "30px", marginTop: "8px !important" }}
+                  orientation="vertical"
+                  flexItem
+                />
+              )}
               <div className="nav-buttons">
                 <SwiperNavButton />
               </div>
@@ -108,14 +112,14 @@ const HomeCategoryProductsSwiper = ({ data }) => {
           ))}
         </Swiper>
         <Swiper
-          slidesPerView={4}
-          spaceBetween={32}
+          slidesPerView={large ? 4 : medium ? 3 : small && 2.6}
+          spaceBetween={large ? 32 : medium ? 20 : small && 12}
           modules={[Navigation, FreeMode, Controller]}
           navigation={true}
           className="mySwiper"
           freeMode={true}
           speed={400}
-          style={{ paddingTop: "32px" }}
+          style={{ paddingTop: large ? "32px" : "24px" }}
           onSwiper={setSecondSwiper}
           controller={{ control: firstSwiper }}>
           {data.products.map((product) => (

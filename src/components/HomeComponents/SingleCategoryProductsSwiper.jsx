@@ -21,8 +21,8 @@ const SingleCategoryProductsSwiper = ({ data }) => {
     <div className="Hcategory-product-swiper-wrapper">
       <div className="products">
         <Swiper
-          slidesPerView={4}
-          spaceBetween={32}
+          slidesPerView={large ? 4 : medium ? 3 : small && 2.6}
+          spaceBetween={large ? 32 : medium ? 20 : small && 12}
           modules={[Navigation, FreeMode]}
           navigation={true}
           className="mySwiper"
@@ -31,20 +31,24 @@ const SingleCategoryProductsSwiper = ({ data }) => {
           <div className="top-section">
             <h1>Featured Products</h1>
             <div className="top-buttons">
-              <Link className="button" to="/shop">
-                View more
-              </Link>
-              <Divider
-                sx={{ height: "30px", marginTop: "8px !important" }}
-                orientation="vertical"
-                flexItem
-              />
+              {" "}
+              {large && (
+                <Link className="button" to="/shop">
+                  View more
+                </Link>
+              )}
+              {large && (
+                <Divider
+                  sx={{ height: "30px", marginTop: "8px !important" }}
+                  orientation="vertical"
+                  flexItem
+                />
+              )}
               <div className="nav-buttons">
                 <SwiperNavButton />
               </div>
             </div>
           </div>
-
           {data.products.map((product) => (
             <SwiperSlide>
               <div className="inside-swiper">

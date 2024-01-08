@@ -10,13 +10,13 @@
   }
   .footer-wrapper {
     width: 100%;
-    min-width: 1300px;
+    max-width: 1300px;
     display: flex;
     flex-direction: column;
     gap: 63px;
     @media (max-width: 960px) {
       display: flex;
-      // max-width: 390px;
+      max-width: 100vw;
       flex-direction: column;
     }
     .upperbox {

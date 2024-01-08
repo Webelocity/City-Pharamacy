@@ -75,8 +75,8 @@ const OurProductsSwiper = () => {
       <div className="our-products-wrapperH">
         <div className="products">
           <Swiper
-            slidesPerView={large ? 5 : medium ? 3 : small && 1.5}
-            spaceBetween={24}
+            slidesPerView={large ? 5 : medium ? 3 : small && 1.6}
+            spaceBetween={large ? 24 : medium ? 16 : small && 12}
             modules={[FreeMode, Navigation]}
             navigation={{
               prevEl: navigationPrevRef.current,

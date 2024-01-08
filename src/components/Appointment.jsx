@@ -156,7 +156,7 @@ const Appointment = ({ open, handleClose }) => {
                 name="message"
                 id="Message"
                 placeholder="Additional Information or Requests
-                (Include any specific requirements or questions you may have)"
+(Include any specific requirements or questions you may have)"
                 value={Booking.message}
                 onChange={handleChange}
               />

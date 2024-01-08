@@ -8,11 +8,12 @@ import consult2 from "../../assets/consult2.png";
 import consult3 from "../../assets/consult3.png";
 import consult4 from "../../assets/consult4.png";
 import consult5 from "../../assets/consult5.png";
-import { Link } from "react-router-dom";
 import Appointment from "../../components/Appointment";
+import { useMediaQuery } from "@mui/material";
 
 const ConsultPharmacist = () => {
   const [showForm, setshowForm] = React.useState(false);
+  const Desktop = useMediaQuery("(min-width:1268px)");
 
   return (
     <div className="ConsultPharmacistWrapper">
@@ -32,13 +33,13 @@ const ConsultPharmacist = () => {
           <img
             src={nurse}
             alt="doctor and paitient"
-            style={{ marginBottom: "-35px" }}
+            style={{ marginBottom: Desktop ? "-35px" : "0" }}
           />
         </div>
         <img
           src={bottm}
           alt="background"
-          style={{ zIndex: "2" }}
+          style={{ zIndex: Desktop ? "2" : "1" }}
           className="bottomImage"
         />
         <img src={shopbackground} alt="dots" className="topImage" />

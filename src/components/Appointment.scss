@@ -10,6 +10,8 @@
   border: none;
   @media (max-width: 1200px) {
     width: 90%;
+    height: 90vh;
+    overflow: scroll;
   }
 
   .form-wrap {
@@ -29,6 +31,11 @@
       align-items: center;
       justify-content: space-between;
       align-self: stretch;
+      @media (max-width: 960px) {
+        h1 {
+          font-size: 20px;
+        }
+      }
       svg {
         transition: 300ms;
         cursor: pointer;
@@ -44,6 +51,9 @@
       font-style: normal;
       font-weight: 400;
       line-height: 150%; /* 24px */
+      @media (max-width: 960px) {
+        line-height: 140%;
+      }
     }
     .form {
       display: flex;
@@ -93,15 +103,24 @@
         }
         textarea {
           flex: 1 0 0;
+          @media (max-width: 960px) {
+            min-height: 120px;
+          }
         }
         input.short {
           max-width: 50%;
+          @media (max-width: 960px) {
+            max-width: 100%;
+          }
         }
         .horizontalFields {
           display: flex;
           align-items: flex-start;
           gap: 22px;
           align-self: stretch;
+          @media (max-width: 960px) {
+            flex-direction: column;
+          }
         }
       }
       .calendly {
@@ -111,6 +130,9 @@
         gap: 4px;
         align-self: stretch;
         border-top: 1px dashed rgba(0, 0, 0, 0.2);
+        @media (max-width: 960px) {
+          flex-direction: column;
+        }
       }
     }
     .buttons {

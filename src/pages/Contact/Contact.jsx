@@ -5,6 +5,7 @@ import bottm from "../../assets/Circle Background bottm.png";
 import shopbackground from "../../assets/shopbackground.png";
 import ContactLast from "../../assets/ContactLast.png";
 import mail from "../../assets/mailIcon.png";
+import { useMediaQuery } from "@mui/material";
 // import GoogleMapReact from "google-map-react";
 
 const Contact = () => {
@@ -23,6 +24,7 @@ const Contact = () => {
     phone: "",
     message: "",
   });
+  const Desktop = useMediaQuery("(min-width:1268px)");
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -67,13 +69,13 @@ const Contact = () => {
           <img
             src={nurse}
             alt="doctor and paitient"
-            style={{ marginBottom: "-35px" }}
+            style={{ marginBottom: Desktop ? "-35px" : "0" }}
           />
         </div>
         <img
           src={bottm}
           alt="background"
-          style={{ zIndex: "2" }}
+          style={{ zIndex: Desktop ? "2" : "1" }}
           className="bottomImage"
         />
         <img src={shopbackground} alt="dots" className="topImage" />
@@ -278,7 +280,7 @@ const Contact = () => {
           <img
             src={ContactLast}
             alt="ContactLast"
-            style={{ marginBottom: "-90px" }}
+            style={{ marginBottom: Desktop ? "-90px" : "0" }}
           />
         </div>
         <img src={shopbackground} alt="dots" className="bg" />

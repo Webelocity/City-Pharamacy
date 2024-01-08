@@ -7,8 +7,12 @@ import about2 from "../../assets/about2.png";
 import about3 from "../../assets/about3.png";
 import bg from "../../assets/bg.png";
 import pierre from "../../assets/pierreabout.png";
+import pierrephone from "../../assets/Pierreaboutphone.png";
+import { useMediaQuery } from "@mui/material";
 
 const About = () => {
+  const Desktop = useMediaQuery("(min-width:1268px)");
+
   return (
     <div className="AboutWrapper">
       <div className="SectionOne">
@@ -24,13 +28,13 @@ const About = () => {
           <img
             src={nurse}
             alt="doctor and paitient"
-            style={{ marginBottom: "-35px" }}
+            style={{ marginBottom: Desktop ? "-35px" : "0" }}
           />
         </div>
         <img
           src={bottm}
           alt="background"
-          style={{ zIndex: "2" }}
+          style={{ zIndex: Desktop ? "2" : "1" }}
           className="bottomImage"
         />
         <img src={shopbackground} alt="dots" className="topImage" />
@@ -235,7 +239,11 @@ const About = () => {
               proficiency.
             </p>
           </div>
-          <img src={pierre} alt="doctor" style={{ marginBottom: "-40px" }} />
+          <img
+            src={Desktop ? pierre : pierrephone}
+            alt="doctor"
+            style={{ marginBottom: Desktop ? "-40px" : "0" }}
+          />
         </div>
       </div>
       <div className="SectionFour">

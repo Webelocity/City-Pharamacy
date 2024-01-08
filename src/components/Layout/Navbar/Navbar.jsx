@@ -62,6 +62,13 @@ const NavBar = () => {
     event.stopPropagation();
     if (current === showMenu) {
       setShowMenu(0);
+    } else {
+      setShowMenu(current);
+    }
+  };
+  const handlePhoneMegaSecondlevel = (event, current) => {
+    if (current === showMenu) {
+      setShowMenu(0);
       setShowMobileMenu(!showMobileMenu);
     } else {
       setShowMenu(current);
@@ -399,7 +406,6 @@ const NavBar = () => {
                 ) : (
                   <AiOutlineMenu className="menu-icon" />
                 )}
-
                 {showMobileMenu && (
                   <div className="dropdown-links-wrapper">
                     <div
@@ -419,7 +425,11 @@ const NavBar = () => {
                         />
                       </div>
                       {showMenu === 1 && (
-                        <div className="MobDrop">
+                        <div
+                          className="MobDrop"
+                          onClick={(event) =>
+                            handlePhoneMegaSecondlevel(event, 1)
+                          }>
                           <Link
                             to="/Fillprescription"
                             className="menu-box Mobbox">

@@ -11,7 +11,9 @@
   border: none;
   transform: translate(1%, 0%);
   @media (max-width: 1200px) {
-    width: 90%;
+    width: 100%;
+    max-width: 100vw;
+    border-radius: 0;
   }
 
   .cart-wrap {
@@ -98,6 +100,12 @@
         border-bottom: 2px dashed #dfdfdf;
         overflow: hidden;
         min-height: 100px;
+        @media (max-width: 960px) {
+          max-width: calc(100% - 10px);
+          img {
+            max-width: 25%;
+          }
+        }
         .data {
           display: flex;
           flex-direction: column;
@@ -118,6 +126,9 @@
             gap: 10px;
             align-self: stretch;
             justify-content: space-evenly;
+            @media (max-width: 960px) {
+              justify-content: flex-start;
+            }
             .price {
               color: var(--Main-Green, var(--Fruit-Salad-600, #219d50));
               font-family: Roboto;
@@ -126,6 +137,9 @@
               font-weight: 600;
               line-height: 150%; /* 36px */
               letter-spacing: 0.36px;
+              @media (max-width: 960px) {
+                font-size: 20px;
+              }
             }
             .input,
             input {
@@ -143,6 +157,9 @@
               border: none;
               padding: 4px 4px 4px 16px;
               max-width: 100%;
+              @media (max-width: 960px) {
+                padding: 4px 4px 4px 6px;
+              }
             }
             .incbuttons {
               display: flex;

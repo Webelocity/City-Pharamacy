@@ -9,12 +9,42 @@ function valuetext(value) {
 }
 
 const filtersCategoryToLook = [
-    {name: "Beauty", open: false, category: "Beauty"},
-    {name: "COVID-19 Essentials", open: false, category: "COVID-19 Essentials"},
-    {name: "Health & Wellness", open: false, category: "Health & Wellness"},
-    {name: "Home Care & Devices", open: false, category: "Home Care & Devices"},
-    {name: "Baby & Child", open: false, category: "Baby & Child"},
-    {name: "Personal Care", open: false, category: "Personal Care"},
+    {
+        name: "Beauty",
+        open: false,
+        category: "Beauty",
+        sub_categories: [`Allergy & Sinus (7)`, `Cough & Cold (7)`, `Diabetes (7)`, `Digestive Care  (7)`, `Ear Care (7)`, `Eye Care (7)`, `First Aid (7)`, `Foot Care (7)`, `Nasal Care (7)`, `Sleep Aids (7)`]
+    },
+    {
+        name: "COVID-19 Essentials",
+        open: false,
+        category: "COVID-19 Essentials",
+        sub_categories: [`Allergy & Sinus (7)`, `Cough & Cold (7)`, `Diabetes (7)`, `Digestive Care  (7)`, `Ear Care (7)`, `Eye Care (7)`, `First Aid (7)`, `Foot Care (7)`, `Nasal Care (7)`, `Sleep Aids (7)`]
+    },
+    {
+        name: "Health & Wellness",
+        open: false,
+        category: "Health & Wellness",
+        sub_categories: [`Allergy & Sinus (7)`, `Cough & Cold (7)`, `Diabetes (7)`, `Digestive Care  (7)`, `Ear Care (7)`, `Eye Care (7)`, `First Aid (7)`, `Foot Care (7)`, `Nasal Care (7)`, `Sleep Aids (7)`]
+    },
+    {
+        name: "Home Care & Devices",
+        open: false,
+        category: "Home Care & Devices",
+        sub_categories: [`Allergy & Sinus (7)`, `Cough & Cold (7)`, `Diabetes (7)`, `Digestive Care  (7)`, `Ear Care (7)`, `Eye Care (7)`, `First Aid (7)`, `Foot Care (7)`, `Nasal Care (7)`, `Sleep Aids (7)`]
+    },
+    {
+        name: "Baby & Child",
+        open: false,
+        category: "Baby & Child",
+        sub_categories: [`Allergy & Sinus (7)`, `Cough & Cold (7)`, `Diabetes (7)`, `Digestive Care  (7)`, `Ear Care (7)`, `Eye Care (7)`, `First Aid (7)`, `Foot Care (7)`, `Nasal Care (7)`, `Sleep Aids (7)`]
+    },
+    {
+        name: "Personal Care",
+        open: false,
+        category: "Personal Care",
+        sub_categories: [`Allergy & Sinus (7)`, `Cough & Cold (7)`, `Diabetes (7)`, `Digestive Care  (7)`, `Ear Care (7)`, `Eye Care (7)`, `First Aid (7)`, `Foot Care (7)`, `Nasal Care (7)`, `Sleep Aids (7)`]
+    },
 ];
 
 const Filters = () => {
@@ -23,7 +53,7 @@ const Filters = () => {
     const OpenCategory = () => {
         openedArray = filtersCategoryToLook.map(category => {
             if (id === category.category) {
-                return {name: category.name, open: true, category: category.category}
+                return {...category, open: true}
             } else return category
         })
         return openedArray
@@ -38,7 +68,7 @@ const Filters = () => {
         setFiltersCategory(prevFilters => {
             return prevFilters.map(filter => {
                 if (filter.name === name) {
-                    return {...filter, open: !filter.open}; // Toggle the 'open' attribute
+                    return {...filter, open: !filter.open};
                 } else return {...filter, open: false}
             });
         });
@@ -82,12 +112,12 @@ const Filters = () => {
                         </ListItemButton>
                         <Collapse in={category.open} timeout="auto" unmountOnExit>
                             <List component="div" disablePadding>
-                                <ListItemButton sx={{pl: 4}}>
-                                    <ListItemIcon>
-                                        <StarBorder/>
-                                    </ListItemIcon>
-                                    <ListItemText primary="Starred"/>
-                                </ListItemButton>
+                                {category?.sub_categories?.map(subcategory =>
+                                    <div className='inside-price-collapse'>
+                                        <input type='checkbox'/>
+                                        <p>{subcategory}</p>
+                                    </div>
+                                )}
                             </List>
                         </Collapse>
                     </>)}

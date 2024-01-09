@@ -1,23 +1,26 @@
 import React from 'react';
-import {Checkbox, IconButton} from "@mui/material";
+import {IconButton} from "@mui/material";
 import CityCheckbox from "../CityCheckbox";
 
-const Address = ({address, checkedAddress, setCheckedAddress}) => {
-    const checked = address.name === checkedAddress
+const Address = ({address, checkedAddress, setCheckedAddress, onEditAddress, setEdit, isBilling}) => {
+    const checked = address.index === checkedAddress
     return (
-        <div className={`single-address ${checked && 'checked'}`} onClick={() => setCheckedAddress(address.name)}>
+        <div className={`single-address ${checked && 'checked'}`} onClick={() => setCheckedAddress(address.index)}>
             <CityCheckbox checked={checked}/>
             <div className='address'>
                 <div className='name'>
                     <div className='n'>
                         <p>
-                            {address.name}
+                            {address.first_name} {address.last_name}
                         </p>
                         {address.default &&
                             <p className='default'>Default</p>
                         }
                     </div>
-                    <IconButton sx={{padding: '10px'}}>
+                    <IconButton sx={{padding: '10px'}} onClick={(event) => {
+                        onEditAddress(event, address, isBilling);
+                        setEdit(true);
+                    }}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
                              fill="none">
                             <g clip-path="url(#clip0_1579_184400)">
@@ -37,7 +40,7 @@ const Address = ({address, checkedAddress, setCheckedAddress}) => {
                     </IconButton>
                 </div>
                 <p>
-                    {address.address}
+                    {address?.street}, {address?.town}, {address?.postal_code}, {address?.country}
                 </p>
             </div>
         </div>

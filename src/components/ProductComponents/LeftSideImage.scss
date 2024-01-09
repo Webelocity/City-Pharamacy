@@ -32,8 +32,13 @@
       padding:10px;
       border-radius: 16px;
       background-color: #F5F5F1;
+      cursor: pointer;
       @media (max-width: 1200px) {
         width: 18%;
+      }
+
+      &.selected {
+        border: 1px solid black
       }
     }
 

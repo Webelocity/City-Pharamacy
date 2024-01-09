@@ -1,27 +1,27 @@
 import React from 'react';
-import {CheckBox} from "@mui/icons-material";
-import {Checkbox, IconButton} from "@mui/material";
+import {IconButton} from "@mui/material";
 import CityCheckbox from "../CityCheckbox";
 
-const SinglePaymentMethod = ({payment, checkedPayment, setCheckedPayment}) => {
+const SinglePaymentMethod = ({payment, checkedPayment, setCheckedPayment, onEditPayment}) => {
 
-    const checked = payment.payment_numbers === checkedPayment;
+    const checked = payment.card_numbers === checkedPayment;
 
 
     return (
-        <div className={`single-payment-method ${checked && 'checked'}`} onClick={() => setCheckedPayment(payment.payment_numbers)}>
+        <div className={`single-payment-method ${checked && 'checked'}`}
+             onClick={() => setCheckedPayment(payment.card_numbers)}>
             <CityCheckbox checked={checked}/>
             <div className='payment-info'>
                 <div className='payment-name'>
                     <div className='title'>
-                        <img src={payment.image} alt={payment.name}/>
+                        <img src={payment.payment_image} alt={payment.card_holder}/>
                         <div className='name'>
                             <div className='n'>
                                 {payment.default &&
                                     <p className='default'>Default</p>
                                 }
                             </div>
-                            <IconButton sx={{padding: '10px'}}>
+                            <IconButton sx={{padding: '10px'}} onClick={(event) => onEditPayment(event, payment)}>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
                                      fill="none">
                                     <g clip-path="url(#clip0_1579_184400)">
@@ -42,10 +42,10 @@ const SinglePaymentMethod = ({payment, checkedPayment, setCheckedPayment}) => {
                         </div>
                     </div>
                 </div>
-                <h1>{payment.payment_numbers}</h1>
+                <h1>**** **** **** {payment.card_numbers.slice(-4)}</h1>
                 <div className='card_holder'>
                     <p>{payment.card_holder}</p>
-                    <p>{payment.card_expire_date}</p>
+                    <p>{payment.card_month}/{payment.card_year}</p>
                 </div>
             </div>
         </div>

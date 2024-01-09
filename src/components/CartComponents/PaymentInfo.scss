@@ -9,8 +9,8 @@
     width: 100%;
   }
 
-  .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.Mui-checked, .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.MuiCheckbox-indeterminate{
-    color:green;
+  .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.Mui-checked, .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.MuiCheckbox-indeterminate {
+    color: green;
   }
 
   .MuiInputBase-root {
@@ -47,7 +47,7 @@
       gap: 10px;
       border-radius: 10px;
       background: var(--Green-Light, rgba(104, 212, 145, 0.27));
-      border:none;
+      border: none;
       color: var(--Main-Green, var(--Fruit-Salad-600, #219D50));
       font-size: 14px;
       font-style: normal;
@@ -55,6 +55,7 @@
       line-height: normal;
       text-transform: capitalize;
     }
+
     .MuiButtonBase-root {
       background-color: transparent;
       @media (max-width: 1200px) {
@@ -208,6 +209,7 @@
       align-items: flex-start;
       gap: 8px;
       align-self: stretch;
+      flex-wrap: wrap;
       @media (max-width: 1200px) {
         flex-direction: column;
       }
@@ -221,8 +223,11 @@
         border-radius: 10px;
         border: 1px solid #DEDEDE;
         background: #FFF;
-        width: calc(100% - 48px);
+        width: calc(50% - 56px);
         cursor: pointer;
+        @media (max-width: 1200px) {
+          width: calc(100% - 48px);
+        }
 
         &.checked {
           border: 1px solid var(--Main-Green, #4C9B58);

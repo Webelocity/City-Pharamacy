@@ -5,11 +5,12 @@ import {IconButton, Rating, useMediaQuery} from "@mui/material";
 import {useNavigate} from "react-router-dom";
 
 const RightSideInfo = () => {
-    const data = {colors: ['#C6B6C4', '#D3FCE2'], models: [1, 2]};
+    const data = {colors: ['#C6B6C4', '#D3FCE2'], models: [1, 2], sizes: [`S`, `M`, `L`, `XL`]};
     const matches = useMediaQuery('(max-width:1200px)');
     const navigate = useNavigate();
     const [color, setColor] = useState(data.colors[0]);
     const [model, setModel] = useState(data.models[0]);
+    const [size, setSize] = useState(data.sizes[0]);
     const [quantity, setQuantity] = useState(1);
     const increaseQuantity = () => {
         setQuantity(prevState => prevState + 1)
@@ -97,6 +98,15 @@ const RightSideInfo = () => {
                         {data.models.map(modelToMap =>
                             <img className={`${modelToMap === model && 'selected'}`}
                                  onClick={() => setModel(modelToMap)} src={photo} alt='product'/>
+                        )}
+                    </div>
+                </div>
+                <div className='models-wrapper'>
+                    <p>Size</p>
+                    <div className='models'>
+                        {data.sizes.map(sizeToMap =>
+                            <div className={`size ${sizeToMap === size && 'selected'}`}
+                                 onClick={() => setSize(sizeToMap)}><p>{sizeToMap}</p></div>
                         )}
                     </div>
                 </div>

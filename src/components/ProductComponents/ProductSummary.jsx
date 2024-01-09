@@ -3,6 +3,7 @@ import './ProductSummary.scss'
 import {Container} from "@mui/material";
 import Description from "./Description";
 import Reviews from "./Reviews";
+import photo from '../../assets/Sizing Chart.svg'
 
 
 const categories = ['Description', 'Reviews', 'Additional information']
@@ -20,6 +21,7 @@ const ProductSummary = () => {
                     </div>
                     {category === 'Description' && <Description />}
                     {category === 'Reviews' && <Reviews />}
+                    {category === 'Additional information' && <img src={photo} alt='additional-information' /> }
                 </div>
             </Container>
         </div>

@@ -3,16 +3,39 @@ import {IconButton, Modal} from "@mui/material";
 import './AddEditAddressModal.scss'
 import {MuiTelInput} from "mui-tel-input";
 
-const AddEditAddressModal = ({open, handleClose}) => {
+const AddEditAddressModal = ({
+                                 open,
+                                 handleClose,
+                                 data,
+                                 setData,
+                                 shippingAddresses,
+                                 addAddress,
+                                 deleteAddress,
+                                 editAddress,
+                                 edit,
+                                 billing
+                             }) => {
+    const handleChange = (event, phoneValue) => {
+        let name;
+        let value;
+        if (event.target) {
+            name = event.target.name;
+            value = event.target.value;
+        } else {
+            name = "phone";
+            value = phoneValue;
+        }
+        setData({...data, [name]: value, index: shippingAddresses.length})
+    }
     return (
         <Modal
             open={open}
             onClose={handleClose}
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description">
-            <div className='modal'>
+            <form className='modal'>
                 <div className='top-part'>
-                    <h1>Add a shipping address</h1>
+                    <h1>{billing ? `Add a billing address` : `Add a shipping address`}</h1>
                     <IconButton onClick={handleClose}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="41" viewBox="0 0 40 41" fill="none">
                             <path d="M27.9961 12.5L11.9961 28.5005" stroke="#979797" stroke-width="1.28573"
@@ -24,12 +47,16 @@ const AddEditAddressModal = ({open, handleClose}) => {
                 </div>
                 <div className='inputs-wrapper'>
                     <div className='inputs-row'>
-                        <input placeholder='First Name'/>
-                        <input placeholder='Last Name'/>
+                        <input value={data.first_name} onChange={handleChange} name="first_name"
+                               placeholder='First Name'/>
+                        <input value={data.last_name} onChange={handleChange} name="last_name" placeholder='Last Name'/>
                     </div>
                     <div className='inputs-row'>
-                        <input placeholder='E-mail Address'/>
+                        <input onChange={handleChange} name="email" placeholder='E-mail Address'/>
                         <MuiTelInput
+                            name="phone"
+                            value={data.phone}
+                            onChange={(value) => handleChange('', value)}
                             className='no-border-input'
                             sx={{width: "56%", "& fieldset": {borderColor: '#DEDEDE !important'},}}
                             InputLabelProps={{
@@ -52,28 +79,37 @@ const AddEditAddressModal = ({open, handleClose}) => {
                                 },
                             }}
                             defaultCountry="CA"
-                            // value={personalInfo.phone}
-                            // onChange={(value) => handleChange(null, {name:"phone", value})}
                         />
                     </div>
                     <div className='inputs-row'>
-                        <input placeholder='Country / Region'/>
-                        <input placeholder='Province'/>
+                        <input value={data.country} onChange={handleChange} name="country"
+                               placeholder='Country / Region'/>
+                        <input value={data.province} onChange={handleChange} name="province" placeholder='Province'/>
                     </div>
                     <div className='inputs-row'>
-                        <input placeholder='Town / City'/>
-                        <input placeholder='Postal Code'/>
+                        <input value={data.town} onChange={handleChange} name="town" placeholder='Town / City'/>
+                        <input value={data.postal_code} onChange={handleChange} name="postal_code"
+                               placeholder='Postal Code'/>
                     </div>
                     <div className='inputs-row'>
-                        <input placeholder='Street Address 1'/>
-                        <input placeholder='Street Address 2'/>
+                        <input value={data.street} onChange={handleChange} name="street"
+                               placeholder='Street Address 1'/>
+                        <input value={data.street2} onChange={handleChange} name="street2"
+                               placeholder='Street Address 2'/>
                     </div>
                 </div>
                 <div className='buttons'>
-                    <button>Add Shipping Address</button>
-                    <button className='white' onClick={handleClose}>Cancel</button>
+                    {edit ? <>
+                        <button onClick={editAddress}>Save Changes</button>
+                        <button className='delete' onClick={deleteAddress}>Delete Address</button>
+                    </> : <>
+                        <button type="submit"
+                                onClick={addAddress}>{billing ? `Add Billing Address` : `Add Shipping Address`}</button>
+                        <button className='white' onClick={handleClose}>Cancel</button>
+                    </>
+                    }
                 </div>
-            </div>
+            </form>
         </Modal>
     );
 };

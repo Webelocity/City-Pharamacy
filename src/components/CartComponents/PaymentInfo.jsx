@@ -3,8 +3,6 @@ import './PaymentInfo.scss'
 import PersonalInfo from "./PersonalInfo";
 import AddressInfo from "./AddressInfo";
 import PaymentMethod from "./PaymentMethod";
-import AddEditAddressModal from "./AddEditAddressModal";
-import AddEditPaymentModal from "./AddEditPaymentModal";
 
 const PaymentInfo = () => {
     const [personalInfo, setPersonalInfo] = useState({first_name: "", last_name: "", phone: "CA"});
@@ -27,7 +25,6 @@ const PaymentInfo = () => {
             <PersonalInfo personalInfo={personalInfo} handleChange={handleChangePersonalInfo} />
             <AddressInfo />
             <PaymentMethod />
-            <AddEditPaymentModal />
         </div>
     );
 };

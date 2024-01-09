@@ -4,27 +4,166 @@ import {Divider} from "@mui/material";
 import AddEditAddressModal from "./AddEditAddressModal";
 
 const AddressInfo = () => {
-    const ShippingAddresses = [{
-        name: "Shipping Address Name",
+    const [shippingAddresses, setShippingAddresses] = useState([{
+        index: 0,
+        first_name: "Sarah",
+        last_name: "Logan",
+        email: "sarahlogan@gmail.com",
+        phone: "+1 230 23 23",
         default: true,
-        address: "123 Main Street, Anytown, CA 12345, United States"
-    }, {
-        name: "Shipping Address Name 2",
+        street: "789 Bay Street",
+        street2: "",
+        town: "Toronto",
+        postal_code: "M5V 1Z4",
+        province: "Ontario",
+        country: "Canada",
+        country_alpha_code: "CA"
+    }]);
+    const [billingAddresses, setBillingAddresses] = useState([{
+        index: 0,
+        first_name: "Sarah",
+        last_name: "Logan",
+        email: "sarahlogan@gmail.com",
+        phone: "+1 230 23 23",
+        default: true,
+        street: "789 Bay Street",
+        town: "Toronto",
+        postal_code: "M5V 1Z4",
+        province: "Ontario",
+        country: "Canada",
+        country_alpha_code: "CA"
+    }]);
+    const [checkedAddress, setCheckedAddress] = useState(shippingAddresses[0]?.index);
+    const [checkedBillingAddress, setCheckedBillingAddress] = useState(billingAddresses[0]?.index);
+    const [openModal, setOpenModal] = useState(false);
+    const [edit, setEdit] = useState(false);
+    const [billing, setBilling] = useState(false);
+    const [data, setData] = useState({
+        index: 0,
+        first_name: "",
+        last_name: "",
+        email: "",
+        phone: "",
         default: false,
-        address: "123 Main Street, Anytown, CA 12345, United States 2"
-    }];
-    const BillingAddress = [{
-        name: "Billing Address Name",
-        default: true,
-        address: "123 Main Street, Anytown, CA 12345, United States"
-    }];
-    const [checkedAddress, setCheckedAddress] = useState(ShippingAddresses[0].name);
-    const [checkedBillingAddress, setCheckedBillingAddress] = useState(BillingAddress[0].name);
-    const [openModal, setOpenModal] = useState(false)
+        street: "",
+        street2: "",
+        town: "",
+        postal_code: "",
+        province: "",
+        country: "",
+        country_alpha_code: ""
+    });
+
+    const addAddress = (event) => {
+        event.preventDefault();
+        if (data) {
+            if (billing) {
+                setBillingAddresses([...billingAddresses, data])
+            } else setShippingAddresses([...shippingAddresses, data]);
+        }
+        setOpenModal(false);
+    }
+
+    const onEditAddress = (event, address, isBilling) => {
+        event.stopPropagation();
+        setData(address);
+        setOpenModal(true)
+        if (isBilling) {
+            setBilling(true)
+        }
+    }
+
+    const editAddress = (event) => {
+        event.preventDefault();
+        setEdit(true);
+        if (billing) {
+            setBillingAddresses(prevState => prevState.map(address => {
+                if (address.index === data.index - 1) {
+                    return {...data, index: address.index}
+                } else return address
+            }));
+        } else {
+            setShippingAddresses(prevState => prevState.map(address => {
+                if (address.index === data.index - 1) {
+                    return {...data, index: address.index}
+                } else return address
+            }));
+        }
+        setOpenModal(false);
+        setData({
+            index: 0,
+            first_name: "",
+            last_name: "",
+            email: "",
+            phone: "",
+            default: false,
+            street: "",
+            street2: "",
+            town: "",
+            postal_code: "",
+            province: "",
+            country: "",
+            country_alpha_code: ""
+        });
+        setEdit(false)
+    }
+
+    const handleDeleteAddress = (event) => {
+        event.preventDefault();
+        if (billing) {
+            setBillingAddresses(prevState => prevState.filter(address => {
+                return address.first_name !== (data.first_name)
+            }));
+        } else
+            setShippingAddresses(prevState => prevState.filter(address => {
+                return address.first_name !== (data.first_name)
+            }));
+        setOpenModal(false);
+        setData({
+            index: 0,
+            first_name: "",
+            last_name: "",
+            email: "",
+            phone: "",
+            default: false,
+            street: "",
+            street2: "",
+            town: "",
+            postal_code: "",
+            province: "",
+            country: "",
+            country_alpha_code: ""
+        });
+        setEdit(false)
+    }
+
+    const handleCloseModal = () => {
+        setOpenModal(false);
+        setData({
+            index: 0,
+            first_name: "",
+            last_name: "",
+            email: "",
+            phone: "",
+            default: false,
+            street: "",
+            street2: "",
+            town: "",
+            postal_code: "",
+            province: "",
+            country: "",
+            country_alpha_code: ""
+        });
+        setEdit(false)
+    }
+
 
     return (
         <>
-            <AddEditAddressModal open={openModal} handleClose={() => setOpenModal(false)}/>
+            <AddEditAddressModal open={openModal} handleClose={handleCloseModal}
+                                 shippingAddresses={shippingAddresses} data={data} edit={edit}
+                                 setData={setData} addAddress={addAddress} editAddress={editAddress}
+                                 deleteAddress={handleDeleteAddress} billing={billing}/>
             <div className='personal-info'>
                 <h1>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -41,23 +180,33 @@ const AddressInfo = () => {
                 <div className='shipping-address'>
                     <p>Shipping address</p>
                     <div className='info'>
-                        {ShippingAddresses.map(address =>
+                        {shippingAddresses?.map(address =>
                             <Address address={address} checkedAddress={checkedAddress}
-                                     setCheckedAddress={setCheckedAddress}/>
+                                     setCheckedAddress={setCheckedAddress} onEditAddress={onEditAddress}
+                                     setEdit={setEdit}/>
                         )}
                     </div>
-                    <button onClick={() => setOpenModal(true)}>Add New Shipping Address</button>
+                    <button onClick={() => {
+                        setOpenModal(true);
+                        setBilling(false)
+                    }}>Add New Shipping Address
+                    </button>
                 </div>
                 <Divider sx={{width: "100%"}}/>
                 <div className='shipping-address'>
                     <p>Billing address</p>
                     <div className='info'>
-                        {BillingAddress.map(address =>
+                        {billingAddresses?.map(address =>
                             <Address address={address} checkedAddress={checkedBillingAddress}
-                                     setCheckedAddress={setCheckedBillingAddress}/>
+                                     setCheckedAddress={setCheckedBillingAddress} onEditAddress={onEditAddress}
+                                     setEdit={setEdit} isBilling={true}/>
                         )}
                     </div>
-                    <button onClick={() => setOpenModal(true)}>Add New Billing Address</button>
+                    <button onClick={() => {
+                        setOpenModal(true);
+                        setBilling(true)
+                    }}>Add New Billing Address
+                    </button>
                 </div>
             </div>
         </>

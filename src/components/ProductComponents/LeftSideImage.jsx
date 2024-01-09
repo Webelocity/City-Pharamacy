@@ -1,20 +1,23 @@
-import React from 'react';
+import React, {useState} from 'react';
 import photo from "../../assets/product.svg";
+import photo1 from "../../assets/baby.svg";
+import photo2 from "../../assets/beauty.svg";
 import './LeftSideImage.scss'
 
 
-const data = [1, 2, 3]
+const data = [photo, photo1, photo2]
 
 const LeftSideImage = () => {
+    const [photoSelected, setPhotoSelected] = useState(photo)
     return (
         <div className='left-side'>
             <div className='photo'>
-                <img src={photo} alt='product'/>
+                <img src={photoSelected} alt='product'/>
             </div>
             <div className='small-photos-wrapper'>
                 {data.map(d =>
-                    <div className='photo'>
-                        <img src={photo} alt='product'/>
+                    <div className={`photo ${photoSelected === d && 'selected'}`} onClick={() => setPhotoSelected(d)}>
+                        <img src={d} alt='product'/>
                     </div>
                 )}
                 <div className='more'>

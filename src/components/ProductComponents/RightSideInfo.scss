@@ -151,9 +151,12 @@
   .colors-model {
     display: flex;
     padding: 27px 0px;
-    align-items: flex-start;
+    align-items: center;
     gap: 16px;
     align-self: stretch;
+    @media (max-width: 1200px) {
+      flex-wrap: wrap;
+    }
 
     .colors-wrapper {
       display: flex;
@@ -193,6 +196,31 @@
         display: flex;
         align-items: center;
         gap: 8px;
+
+        .size {
+          display: flex;
+          width: 67px;
+          height: 67px;
+          justify-content: center;
+          align-items: center;
+          gap: 7.843px;
+          border-radius: 50%;
+          background: var(--Foggy-Gray-50, #F5F5F1);
+          cursor: pointer;
+
+          p {
+            color: rgba(0, 0, 0, 0.50);
+            text-align: center;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+          }
+
+          &.selected {
+            border: 1px solid black
+          }
+        }
 
         img {
           width: 67px;

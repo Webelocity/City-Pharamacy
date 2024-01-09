@@ -1,16 +1,13 @@
 import React, {useState} from 'react';
 import './Comments.scss'
-import {Checkbox, Divider, Rating, useMediaQuery} from "@mui/material";
+import {useMediaQuery} from "@mui/material";
 import photo from '../../assets/product-comment.svg'
 import photo2 from '../../assets/everyday-turmeric.svg'
-import ThumbUpIcon from '@mui/icons-material/ThumbUp';
-import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
-import ThumbDownIcon from '@mui/icons-material/ThumbDown';
-import ThumbDownOffAltIcon from '@mui/icons-material/ThumbDownOffAlt';
+import Comment from './Comment'
+import {useSelector} from "react-redux";
 
 const commentsDummy = [
     {
-        id: 0,
         name: "Sherrie B",
         photo: photo,
         commented_since: "Yesterday",
@@ -20,7 +17,6 @@ const commentsDummy = [
         replies: []
     },
     {
-        id: 1,
         name: "Sherrie B",
         photo: photo,
         commented_since: "Yesterday",
@@ -29,7 +25,6 @@ const commentsDummy = [
         dislikes: 0,
         replies: [
             {
-                id: 0,
                 name: "Bella",
                 photo: photo,
                 commented_since: "2 weeks ago",
@@ -40,7 +35,6 @@ const commentsDummy = [
         ]
     },
     {
-        id: 2,
         name: "Sherrie B",
         photo: photo,
         commented_since: "Yesterday",
@@ -55,6 +49,7 @@ const Comments = () => {
     const matches = useMediaQuery('(max-width:1200px)');
     const [comments, setComments] = useState(commentsDummy);
     const [comment, setComment] = useState({full_name: "", email_address: "", photo: photo, comment: ""});
+    const user = useSelector((state) => state.user.currentUser);
 
     const handleChange = (event) => {
         const {value, name} = event.target;
@@ -63,7 +58,6 @@ const Comments = () => {
 
     const handleSendMessage = () => {
         const commentToAdd = {
-            id: comments.length,
             name: `${comment.full_name}`,
             photo: photo,
             commented_since: `Just Now`,
@@ -77,20 +71,20 @@ const Comments = () => {
         //TODO add comment to db
     }
 
-    const handleLike = (event, idFromComment, idFromReply) => {
+    const handleLike = (event, commentIndex, replyIndex) => {
         const checked = event.target.checked;
 
-        setComments(prevState => prevState.map(comment => {
-            if (comment.id !== idFromComment) return comment;
+        setComments(prevState => prevState.map((comment, cIndex) => {
+            if (cIndex !== commentIndex) return comment;
 
-            const updateLikes = (item) => ({
+            const updateLikes = (item, rIndex) => ({
                 ...item,
                 likes: checked ? item.likes + 1 : item.likes - 1,
             });
 
-            if (idFromReply || idFromReply === 0) {
-                const updatedReplies = comment.replies.map(reply =>
-                    (reply.id === idFromReply) ? updateLikes(reply) : reply
+            if (replyIndex || replyIndex === 0) {
+                const updatedReplies = comment.replies.map((reply, rIndex) =>
+                    (rIndex === replyIndex) ? updateLikes(reply, rIndex) : reply
                 );
                 return { ...comment, replies: updatedReplies };
             }
@@ -99,108 +93,67 @@ const Comments = () => {
         }));
     };
 
-    const handleDislike = (event, idFromComment, idFromReply) => {
+
+    const handleDislike = (event, commentIndex, replyIndex) => {
         const checked = event.target.checked;
 
-        setComments(prevState => prevState.map(comment => {
-            if (comment.id !== idFromComment) return comment;
+        setComments(prevState => prevState.map((comment, cIndex) => {
+            if (cIndex !== commentIndex) return comment;
 
-            const updateDislikes = (item) => ({
+            const updateLikes = (item, rIndex) => ({
                 ...item,
                 dislikes: checked ? item.dislikes + 1 : item.dislikes - 1,
             });
 
-            if (idFromReply || idFromReply === 0) {
-                const updatedReplies = comment.replies.map(reply =>
-                    (reply.id === idFromReply) ? updateDislikes(reply) : reply
+            if (replyIndex || replyIndex === 0) {
+                const updatedReplies = comment.replies.map((reply, rIndex) =>
+                    (rIndex === replyIndex) ? updateLikes(reply, rIndex) : reply
                 );
                 return { ...comment, replies: updatedReplies };
             }
 
-            return updateDislikes(comment);
+            return updateLikes(comment);
         }));
     };
 
+
+    const handleSubmitReply = (event, commentIndex, data) => {
+        event.preventDefault();
+
+        const updatedComments = comments.map((comment, cIndex) => {
+            if (cIndex === commentIndex) {
+                const dataToAdd = {
+                    name: user?.email,
+                    photo: photo,
+                    commented_since: "Just Now",
+                    comment: data,
+                    likes: 0,
+                    dislikes: 0
+                }
+                return {
+                    ...comment,
+                    replies: [...comment.replies, dataToAdd],
+                };
+            }
+            return comment;
+        });
+
+        setComments(updatedComments);
+    };
+
+
     return (
         <div className='comments-wrapper'>
-            {comments.map(comment =>
-                <div className='comment-section'>
-                    <div className='name-section'>
-                        <img src={comment.photo} alt={comment.name}/>
-                        <div className='name-rating'>
-                            <div className='name-time'>
-                                <p>{comment.name}</p>
-                                <p className='time'>{comment.commented_since}</p>
-                            </div>
-                            <Rating/>
-                        </div>
-                    </div>
-                    <p>
-                        {comment.comment}
-                    </p>
-                    <div className='likes-dislikes-section'>
-                        <button>Reply</button>
-                        <div>
-                            <Checkbox
-                                onChange={(event) => handleLike(event, comment.id)}
-                                icon={<ThumbUpOffAltIcon/>}
-                                checkedIcon={<ThumbUpIcon color="success"/>}
-                            />
-                            {comment.likes}
-                        </div>
-                        <div>
-                            <Checkbox
-                                onChange={(event) => handleDislike(event, comment.id)}
-                                icon={<ThumbDownOffAltIcon/>}
-                                checkedIcon={<ThumbDownIcon color="success"/>}
-                            />
-                            {comment.dislikes}
-                        </div>
-                    </div>
-                    {comment.replies.map(reply =>
-                        <div className='reply-wrapper'>
-                            <div className='name-section'>
-                                <img src={reply.photo} alt={reply.name}/>
-                                <div className='name-rating'>
-                                    <div className='name-time'>
-                                        <p>{reply.name}</p>
-                                        <p className='time'>{reply.commented_since}</p>
-                                    </div>
-                                    <Rating/>
-                                </div>
-                            </div>
-                            <p>
-                                {reply.comment}
-                            </p>
-                            <div className='likes-dislikes-section'>
-                                {/*<button>Reply</button>*/}
-                                <div>
-                                    <Checkbox
-                                        onChange={(event) => handleLike(event, comment.id, reply.id)}
-                                        icon={<ThumbUpOffAltIcon/>}
-                                        checkedIcon={<ThumbUpIcon color="success"/>}
-                                    />
-                                    {reply.likes}
-                                </div>
-                                <div>
-                                    <Checkbox
-                                        onChange={(event) => handleDislike(event, comment.id, reply.id)}
-                                        icon={<ThumbDownOffAltIcon/>}
-                                        checkedIcon={<ThumbDownIcon color="success"/>}
-                                    />
-                                    {reply.dislikes}
-                                </div>
-                            </div>
-                        </div>
-                    )}
-                    <Divider sx={{width: "100%"}}/>
-                </div>
+            {comments.map((comment,index) =>
+                <Comment key={index} comment={comment} handleLike={handleLike} handleDislike={handleDislike}
+                         handleSubmitReply={handleSubmitReply} index={index} />
             )}
             <div className='write-comment-wrapper'>
                 <h1>WRITE A COMMENT</h1>
                 <div className='first-name'>
                     <input value={comment.full_name} name="full_name" onChange={handleChange} placeholder="Full Name*"/>
-                    <input value={comment.email_address} name="email_address" onChange={handleChange} placeholder="Email Address*"/>
+                    <input value={comment.email_address} name="email_address" onChange={handleChange}
+                           placeholder="Email Address*"/>
                 </div>
                 <textarea value={comment.email_address} name="comment" onChange={handleChange} rows="5" cols="60"
                           placeholder='Message*'>

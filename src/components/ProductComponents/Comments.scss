@@ -17,6 +17,25 @@
     gap: 24px;
     align-self: stretch;
 
+    .reply {
+      width: 100%;
+
+      .mui-register-password {
+        border-radius: 12px;
+        padding:12px 16px;
+        border: 1px solid #E2E8F0;
+        width: 100%;
+        background-color: #FFFFFF;
+        @media (max-width: 1200px) {
+          width: 100%;
+        }
+
+        input {
+          border: none;
+        }
+      }
+    }
+
 
     p {
       color: var(--Basic-Black, #000);
